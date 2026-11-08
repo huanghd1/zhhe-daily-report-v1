@@ -1,7 +1,7 @@
 // 每日简报数据生成脚本：抓 GitHub 榜单和 HN AI 快讯，调用大模型分析，写入 public/data.json。
 // 只用 Node 24 原生能力（fetch、node:fs、node:util），没有第三方依赖。
 // 本地运行 npm run update（读取根目录 .env）；GitHub Actions 中由 Secrets / Variables 注入环境变量。
-import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseEnv } from 'node:util';
@@ -20,9 +20,20 @@ export const PROJECT_ROOT = fileURLToPath(new URL('..', import.meta.url));
 export const ENV_PATH = join(PROJECT_ROOT, '.env');
 export const DATA_PATH = join(PROJECT_ROOT, 'public', 'data.json');
 
-// isboyjc 每日榜单（2026-08 起已停更，过期时自动降级到 GitHub Search API）
+// 首选：GitHub 官方 Trending 页面（server-rendered，带 "N stars today"，是唯一能给出真实 24h 增量的来源）
+export const TRENDING_HTML_URL = 'https://github.com/trending?since=daily';
+// 次选：isboyjc 每日榜单（2026-08 起已停更，只在它还新鲜时使用）
 export const TRENDING_URL = 'https://raw.githubusercontent.com/isboyjc/github-trending-api/main/data/daily/all.json';
+// 兜底：近 7 天新建、按 star 排序（口径与 Trending 不同，页面会标注）
 const GITHUB_SEARCH_URL = 'https://api.github.com/search/repositories';
+// 归档与 feed 需要站点地址；fork 后改成自己的地址，或用仓库 Variable SITE_URL 覆盖
+export const SITE_URL = (process.env.SITE_URL?.trim() || 'https://huanghd1.github.io/zhhe-daily-report').replace(
+  /\/+$/,
+  '',
+);
+// 归档保留天数（history/ 下最多留这么多份，feed 取其中最近 20 份）
+const ARCHIVE_LIMIT = 60;
+const FEED_LIMIT = 20;
 // HN 官方 Algolia 搜索接口；hnrss.org 实测不稳定，Anthropic 官网没有 RSS
 const HN_SEARCH_URL = 'https://hn.algolia.com/api/v1/search';
 const HN_KEYWORDS = 'AI LLM Claude Anthropic';
@@ -52,11 +63,14 @@ const KEYWORD_RULES = [
   ['DeepSeek', /\bdeepseek\b/i],
   ['Agent', /\bagent(?:s|ic)?\b|智能体/i],
   ['LLM', /\bllms?\b|大模型|语言模型/i],
+  ['模型', /\bmodels?\b|\bweights\b|模型/i],
   ['MCP', /\bmcp\b|model context protocol/i],
   ['RAG', /\brag\b/i],
   ['开源', /\bopen[- ]?(?:source|weights?)\b|开源/i],
   ['推理', /\binference\b|\breasoning\b|推理/i],
-  ['安全', /\bsecurity\b|\bprivacy\b|\bleaks?\b|\bscams?\b|安全|隐私/i],
+  ['GPU', /\bgpus?\b|\bcuda\b|\bnvidia\b|算力/i],
+  // 隐私/凭据类新闻的标题往往只写 password、breach，光靠 security/leaks 会漏
+  ['安全', /\bsecurity\b|\bprivacy\b|\bleaks?\b|\bscams?\b|\bbreach(?:es)?\b|\bpasswords?\b|\bcredentials?\b|\bvulnerab\w*\b|安全|隐私|泄露/i],
   ['Rust', /\brust\b/i],
 ];
 const KEYWORD_LIMIT = 6;
@@ -67,6 +81,10 @@ const LLM_TIMEOUT_MS = 120_000;
 // isboyjc 数据超过这个时长视为过期
 const TRENDING_MAX_AGE_MS = 48 * 3600_000;
 const TOP_REPOS = 5;
+// 多取一批候选，过滤掉低质仓库后仍能凑满 5 个
+const REPO_CANDIDATES = 12;
+// 人工拉黑（小写 full_name）。默认留空；遇到明显刷榜/薅羊毛仓库时加进来即可
+export const REPO_DENYLIST = new Set([]);
 const TOP_NEWS = 5;
 const USER_AGENT = 'zhhe-reonr-daily-report';
 // 简报按北京时间归档；中国不实行夏令时，固定 UTC+8，不依赖运行环境的时区设置
@@ -125,6 +143,29 @@ async function fetchJson(stage, url, timeoutMs, init = {}) {
   }
 }
 
+/** @param {number} ms */
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * 网络抖动时重试一次；只对「请求直接抛错」重试，HTTP 4xx/5xx 原样返回交给上层判断
+ * @param {string} url
+ * @param {RequestInit} init
+ * @param {number} [attempts]
+ */
+async function fetchWithRetry(url, init, attempts = 2) {
+  /** @type {unknown} */
+  let lastError;
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    try {
+      return await fetch(url, init);
+    } catch (err) {
+      lastError = err;
+      if (attempt < attempts - 1) await sleep(800);
+    }
+  }
+  throw lastError;
+}
+
 // "17,010" / 17010 / "1.2k" → 数字；无法解析时返回 0
 /** @param {unknown} value */
 export function parseStars(value) {
@@ -159,6 +200,90 @@ function str(value) {
  */
 function asRecord(value) {
   return value !== null && typeof value === 'object' ? /** @type {Record<string, unknown>} */ (value) : {};
+}
+
+// ---------- HTML / URL 工具 ----------
+
+const HTML_ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ' };
+
+/** @param {string} value */
+function decodeEntities(value) {
+  return value.replace(/&(#x?[0-9a-f]+|[a-z]+);/gi, (match, code) => {
+    const key = String(code).toLowerCase();
+    if (Object.hasOwn(HTML_ENTITIES, key)) return HTML_ENTITIES[key];
+    if (key.startsWith('#x')) return String.fromCodePoint(Number.parseInt(key.slice(2), 16));
+    if (key.startsWith('#')) return String.fromCodePoint(Number(key.slice(1)));
+    return match;
+  });
+}
+
+/** @param {string} html */
+function htmlToText(html) {
+  return decodeEntities(html.replace(/<[^>]*>/g, ' ')).replace(/\s+/g, ' ').trim();
+}
+
+const TRACKING_PARAMS = new Set([
+  'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
+  'ref', 'ref_src', 'source', 'fbclid', 'gclid', 'mc_cid', 'mc_eid', 'igshid', 'spm',
+]);
+
+/**
+ * 归一化链接用于去重：去掉追踪参数、www、末尾斜杠和锚点。非 http(s) 返回 null。
+ * 同一篇文章常被不同标题重复提交（HN 上很常见），所以去重要按 URL 而不是按标题。
+ * @param {unknown} value
+ * @returns {string | null}
+ */
+export function normalizeUrl(value) {
+  const safe = safeUrl(value);
+  if (!safe) return null;
+  const u = new URL(safe);
+  u.hash = '';
+  u.hostname = u.hostname.replace(/^www\./i, '').toLowerCase();
+  for (const key of [...u.searchParams.keys()]) {
+    if (TRACKING_PARAMS.has(key.toLowerCase())) u.searchParams.delete(key);
+  }
+  if (u.pathname.length > 1) u.pathname = u.pathname.replace(/\/+$/, '');
+  return u.toString();
+}
+
+/**
+ * 解析 GitHub Trending 页面的仓库卡片：name / description / language / 总 star / 今日新增 star。
+ * 页面改版、被限流或返回空内容时返回 []，由调用方降级到其他来源。
+ * @param {string} html
+ * @returns {TrendingRepo[]}
+ */
+export function parseTrendingHtml(html) {
+  if (typeof html !== 'string' || !html.includes('Box-row')) return [];
+  const chunks = html.split(/<article\b[^>]*class="[^"]*\bBox-row\b[^"]*"[^>]*>/i).slice(1);
+  /** @type {TrendingRepo[]} */
+  const repos = [];
+  for (const chunk of chunks) {
+    const head = /<h2\b[^>]*>([\s\S]*?)<\/h2>/i.exec(chunk);
+    if (!head) continue;
+    const link = /href="\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)"/.exec(head[1]);
+    if (!link) continue;
+
+    const name = `${link[1]}/${link[2]}`;
+    const description = /<p\b[^>]*>([\s\S]*?)<\/p>/i.exec(chunk);
+    const language = /itemprop="programmingLanguage"[^>]*>([\s\S]*?)<\//i.exec(chunk);
+    const color = /repo-language-color[^>]*style="[^"]*?(#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{3}))(?![0-9a-fA-F])/i.exec(chunk);
+    const stargazers = /href="\/[^"]+\/stargazers"[^>]*>([\s\S]*?)<\/a>/i.exec(chunk);
+    const today = /([\d,]+)\s+stars?\s+today/i.exec(chunk);
+
+    const stars = parseStars(htmlToText(stargazers ? stargazers[1] : ''));
+    if (!stars) continue;
+
+    repos.push({
+      name,
+      description: description ? htmlToText(description[1]) : '',
+      stars,
+      addStars: today ? parseStars(today[1]) : null,
+      language: language ? htmlToText(language[1]) || null : null,
+      languageColor: color ? color[1].toLowerCase() : null,
+      url: `https://github.com/${name}`,
+    });
+  }
+  return repos;
 }
 
 // ---------- GitHub ----------
@@ -198,6 +323,77 @@ function toRepo(raw, keys) {
 }
 
 /**
+ * GitHub 官方 Trending 页面：server-rendered HTML，卡片里带 "N stars today"。
+ * 这是唯一同时给出「今日增量」和「全站热门（含老项目）」的来源；解析不出来时返回 null 交给降级逻辑。
+ * @param {Date} now
+ * @returns {Promise<GithubResult | null>}
+ */
+async function fetchTrendingHtml(now) {
+  let res;
+  try {
+    res = await fetchWithRetry(TRENDING_HTML_URL, {
+      headers: { 'User-Agent': USER_AGENT, Accept: 'text/html' },
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+    });
+  } catch (err) {
+    throw new ReportError('github', `请求失败：github.com/trending（${/** @type {Error} */ (err).message}）`, { cause: err });
+  }
+  if (!res.ok) {
+    throw new ReportError('github', `GitHub Trending 返回 HTTP ${res.status}`);
+  }
+  const repos = pickRepos(parseTrendingHtml(await res.text()), TOP_REPOS);
+  if (repos.length === 0) return null;
+  return { repos, source: 'trending', dataDate: beijingDate(now) };
+}
+
+/**
+ * 低质仓库：没有描述、描述等于仓库名（刷榜占位），或在人工黑名单里。
+ * 只影响展示位的挑选，不改动数据源本身。
+ * @param {TrendingRepo} repo
+ */
+export function isLowQualityRepo(repo) {
+  if (REPO_DENYLIST.has(String(repo.name).toLowerCase())) return true;
+  const description = String(repo.description ?? '').trim();
+  if (!description) return true;
+  const slug = String(repo.name).split('/').pop() ?? '';
+  const squash = (value) => value.toLowerCase().replace(/[\s_\-.]/g, '');
+  return squash(description) === squash(slug);
+}
+
+/**
+ * 从候选里挑出展示用的仓库：先过滤低质，不足时再用被过滤的补齐（宁可展示也不要空栏）
+ * @param {TrendingRepo[]} repos
+ * @param {number} [limit]
+ * @returns {TrendingRepo[]}
+ */
+export function pickRepos(repos, limit = TOP_REPOS) {
+  const good = repos.filter((repo) => !isLowQualityRepo(repo));
+  if (good.length >= limit) return good.slice(0, limit);
+  const filler = repos.filter((repo) => isLowQualityRepo(repo)).slice(0, limit - good.length);
+  return [...good, ...filler];
+}
+
+/**
+ * 与上一份简报对比名次：正数 = 上升，负数 = 下降，新上榜为 null
+ * @param {TrendingRepo[]} repos
+ * @param {unknown} previous 上一份 data.json
+ * @returns {(TrendingRepo & { rankDelta: number | null })[]}
+ */
+export function addRankDeltas(repos, previous) {
+  const prev = asRecord(previous);
+  /** @type {Map<string, number>} */
+  const before = new Map();
+  for (const item of Array.isArray(prev.githubTrending) ? prev.githubTrending : []) {
+    const r = asRecord(item);
+    if (typeof r.name === 'string' && !before.has(r.name)) before.set(r.name, before.size);
+  }
+  return repos.map((repo, index) => {
+    const previousIndex = before.get(repo.name);
+    return { ...repo, rankDelta: previousIndex === undefined ? null : previousIndex - index };
+  });
+}
+
+/**
  * isboyjc 榜单：数据新鲜时返回结果，过期或格式异常时返回 null（交给降级逻辑）
  * @param {Date} now
  * @returns {Promise<GithubResult | null>}
@@ -209,10 +405,12 @@ async function fetchTrendingFeed(now) {
     return null;
   }
   const items = Array.isArray(data.items) ? data.items : [];
-  const repos = items
-    .map((it) => toRepo(it, { name: 'title', url: 'url', stars: 'stars', addStars: 'addStars' }))
-    .filter((r) => r !== null)
-    .slice(0, TOP_REPOS);
+  const repos = pickRepos(
+    items
+      .map((it) => toRepo(it, { name: 'title', url: 'url', stars: 'stars', addStars: 'addStars' }))
+      .filter((r) => r !== null),
+    TOP_REPOS,
+  );
   if (repos.length === 0) return null;
   return { repos, source: 'trending', dataDate: beijingDate(pubDate) };
 }
@@ -230,17 +428,19 @@ async function fetchSearchFallback(now, token) {
     q: `created:>=${since}`,
     sort: 'stars',
     order: 'desc',
-    per_page: String(TOP_REPOS),
+    per_page: String(REPO_CANDIDATES),
   });
   /** @type {Record<string, string>} */
   const headers = { Accept: 'application/vnd.github+json', 'User-Agent': USER_AGENT };
   if (token) headers.Authorization = `Bearer ${token}`;
   const data = asRecord(await fetchJson('github', `${GITHUB_SEARCH_URL}?${params}`, FETCH_TIMEOUT_MS, { headers }));
   const items = Array.isArray(data.items) ? data.items : [];
-  const repos = items
-    .map((it) => toRepo(it, { name: 'full_name', url: 'html_url', stars: 'stargazers_count' }))
-    .filter((r) => r !== null)
-    .slice(0, TOP_REPOS);
+  const repos = pickRepos(
+    items
+      .map((it) => toRepo(it, { name: 'full_name', url: 'html_url', stars: 'stargazers_count' }))
+      .filter((r) => r !== null),
+    TOP_REPOS,
+  );
   if (repos.length === 0) {
     throw new ReportError('github', 'GitHub Search API 未返回任何仓库');
   }
@@ -253,12 +453,21 @@ async function fetchSearchFallback(now, token) {
  * @returns {Promise<GithubResult>}
  */
 export async function fetchGithubTrending(now = new Date(), env = process.env) {
+  // 1) 官方 Trending：真实 24h 增量，且老项目也能上榜
+  try {
+    const trending = await fetchTrendingHtml(now);
+    if (trending) return trending;
+  } catch {
+    // 页面改版 / 被限流 / 网络失败时静默降级
+  }
+  // 2) isboyjc 每日榜单（2026-08 起已停更，只在其仍然新鲜时使用）
   try {
     const fresh = await fetchTrendingFeed(now);
     if (fresh) return fresh;
   } catch {
-    // isboyjc 不可用时同样走降级，只有两个来源都失败才报错
+    // 同上
   }
+  // 3) 兜底：近 7 天新建、按 star 排序
   return fetchSearchFallback(now, env.GITHUB_TOKEN?.trim() || undefined);
 }
 
@@ -331,24 +540,53 @@ export async function fetchAiNews(now = new Date()) {
     attributesToRetrieve: 'title,url,points,objectID',
   });
   const data = asRecord(await fetchJson('news', `${HN_SEARCH_URL}?${params}`, FETCH_TIMEOUT_MS));
-  const hits = (Array.isArray(data.hits) ? data.hits : [])
-    .map(asRecord)
-    .sort((a, b) => (Number(b.points) || 0) - (Number(a.points) || 0));
 
-  const seen = new Set();
-  /** @type {NewsItem[]} */
+  /** @type {{ title: string, url: string, source: string, points: number, key: string, titleKey: string }[]} */
+  const candidates = (Array.isArray(data.hits) ? data.hits : [])
+    .map(asRecord)
+    .map((hit) => {
+      const title = str(hit.title);
+      const id = str(hit.objectID);
+      const url = safeUrl(hit.url) ?? (/^\d+$/.test(id) ? `https://news.ycombinator.com/item?id=${id}` : null);
+      if (!title || !url) return null;
+      return {
+        title,
+        url,
+        source: hostOf(url),
+        points: parseStars(hit.points),
+        // 同一篇文章常被不同标题重复提交，按归一化 URL 去重；标题再兜一层
+        key: normalizeUrl(url) ?? url,
+        titleKey: title.toLowerCase().replace(/\s+/g, ' ').trim(),
+      };
+    })
+    .filter((item) => item !== null && !isFinanceTitle(item.title))
+    .sort((a, b) => b.points - a.points);
+
+  const seenUrl = new Set();
+  const seenTitle = new Set();
+  /** @type {Map<string, number>} */
+  const perHost = new Map();
   const news = [];
-  for (const hit of hits) {
-    const title = str(hit.title);
-    const id = str(hit.objectID);
-    const url = safeUrl(hit.url) ?? (/^\d+$/.test(id) ? `https://news.ycombinator.com/item?id=${id}` : null);
-    // 同一篇文章常被多人重复提交，按标题去重
-    const key = title.toLowerCase();
-    if (!title || !url || seen.has(key) || isFinanceTitle(title)) continue;
-    seen.add(key);
-    news.push({ title, url, source: hostOf(url), points: parseStars(hit.points) });
-    if (news.length === TOP_NEWS) break;
-  }
+
+  // 先按「同域名最多 1 条」选，凑不满 5 条再放宽到 2 条，避免一个站点/一篇文章占满整栏
+  /** @param {number} maxPerHost */
+  const take = (maxPerHost) => {
+    for (const item of candidates) {
+      if (news.length === TOP_NEWS) break;
+      if (seenUrl.has(item.key) || seenTitle.has(item.titleKey)) continue;
+      const hostCount = perHost.get(item.source) ?? 0;
+      if (hostCount >= maxPerHost) continue;
+      seenUrl.add(item.key);
+      seenTitle.add(item.titleKey);
+      perHost.set(item.source, hostCount + 1);
+      news.push({ title: item.title, url: item.url, source: item.source, points: item.points });
+    }
+  };
+  take(1);
+  take(2);
+  // 补位的条目是后追加的，按分数重排一次，页面顺序才是“最热在前”
+  news.sort((a, b) => b.points - a.points);
+
   if (news.length === 0) {
     throw new ReportError('news', 'Hacker News 过去 24 小时没有匹配的 AI 帖子');
   }
@@ -382,17 +620,18 @@ export function readLlmConfig(env = process.env) {
 /**
  * @param {TrendingRepo[]} repos
  * @param {NewsItem[]} news
+ * @param {string} [previousAnalysis] 昨天的解读，用来要求模型换角度、别复读
  */
-export function buildPrompt(repos, news) {
+export function buildPrompt(repos, news, previousAnalysis = '') {
   const repoLines = repos.map(
     (r, i) =>
       `${i + 1}. ${r.name}（${r.language ?? '未知语言'}，${r.stars} stars` +
-      `${typeof r.addStars === 'number' ? `，新增 ${r.addStars}` : ''}）：${r.description || '无描述'}`,
+      `${typeof r.addStars === 'number' ? `，今日新增 ${r.addStars}` : ''}）：${r.description || '无描述'}`,
   );
   const newsLines = news.map(
     (n, i) => `${i + 1}. ${n.title}（来源：${n.source}${n.points ? `，HN ${n.points} 分` : ''}）`,
   );
-  return [
+  const lines = [
     '以下是今天的 GitHub 热门项目和 AI 领域动态：',
     '',
     '【GitHub 热门项目】',
@@ -403,7 +642,19 @@ export function buildPrompt(repos, news) {
     '',
     '请写一段约 300 字的中文“今日技术趋势与解读”：提炼共同趋势，点评一两个值得关注的项目或事件，',
     '最后给开发者一条实用建议。只输出正文，不要标题、列表或 Markdown 格式。',
-  ].join('\n');
+  ];
+  if (previousAnalysis) {
+    lines.push(
+      '',
+      '【昨天的解读，仅用于避免重复】',
+      previousAnalysis.slice(0, 400),
+      '',
+      '要求：不要重复昨天的论点、开头句式和结尾建议；至少引用两个具体数字（star 总数、今日涨幅或点赞数）；',
+      '如果今天的素材确实没有新信号，就换一个更具体的小角度（某个细分领域、某个工程取舍），不要硬凑宏大趋势。',
+      '仍然只输出正文。',
+    );
+  }
+  return lines.join('\n');
 }
 
 /**
@@ -482,17 +733,39 @@ export async function buildReport(now = new Date(), env = process.env, previous 
   // 日期在开始时确定，跨零点执行也记在发起当天
   const date = beijingDate(now);
   const [github, news] = await Promise.all([fetchGithubTrending(now, env), fetchAiNews(now)]);
-  const { repos, since } = fillStarDeltas(github.repos, previous);
-  const analysis = await generateAnalysis(buildPrompt(repos, news), llm);
+  const { repos: filled, since } = fillStarDeltas(github.repos, previous);
+  // 与上一份简报对比名次，页面显示 ▲/▼
+  const repos = addRankDeltas(filled, previous);
+
+  // 解读失败不再拖垮整份简报：榜单和快讯照发，页面提示“解读暂缺”，第二天自动恢复
+  const prompt = buildPrompt(repos, news, str(asRecord(previous).aiAnalysis));
+  let analysis = '';
+  let analysisError = null;
+  // 模型偶发 5xx / 超时很常见，重试一次再降级
+  for (let attempt = 1; attempt <= 2; attempt += 1) {
+    try {
+      analysis = await generateAnalysis(prompt, llm);
+      analysisError = null;
+      break;
+    } catch (err) {
+      analysisError = err instanceof Error ? err.message : String(err);
+      if (attempt === 1) await sleep(1500);
+    }
+  }
+  if (!analysis) {
+    console.warn(`解读生成失败，仅发布榜单与快讯：${analysisError}`);
+  }
+
   return {
     date,
     githubTrending: repos,
     aiNews: news,
     aiAnalysis: analysis,
+    analysisStatus: analysis ? 'ok' : 'unavailable',
     keywords: extractKeywords(repos, news),
     githubSource: github.source,
     githubDataDate: github.dataDate,
-    // star 增量的对比基准时间（上一份 data.json 的 generatedAt）；增量来自 isboyjc 或无法估算时为 null
+    // star 增量的对比基准时间（上一份 data.json 的 generatedAt）；增量来自 Trending/isboyjc 或无法估算时为 null
     addStarsSince: since,
     generatedAt: new Date().toISOString(),
   };
@@ -527,6 +800,167 @@ export function writeReport(report, path = DATA_PATH) {
   }
 }
 
+/** @param {unknown} value */
+function escapeXml(value) {
+  return String(value ?? '').replace(
+    /[<>&'"]/g,
+    (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;' })[c] ?? c,
+  );
+}
+
+/** 读 history/index.json；不存在或损坏时返回空数组 */
+function readArchiveIndex(historyDir) {
+  try {
+    const list = JSON.parse(readFileSync(join(historyDir, 'index.json'), 'utf8'));
+    return Array.isArray(list) ? list.filter((e) => e && typeof e.date === 'string') : [];
+  } catch {
+    return [];
+  }
+}
+
+// 往期列表页：静态生成，不依赖任何接口
+function buildArchivePage(entries) {
+  const rows = entries
+    .map(
+      (e) => `      <li>
+        <a href="${escapeXml(e.date)}.json"><time>${escapeXml(e.date)}</time></a>
+        <span class="meta">${Number(e.repos) || 0} 个仓库 · ${Number(e.news) || 0} 条快讯${
+          Array.isArray(e.keywords) && e.keywords.length ? ` · ${escapeXml(e.keywords.join(' / '))}` : ''
+        }</span>
+        <p>${escapeXml(e.head ?? '')}${e.head ? '…' : ''}</p>
+      </li>`,
+    )
+    .join('\n');
+  return `<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>往期归档 · 每日前沿科技与 GitHub 趋势</title>
+<style>
+  body { margin: 0; padding: 40px 20px; background: #06080d; color: #e6edf7;
+    font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; }
+  h1 { font-size: 22px; margin: 0 0 6px; }
+  p.sub { color: #93a3b8; font-size: 13px; margin: 0 0 26px; }
+  ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+  li { border: 1px solid rgba(148,163,184,.16); border-radius: 14px; padding: 16px 18px;
+    background: rgba(17,24,37,.62); }
+  a { color: #6ee7b7; text-decoration: none; font-weight: 600; }
+  a:hover { text-decoration: underline; }
+  time { font-family: Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .meta { margin-left: 10px; color: #64748b; font-size: 11px; font-family: Consolas, monospace; }
+  li p { margin: 8px 0 0; color: #93a3b8; font-size: 13px; line-height: 1.7; }
+</style>
+</head>
+<body>
+  <main>
+    <h1>往期归档</h1>
+    <p class="sub">每天北京时间 08:00 更新 · <a href="../">返回今日简报</a> · <a href="../feed.xml">RSS</a></p>
+    <ul>
+${rows || '      <li><p>还没有归档。</p></li>'}
+    </ul>
+  </main>
+</body>
+</html>
+`;
+}
+
+/**
+ * RSS 2.0：每条是当天完整解读，阅读器里能直接看，不需要打开网页
+ * @param {{ date: string, head?: string }[]} entries
+ * @param {string} historyDir
+ */
+function buildFeed(entries, historyDir) {
+  const items = entries.map((e) => {
+    let text = e.head ?? '';
+    try {
+      text = JSON.parse(readFileSync(join(historyDir, `${e.date}.json`), 'utf8')).aiAnalysis || text;
+    } catch {
+      // 归档缺失时退回摘要
+    }
+    const pubDate = new Date(`${e.date}T08:00:00+08:00`).toUTCString();
+    const categories = (Array.isArray(e.keywords) ? e.keywords : [])
+      .map((keyword) => `<category>${escapeXml(keyword)}</category>`)
+      .join('');
+    return `    <item>
+      <title>每日科技简报 ${escapeXml(e.date)}</title>
+      <link>${SITE_URL}/</link>
+      <guid isPermaLink="false">${SITE_URL}/#${escapeXml(e.date)}</guid>
+      <pubDate>${pubDate}</pubDate>
+${categories ? `      ${categories}\n` : ''}      <description>${escapeXml(text)}</description>
+    </item>`;
+  });
+  const lastBuildDate = new Date(`${entries[0]?.date ?? beijingDate()}T08:00:00+08:00`).toUTCString();
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>每日前沿科技与 GitHub 趋势</title>
+    <link>${SITE_URL}/</link>
+    <description>每天北京时间 08:00 更新的技术简报</description>
+    <language>zh-CN</language>
+    <lastBuildDate>${lastBuildDate}</lastBuildDate>
+    <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml" />
+${items.join('\n')}
+  </channel>
+</rss>
+`;
+}
+
+/**
+ * 站点地图：lastmod 跟着最新一期走，定时任务跑完自动更新
+ * @param {{ date: string }[]} entries
+ */
+function buildSitemap(entries) {
+  const lastmod = entries[0]?.date ?? beijingDate();
+  const urls = [
+    `<url><loc>${SITE_URL}/</loc><lastmod>${lastmod}</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>`,
+    `<url><loc>${SITE_URL}/history/</loc><lastmod>${lastmod}</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>`,
+    `<url><loc>${SITE_URL}/fortune</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>`,
+  ];
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.join('\n')}
+</urlset>
+`;
+}
+
+/**
+ * 归档当天简报并重建 history/index.json、history/index.html、feed.xml。
+ * 归档失败不影响当天发布（data.json 已经写好了）
+ * @param {Awaited<ReturnType<typeof buildReport>>} report
+ * @param {string} [publicDir]
+ */
+export function writeArchive(report, publicDir = dirname(DATA_PATH)) {
+  const historyDir = join(publicDir, 'history');
+  mkdirSync(historyDir, { recursive: true });
+  writeFileSync(join(historyDir, `${report.date}.json`), `${JSON.stringify(report, null, 2)}\n`);
+
+  const entries = readArchiveIndex(historyDir).filter((entry) => entry.date !== report.date);
+  entries.push({
+    date: report.date,
+    repos: (report.githubTrending ?? []).length,
+    news: (report.aiNews ?? []).length,
+    keywords: report.keywords ?? [],
+    head: (report.aiAnalysis ?? '').slice(0, 90),
+  });
+  entries.sort((a, b) => String(b.date).localeCompare(String(a.date)));
+  const kept = entries.slice(0, ARCHIVE_LIMIT);
+
+  writeFileSync(join(historyDir, 'index.json'), `${JSON.stringify(kept, null, 2)}\n`);
+  writeFileSync(join(historyDir, 'index.html'), buildArchivePage(kept));
+  writeFileSync(join(publicDir, 'feed.xml'), buildFeed(kept.slice(0, FEED_LIMIT), historyDir));
+  writeFileSync(join(publicDir, 'sitemap.xml'), buildSitemap(kept));
+
+  const keptFiles = new Set(kept.map((entry) => `${entry.date}.json`));
+  for (const name of readdirSync(historyDir)) {
+    if (/^\d{4}-\d{2}-\d{2}\.json$/.test(name) && !keptFiles.has(name)) {
+      rmSync(join(historyDir, name), { force: true });
+    }
+  }
+  return kept;
+}
+
 /**
  * 全部成功后才写文件；失败时保留上一份 data.json，页面继续显示旧简报
  * @param {{ now?: Date, env?: Record<string, string | undefined>, path?: string }} [options]
@@ -534,6 +968,11 @@ export function writeReport(report, path = DATA_PATH) {
 export async function updateData({ now = new Date(), env = process.env, path = DATA_PATH } = {}) {
   const report = await buildReport(now, env, readPreviousReport(path));
   writeReport(report, path);
+  try {
+    writeArchive(report, dirname(path));
+  } catch (err) {
+    console.warn(`归档 / feed 写入失败（不影响当天简报）：${err instanceof Error ? err.message : String(err)}`);
+  }
   return report;
 }
 

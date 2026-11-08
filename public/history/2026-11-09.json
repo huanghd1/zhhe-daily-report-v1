@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-09",
+  "githubTrending": [
+    {
+      "name": "KKKKhazix/agent-autoloop",
+      "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
+      "stars": 4107,
+      "addStars": 151,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/KKKKhazix/agent-autoloop",
+      "rankDelta": 0
+    },
+    {
+      "name": "Minireel/HGhub",
+      "description": "YellowFruit third-party client",
+      "stars": 3332,
+      "addStars": 1027,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/Minireel/HGhub",
+      "rankDelta": 1
+    },
+    {
+      "name": "NotRexed/Hookshot",
+      "description": "A Native Recompilation Of The Legend Of Zelda: Ocarina Of Time Nintendo Switch 2 Remake",
+      "stars": 3120,
+      "addStars": null,
+      "language": "C++",
+      "languageColor": "#f34b7d",
+      "url": "https://github.com/NotRexed/Hookshot",
+      "rankDelta": null
+    },
+    {
+      "name": "govijr/terminal-mac",
+      "description": "Entire MacOS running in your terminal.",
+      "stars": 2390,
+      "addStars": 148,
+      "language": "Swift",
+      "languageColor": "#F05138",
+      "url": "https://github.com/govijr/terminal-mac",
+      "rankDelta": 0
+    },
+    {
+      "name": "sarpstar/cinecode",
+      "description": "Films made with code. Short films, long YouTube videos, ads, explainers and music videos: an AI coding agent writes the script, builds every frame in code, designs the sound and hands you an MP4.",
+      "stars": 1600,
+      "addStars": null,
+      "language": "Python",
+      "languageColor": "#3572A5",
+      "url": "https://github.com/sarpstar/cinecode",
+      "rankDelta": null
+    }
+  ],
+  "aiNews": [
+    {
+      "title": "Goodbye Claude, hello Pi",
+      "url": "https://caleb.software/posts/claude-to-pi.html",
+      "source": "caleb.software",
+      "points": 693
+    },
+    {
+      "title": "Goldman Sachs is pulling Claude Code from its bankers and traders",
+      "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
+      "source": "thestateofai.com",
+      "points": 580
+    },
+    {
+      "title": "How I Fight AI Brain Fry",
+      "url": "https://sergeykuhne.com/blog/fighting-ai-brain-fry",
+      "source": "sergeykuhne.com",
+      "points": 145
+    },
+    {
+      "title": "Why I will not be using LLMs in my coding",
+      "url": "https://www.polso.info/why-i-will-not-be-using-llms-coding",
+      "source": "polso.info",
+      "points": 106
+    },
+    {
+      "title": "Silicon Valley Promises AI Will Cure Disease. Drugmaker CEOs Aren't Buying It",
+      "url": "https://www.wsj.com/tech/ai/silicon-valley-promises-ai-will-cure-disease-drugmaker-ceos-arent-buying-it-5218511c",
+      "source": "wsj.com",
+      "points": 89
+    }
+  ],
+  "aiAnalysis": "今天的热度分化得很清楚：Agent 工具继续收割关注，agent-autoloop 以 4107 stars、单日 151 的表现稳步累积，说明“后台自主推进、只在关键节点找人拍板”的模式正在被更多人认可；而 HGhub 单日暴增 1027 stars 冲到 3332，则是典型的社区爆发式拉新，热度与工具成熟度往往并不同步。另一个有趣信号是 terminal-mac 用 Swift 把整个 macOS 塞进终端，2390 stars、今日新增 148，这类“以极客趣味为驱动”的项目说明开发者对可控、可组合环境的渴望并未消退。AI 动态里，高盛把 Claude Code 从银行家和交易员手中撤回（580 分），与“告别 Claude 拥抱 Pi”的 693 分形成对照：企业侧在收紧权限与合规，个人侧却在寻找更轻的替代，工具选择正从“能力最强”转向“风险可控”。给开发者的建议是：评估任何 AI 编码工具时，先问它会在哪些文件、哪些凭据上留下痕迹，再谈效率提升；热度榜单上单日翻倍的项目，不妨等一周再看它的 issue 区是否撑得住。",
+  "analysisStatus": "ok",
+  "keywords": [
+    "Claude",
+    "Agent",
+    "LLM"
+  ],
+  "githubSource": "search",
+  "githubDataDate": "2026-11-09",
+  "addStarsSince": "2026-11-08T00:39:38.971Z",
+  "generatedAt": "2026-11-09T01:15:35.967Z"
+}

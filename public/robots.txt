@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://huanghd1.github.io/zhhe-daily-report/sitemap.xml

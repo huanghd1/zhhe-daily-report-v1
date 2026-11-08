@@ -42,11 +42,11 @@ npm run preview             # http://127.0.0.1:4173/ 预览，PORT 可改端口
 
 ## 生成逻辑
 
-- 数据源：GitHub 榜单优先用 isboyjc/github-trending-api，`pubDate` 超过 48 小时（2026-08 起已停更）或请求失败时降级到 GitHub Search API（近 7 天新建、按 star 排序），`githubSource` 记录实际来源。AI 快讯用 HN Algolia 接口（标题含 AI / LLM / Claude / Anthropic、过去 24 小时、按点赞数取前 5，`isFinanceTitle` 过滤财经标题）。Anthropic 官网没有 RSS，hnrss.org 不稳定。
-- 任一步失败都抛出带 `stage`（config / github / news / llm）的 `ReportError`，脚本以非 0 退出，不写文件。写入时先写 `data.json.tmp` 再改名，旧文件要么完整保留要么被完整替换。
+- 数据源：GitHub 榜单优先抓 `https://github.com/trending?since=daily` 官方页面（`parseTrendingHtml` 正则解析，带 `N stars today` 真实增量）；解析失败/改版时退回 isboyjc 榜单（`pubDate` 超过 48 小时即视为过期，2026-08 起已停更）；最后兜底 GitHub Search API（近 7 天新建、按 star 排序）。`githubSource` 记录实际来源（`trending` / `search`）。AI 快讯用 HN Algolia 接口（标题含 AI / LLM / Claude / Anthropic、过去 24 小时、按点赞数排序），按 `normalizeUrl` 归一化 URL 去重、同域名最多 1 条（不够 5 条放宽到 2 条），`isFinanceTitle` 过滤财经标题。Anthropic 官网没有 RSS，hnrss.org 不稳定。
+- 抓取任一步失败都抛出带 `stage`（config / github / news / llm）的 `ReportError`，脚本以非 0 退出，不写文件。**例外**：解读（llm 阶段）失败不再阻断发布——榜单与快讯照写，`analysisStatus: 'unavailable'`，页面显示「解读生成失败」。写入时先写 `data.json.tmp` 再改名，旧文件要么完整保留要么被完整替换。
 - 日期固定按北京时间（UTC+8）计算，不依赖运行环境时区；页面同样按北京时间判断“今天”，数据不是今天时显示提示条。
-- `data.json` 字段：`date`、`githubTrending`、`aiNews`、`aiAnalysis`、`keywords`、`githubSource`、`githubDataDate`、`addStarsSince`、`generatedAt`（ISO 字符串）。改字段时 `index.html` 和测试要一起改。
-  - 仓库：`name`、`description`、`stars`、`addStars`、`language`、`languageColor`、`url`。`addStars` 用 isboyjc 自带值；Search API 没有这个数，用上一份 data.json 同名仓库的 star 数算差值（`fillStarDeltas`），新上榜仓库为 `null`；`addStarsSince` 是对比基准的 `generatedAt`。`languageColor` 只接受 `#rgb` / `#rrggbb`，页面写进 style 前会再校验一次。
+- `data.json` 字段：`date`、`githubTrending`、`aiNews`、`aiAnalysis`、`analysisStatus`（`ok` / `unavailable`）、`keywords`、`githubSource`、`githubDataDate`、`addStarsSince`、`generatedAt`（ISO 字符串）。改字段时 `index.html` 和测试要一起改。写盘后还会更新 `public/history/`（按天归档 + `index.json` + 列表页）和 `public/feed.xml`（最近 20 期 RSS），归档失败不影响当天 `data.json`。
+  - 仓库：`name`、`description`、`stars`、`addStars`、`language`、`languageColor`、`url`。`addStars` 在 Trending 模式下是官方「N stars today」，在 isboyjc 模式下是自带值；Search API 没有这个数，用上一份 data.json 同名仓库的 star 数算差值（`fillStarDeltas`），新上榜仓库为 `null`；`addStarsSince` 是对比基准的 `generatedAt`。`languageColor` 只接受 `#rgb` / `#rrggbb`，页面写进 style 前会再校验一次。
   - 快讯：`title`、`url`、`source`、`points`（HN 点赞数）。
   - `keywords`：`extractKeywords` 按 `KEYWORD_RULES` 整词匹配仓库名称 + 描述和快讯标题，按命中条数取前 6 个。
 - 页面没有生成接口，右上角“手动更新数据”只是跳转到 Actions 的 workflow 页面手动触发。

@@ -1,13 +1,33 @@
 {
   "name": "zhhe-reonr",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "每天北京时间 08:00 自动更新的科技简报：GitHub 趋势 + Hacker News AI 快讯 + 大模型解读，纯静态部署在 GitHub Pages。",
   "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "scripts": {
     "update": "node scripts/update-data.js",
     "preview": "node scripts/preview.js",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huanghd1/zhhe-daily-report.git"
+  },
+  "keywords": [
+    "github-trending",
+    "hacker-news",
+    "daily-briefing",
+    "static-site",
+    "github-pages",
+    "llm",
+    "chinese"
+  ],
+  "author": "huanghd1",
+  "license": "MIT",
   "devDependencies": {
     "vitest": "5.1.0"
   }

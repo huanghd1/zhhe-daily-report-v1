@@ -4,6 +4,7 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { afterAll, afterEach, describe, expect, it, vi } from 'vitest';
 import {
+  addRankDeltas,
   beijingDate,
   buildPrompt,
   DATA_PATH,
@@ -15,11 +16,16 @@ import {
   fillStarDeltas,
   generateAnalysis,
   isFinanceTitle,
+  isLowQualityRepo,
   loadEnvFile,
+  normalizeUrl,
   parseStars,
+  parseTrendingHtml,
+  pickRepos,
   readLlmConfig,
   ReportError,
   safeUrl,
+  TRENDING_HTML_URL,
   TRENDING_URL,
   updateData,
 } from './update-data.js';
@@ -34,11 +40,17 @@ afterAll(() => rmSync(dir, { recursive: true, force: true }));
 
 // 按 URL 前缀路由的 fetch 替身；值为函数时可根据请求动态返回，返回 Response 时原样使用
 function mockFetch(routes) {
+  // 默认让 GitHub Trending 页面返回空文档（解析不出仓库 → 走 isboyjc / Search 分支）；
+  // 需要测 Trending 解析的用例显式传入 [TRENDING_HTML_URL]
+  const table = {
+    [TRENDING_HTML_URL]: () => new Response('<html><body></body></html>', { status: 200 }),
+    ...routes,
+  };
   const fn = vi.fn(async (input, init) => {
     const url = String(input);
-    const key = Object.keys(routes).find((prefix) => url.startsWith(prefix));
+    const key = Object.keys(table).find((prefix) => url.startsWith(prefix));
     if (!key) throw new Error(`unexpected fetch: ${url}`);
-    const handler = routes[key];
+    const handler = table[key];
     const body = typeof handler === 'function' ? await handler(url, init) : handler;
     return body instanceof Response ? body : Response.json(body);
   });
@@ -117,7 +129,9 @@ describe('fetchGithubTrending', () => {
       languageColor: '#3178c6',
       url: 'https://github.com/owner/repo-1',
     });
-    expect(fetchFn).toHaveBeenCalledTimes(1);
+    // 先请求 Trending 页面（空文档），再请求 isboyjc 榜单
+    expect(fetchFn).toHaveBeenCalledTimes(2);
+    expect(String(fetchFn.mock.calls[0][0])).toContain('github.com/trending');
   });
 
   it('keeps the feed addStars and a valid languageColor, rejecting unsafe colors', async () => {
@@ -155,11 +169,12 @@ describe('fetchGithubTrending', () => {
     expect(result.repos).toEqual([
       { name: 'a/b', description: '', stars: 19525, addStars: null, language: null, languageColor: null, url: 'https://github.com/a/b' },
     ]);
-    const searchUrl = new URL(String(fetchFn.mock.calls[1][0]));
+    const searchCall = fetchFn.mock.calls.find(([url]) => String(url).startsWith(SEARCH_URL));
+    const searchUrl = new URL(String(searchCall[0]));
     expect(searchUrl.searchParams.get('q')).toBe('created:>=2026-10-30');
     expect(searchUrl.searchParams.get('sort')).toBe('stars');
     // 没有 GITHUB_TOKEN 时匿名请求
-    expect(fetchFn.mock.calls[1][1].headers.Authorization).toBeUndefined();
+    expect(searchCall[1].headers.Authorization).toBeUndefined();
   });
 
   it('sends GITHUB_TOKEN to the Search API when available', async () => {
@@ -350,7 +365,7 @@ describe('buildPrompt', () => {
       [{ ...repo, addStars: 300 }, { ...repo, name: 'c/d', addStars: null }],
       [{ title: 'Claude news', url: 'https://claude.com/x', source: 'claude.com', points: 120 }],
     );
-    expect(prompt).toContain('a/b（Rust，1200 stars，新增 300）：agent tool');
+    expect(prompt).toContain('a/b（Rust，1200 stars，今日新增 300）：agent tool');
     expect(prompt).toContain('c/d（Rust，1200 stars）：agent tool');
     expect(prompt).toContain('Claude news（来源：claude.com，HN 120 分）');
     expect(prompt).toContain('300 字');
@@ -441,8 +456,9 @@ describe('updateData', () => {
       addStarsSince: null,
     });
     expect(Number.isNaN(Date.parse(saved.generatedAt))).toBe(false);
-    // 不留临时文件
-    expect(readdirSync(dirname(path))).toEqual(['data.json']);
+    // 不留临时文件；同时写出了归档和 feed
+    expect(readdirSync(dirname(path)).sort()).toEqual(['data.json', 'feed.xml', 'history', 'sitemap.xml']);
+    expect(existsSync(join(dirname(path), 'history', '2026-11-06.json'))).toBe(true);
   });
 
   it('computes star deltas against the previous data.json', async () => {
@@ -459,20 +475,33 @@ describe('updateData', () => {
     expect(second.addStarsSince).toBe(first.generatedAt);
   });
 
-  it.each([
-    ['news', { [HN_URL]: new Response('down', { status: 503 }) }],
-    ['llm', { 'https://llm.test/v1/chat/completions': new Response('{"error":"invalid api key"}', { status: 401 }) }],
-  ])('keeps the previous data.json untouched when the %s stage fails', async (stage, override) => {
+  it.each([['news', { [HN_URL]: new Response('down', { status: 503 }) }]])(
+    'keeps the previous data.json untouched when the %s stage fails',
+    async (stage, override) => {
+      const path = tempDataPath();
+      mockFetch(happyRoutes());
+      await updateData({ now: NOW, env: LLM_ENV, path });
+      const before = readFileSync(path, 'utf8');
+
+      mockFetch({ ...happyRoutes(), ...override });
+      await expect(updateData({ now: NOW, env: LLM_ENV, path })).rejects.toMatchObject({ stage });
+
+      expect(readFileSync(path, 'utf8')).toBe(before);
+      // 失败时不会留下 .tmp 半成品
+      expect(readdirSync(dirname(path)).filter((name) => name.endsWith('.tmp'))).toEqual([]);
+    },
+  );
+
+  it('still publishes the brief when the LLM fails, marking the analysis unavailable', async () => {
     const path = tempDataPath();
-    mockFetch(happyRoutes());
-    await updateData({ now: NOW, env: LLM_ENV, path });
-    const before = readFileSync(path, 'utf8');
+    mockFetch({ ...happyRoutes(), 'https://llm.test/v1/chat/completions': new Response('{"error":"invalid api key"}', { status: 401 }) });
 
-    mockFetch({ ...happyRoutes(), ...override });
-    await expect(updateData({ now: NOW, env: LLM_ENV, path })).rejects.toMatchObject({ stage });
+    const report = await updateData({ now: NOW, env: LLM_ENV, path });
 
-    expect(readFileSync(path, 'utf8')).toBe(before);
-    expect(readdirSync(dirname(path))).toEqual(['data.json']);
+    expect(report.aiAnalysis).toBe('');
+    expect(report.analysisStatus).toBe('unavailable');
+    expect(report.githubTrending).toHaveLength(1);
+    expect(JSON.parse(readFileSync(path, 'utf8')).analysisStatus).toBe('unavailable');
   });
 
   it('fails on missing LLM config before making any request and writes nothing', async () => {
@@ -535,8 +564,222 @@ describe('loadEnvFile', () => {
   });
 });
 
+describe('repo quality filter', () => {
+  const repo = (name, description) => ({
+    name,
+    description,
+    stars: 100,
+    addStars: 1,
+    language: 'Go',
+    languageColor: null,
+    url: `https://github.com/${name}`,
+  });
+
+  it('drops repos without a description or with a description equal to the repo name', () => {
+    expect(isLowQualityRepo(repo('a/b', ''))).toBe(true);
+    expect(isLowQualityRepo(repo('worldonlyu/Google_AI_Pro_2Year_ZeroCost_Auto', 'Google_AI_Pro_2Year_ZeroCost_Auto'))).toBe(true);
+    expect(isLowQualityRepo(repo('a/b', 'A real description'))).toBe(false);
+  });
+
+  it('fills up to five and backfills when filtering leaves too few', () => {
+    const list = [repo('a/b', 'ok'), repo('c/d', ''), repo('e/f', 'fine')];
+    expect(pickRepos(list, 2).map((r) => r.name)).toEqual(['a/b', 'e/f']);
+    expect(pickRepos(list, 3).map((r) => r.name)).toEqual(['a/b', 'e/f', 'c/d']);
+  });
+});
+
+describe('addRankDeltas', () => {
+  it('reports rank movement against the previous brief', () => {
+    const mk = (name) => ({
+      name,
+      description: 'd',
+      stars: 1,
+      addStars: null,
+      language: null,
+      languageColor: null,
+      url: `https://github.com/${name}`,
+    });
+    const out = addRankDeltas([mk('b/x'), mk('a/y'), mk('c/z')], {
+      githubTrending: [mk('a/y'), mk('c/z'), mk('b/x')],
+    });
+    expect(out.map((r) => r.rankDelta)).toEqual([2, -1, -1]);
+  });
+
+  it('leaves new entries as null', () => {
+    expect(addRankDeltas([{ name: 'new/one' }], null)[0].rankDelta).toBeNull();
+  });
+});
+
 describe('decodeEnvFile', () => {
   it('strips a UTF-8 BOM', () => {
     expect(decodeEnvFile(Buffer.concat([Buffer.from([0xef, 0xbb, 0xbf]), Buffer.from('A=1')]))).toBe('A=1');
+  });
+});
+
+// ---------- 新增：GitHub Trending 解析、URL 去重、解读降级 ----------
+
+// 按 GitHub Trending 页面的真实结构裁的一张卡片
+const trendingCard = (name, stars, today, language = 'TypeScript', color = '#3178c6', description = 'desc') => `
+<article class="Box-row">
+  <h2 class="h3 lh-condensed">
+    <a href="/${name}" data-view-component="true" class="Link">
+      <svg class="octicon" viewBox="0 0 16 16"></svg>
+      <span data-view-component="true" class="text-normal"> ${name.split('/')[0]} / </span>${name.split('/')[1]}
+    </a>
+  </h2>
+  <p class="col-9 color-fg-muted my-1 pr-4">
+      ${description}
+  </p>
+  <div class="f6 color-fg-muted mt-2">
+    <span class="d-inline-block ml-0 mr-3">
+      <span class="repo-language-color" style="background-color: ${color}"></span>
+      <span itemprop="programmingLanguage">${language}</span>
+    </span>
+    <a href="/${name}/stargazers" class="Link--muted d-inline-block mr-3">
+      <svg class="octicon octicon-star" viewBox="0 0 16 16"></svg>
+      ${stars}
+    </a>
+    <a href="/${name}/forks" class="Link--muted d-inline-block mr-3">
+      <svg class="octicon octicon-repo-forked" viewBox="0 0 16 16"></svg>
+      1,234
+    </a>
+    <span class="d-inline-block float-sm-right">
+      <svg class="octicon octicon-star" viewBox="0 0 16 16"></svg>
+      ${today} stars today
+    </span>
+  </div>
+</article>`;
+
+describe('parseTrendingHtml', () => {
+  it('reads name, description, language, total stars and stars today', () => {
+    const html = `<div class="Box">${trendingCard('deepseek-ai/dsh-superagent-prototype', '19,710', '1,234', 'TypeScript', '#3178c6', 'Towards an &amp; autonomous agent')}${trendingCard('govijr/terminal-mac', '2,242', '310', 'Swift', '#F05138')}</div>`;
+
+    const repos = parseTrendingHtml(html);
+
+    expect(repos).toHaveLength(2);
+    expect(repos[0]).toEqual({
+      name: 'deepseek-ai/dsh-superagent-prototype',
+      description: 'Towards an & autonomous agent',
+      stars: 19710,
+      addStars: 1234,
+      language: 'TypeScript',
+      languageColor: '#3178c6',
+      url: 'https://github.com/deepseek-ai/dsh-superagent-prototype',
+    });
+    expect(repos[1]).toMatchObject({ name: 'govijr/terminal-mac', stars: 2242, addStars: 310, languageColor: '#f05138' });
+  });
+
+  it('returns an empty list for junk, empty pages and cards without a star count', () => {
+    expect(parseTrendingHtml('')).toEqual([]);
+    expect(parseTrendingHtml('<html><body>rate limited</body></html>')).toEqual([]);
+    expect(parseTrendingHtml(trendingCard('a/b', '', ''))).toEqual([]);
+  });
+});
+
+describe('normalizeUrl', () => {
+  it('strips tracking params, www, trailing slash and anchor', () => {
+    expect(normalizeUrl('https://www.example.com/a/?utm_source=x&ref=y#top')).toBe('https://example.com/a');
+    expect(normalizeUrl('https://hunch.net/?p=13764006')).toBe('https://hunch.net/?p=13764006');
+    expect(normalizeUrl('https://example.com/')).toBe('https://example.com/');
+  });
+
+  it('rejects non-http(s) values', () => {
+    expect(normalizeUrl('javascript:alert(1)')).toBeNull();
+    expect(normalizeUrl(undefined)).toBeNull();
+  });
+});
+
+describe('fetchGithubTrending with the official Trending page', () => {
+  it('prefers the Trending page and keeps the real "stars today" delta', async () => {
+    mockFetch({
+      [TRENDING_HTML_URL]: () => new Response(trendingCard('owner/repo-1', '9,000', '321'), { status: 200 }),
+      [TRENDING_URL]: { pubDate: 'Thu, 05 Nov 2026 13:56:53 GMT', items: [trendingItem(1)] },
+    });
+
+    const result = await fetchGithubTrending(NOW, {});
+
+    expect(result.source).toBe('trending');
+    expect(result.repos[0]).toMatchObject({ name: 'owner/repo-1', stars: 9000, addStars: 321 });
+  });
+
+  it('falls through to the feed when the Trending page is empty', async () => {
+    mockFetch({
+      [TRENDING_HTML_URL]: () => new Response('<html><body></body></html>', { status: 200 }),
+      [TRENDING_URL]: { pubDate: 'Thu, 05 Nov 2026 13:56:53 GMT', items: [trendingItem(1)] },
+    });
+
+    const result = await fetchGithubTrending(NOW, {});
+
+    expect(result.repos[0].name).toBe('owner/repo-1');
+  });
+});
+
+describe('fetchAiNews dedupe', () => {
+  it('dedupes the same article submitted under different titles and spreads domains', async () => {
+    mockFetch({
+      [HN_URL]: {
+        hits: [
+          { title: 'The end of Microsoft Research AI Frontiers', url: 'https://hunch.net/?p=13764006', points: 344, objectID: '1' },
+          { title: 'The End of AI Frontiers', url: 'https://hunch.net/?p=13764006', points: 81, objectID: '2' },
+          { title: 'Another hunch story', url: 'https://www.hunch.net/?p=999', points: 70, objectID: '3' },
+          { title: 'Brave sells its index', url: 'https://searchenginejournal.com/brave/595829/', points: 15, objectID: '4' },
+          { title: 'I do not care about AI content', url: 'https://kevinboone.me/ai.html', points: 14, objectID: '5' },
+          { title: 'A fifth one', url: 'https://example.org/x', points: 9, objectID: '6' },
+        ],
+      },
+    });
+
+    const news = await fetchAiNews(NOW);
+
+    // 同一 URL 只留一条；hunch.net 先占 1 条，放宽后最多 2 条
+    expect(news.map((n) => n.title)).toEqual([
+      'The end of Microsoft Research AI Frontiers',
+      'Another hunch story',
+      'Brave sells its index',
+      'I do not care about AI content',
+      'A fifth one',
+    ]);
+  });
+});
+
+describe('buildPrompt', () => {
+  it('asks the model to avoid repeating yesterday and to cite numbers', () => {
+    const prompt = buildPrompt(
+      [{ name: 'a/b', description: 'd', stars: 100, addStars: 5, language: 'Go', languageColor: null, url: 'https://github.com/a/b' }],
+      [{ title: 'T', url: 'https://e.com', source: 'e.com', points: 7 }],
+      '昨天说 Agent 会自己干活',
+    );
+
+    expect(prompt).toContain('昨天说 Agent 会自己干活');
+    expect(prompt).toContain('至少引用两个具体数字');
+    expect(prompt).toContain('a/b');
+    expect(prompt).toContain('今日新增 5');
+  });
+});
+
+describe('archive and feed', () => {
+  it('writes a per-day archive, an index page and an RSS feed', async () => {
+    const path = join(mkdtempSync(join(dir, 'archive-')), 'public', 'data.json');
+    mockFetch({
+      [TRENDING_URL]: { pubDate: 'Wed, 26 Aug 2026 13:56:53 GMT', items: [] },
+      [SEARCH_URL]: { items: [{ full_name: 'a/b', html_url: 'https://github.com/a/b', language: 'Rust', stargazers_count: 7 }] },
+      [HN_URL]: { hits: [{ title: 'New open LLM released', url: 'https://example.com/llm', points: 10, objectID: '1' }] },
+      'https://llm.test/v1/chat/completions': { choices: [{ message: { content: '今天的解读' } }] },
+    });
+
+    await updateData({ now: NOW, env: LLM_ENV, path });
+
+    const publicDir = dirname(path);
+    expect(JSON.parse(readFileSync(join(publicDir, 'history', '2026-11-06.json'), 'utf8')).date).toBe('2026-11-06');
+    const index = JSON.parse(readFileSync(join(publicDir, 'history', 'index.json'), 'utf8'));
+    expect(index[0]).toMatchObject({ date: '2026-11-06', repos: 1, news: 1 });
+    expect(readFileSync(join(publicDir, 'history', 'index.html'), 'utf8')).toContain('2026-11-06');
+    const feed = readFileSync(join(publicDir, 'feed.xml'), 'utf8');
+    expect(feed).toContain('<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">');
+    expect(feed).toContain('<atom:link href=');
+    expect(feed).toContain('今天的解读');
+    const sitemap = readFileSync(join(publicDir, 'sitemap.xml'), 'utf8');
+    expect(sitemap).toContain('<lastmod>2026-11-06</lastmod>');
+    expect(sitemap).toContain('<loc>https://huanghd1.github.io/zhhe-daily-report/</loc>');
   });
 });

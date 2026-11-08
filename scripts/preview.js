@@ -16,6 +16,9 @@ const TYPES = {
   '.svg': 'image/svg+xml',
   '.png': 'image/png',
   '.ico': 'image/x-icon',
+  // GitHub Pages 会按扩展名给这两个类型，本地预览也保持一致
+  '.xml': 'application/xml; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8',
 };
 
 // URL 路径 → public/ 下的文件；越界（../ 或编码后的 %2e%2e、%5c）或不存在时返回 null。

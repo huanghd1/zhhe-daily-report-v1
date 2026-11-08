@@ -51,16 +51,19 @@ jobs:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ vars.LLM_BASE_URL || 'https://api.deepseek.com/v1' }}
           LLM_MODEL: ${{ vars.LLM_MODEL || 'deepseek-chat' }}
+          # 站点地址（feed / sitemap 用）；fork 后设成自己的 Pages 地址
+          SITE_URL: ${{ vars.SITE_URL }}
           # 降级到 GitHub Search API 时使用，避免共享出口 IP 被匿名限流
           GITHUB_TOKEN: ${{ github.token }}
 
       # 用 GITHUB_TOKEN 推送的提交不会再次触发 workflow，不会形成循环
-      - name: 提交 data.json
+      # 除了 data.json，还要提交 history/ 归档与 feed.xml
+      - name: 提交 data.json / 归档 / feed
         if: github.event_name != 'push'
         run: |
-          git add public/data.json
+          git add public
           if git diff --cached --quiet; then
-            echo "data.json 没有变化，跳过提交"
+            echo "没有变化，跳过提交"
             exit 0
           fi
           git config user.name 'github-actions[bot]'
