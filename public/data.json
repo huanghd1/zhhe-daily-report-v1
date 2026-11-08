@@ -1,38 +1,11 @@
 {
-  "date": "2026-11-07",
+  "date": "2026-11-08",
   "githubTrending": [
-    {
-      "name": "deepseek-ai/dsh-superagent-prototype",
-      "description": "Towards a More Autonomous Agent System",
-      "stars": 20611,
-      "addStars": 369,
-      "language": "TypeScript",
-      "languageColor": "#3178c6",
-      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype"
-    },
-    {
-      "name": "storytold/craft-anything",
-      "description": "Craft Anything: understand how any software works, and craft your own.",
-      "stars": 19557,
-      "addStars": 1495,
-      "language": "Rust",
-      "languageColor": "#dea584",
-      "url": "https://github.com/storytold/craft-anything"
-    },
-    {
-      "name": "zortos293/Lichii",
-      "description": "VERY experimental Nintendo Switch 2 emulator",
-      "stars": 4663,
-      "addStars": 696,
-      "language": "C++",
-      "languageColor": "#f34b7d",
-      "url": "https://github.com/zortos293/Lichii"
-    },
     {
       "name": "KKKKhazix/agent-autoloop",
       "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
-      "stars": 3881,
-      "addStars": 201,
+      "stars": 3956,
+      "addStars": 75,
       "language": "TypeScript",
       "languageColor": "#3178c6",
       "url": "https://github.com/KKKKhazix/agent-autoloop"
@@ -40,53 +13,79 @@
     {
       "name": "worldonlyu/Google_AI_Pro_2Year_ZeroCost_Auto",
       "description": "Google_AI_Pro_2Year_ZeroCost_Auto",
-      "stars": 3000,
-      "addStars": 119,
+      "stars": 3055,
+      "addStars": 55,
       "language": "Python",
       "languageColor": "#3572A5",
       "url": "https://github.com/worldonlyu/Google_AI_Pro_2Year_ZeroCost_Auto"
+    },
+    {
+      "name": "Minireel/HGhub",
+      "description": "YellowFruit third-party client",
+      "stars": 2305,
+      "addStars": null,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/Minireel/HGhub"
+    },
+    {
+      "name": "govijr/terminal-mac",
+      "description": "Entire MacOS running in your terminal.",
+      "stars": 2242,
+      "addStars": null,
+      "language": "Swift",
+      "languageColor": "#F05138",
+      "url": "https://github.com/govijr/terminal-mac"
+    },
+    {
+      "name": "mromidev/claude-animated-shorts",
+      "description": "Free Claude skill: viral animated story shorts (2D characters in a 3D world) with three.js + Remotion",
+      "stars": 2227,
+      "addStars": null,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/mromidev/claude-animated-shorts"
     }
   ],
   "aiNews": [
     {
-      "title": "AI is dramatically accelerating AI research",
-      "url": "https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai",
-      "source": "planned-obsolescence.org",
-      "points": 333
+      "title": "The end of Microsoft Research's AI Frontiers group",
+      "url": "https://hunch.net/?p=13764006",
+      "source": "hunch.net",
+      "points": 344
     },
     {
-      "title": "University libraries are being swarmed by AI bots, putting public access at risk",
-      "url": "https://www.cbc.ca/news/world/university-libraries-ai-data-scraping-bots-9.7408287",
-      "source": "cbc.ca",
-      "points": 130
+      "title": "Claude Code's \"Don't Ask Again\" exposes passwords in 1,122 public GitHub files",
+      "url": "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again",
+      "source": "apiiro.com",
+      "points": 131
     },
     {
-      "title": "Memorilla: Latent Semantic Memory for LLMs",
-      "url": "https://arxiv.org/abs/2610.21375",
-      "source": "arxiv.org",
-      "points": 108
+      "title": "The End of AI Frontiers",
+      "url": "https://hunch.net/?p=13764006",
+      "source": "hunch.net",
+      "points": 81
     },
     {
-      "title": "Microsoft is winding down Oracle deal to rent AI cloud capacity",
-      "url": "https://www.reuters.com/business/microsoft-is-winding-down-oracle-deal-rent-ai-cloud-capacity-bloomberg-news-2026-11-06/",
-      "source": "reuters.com",
-      "points": 102
+      "title": "Brave Sells Its Search Index to AI, and Your Website Is Probably in It",
+      "url": "https://www.searchenginejournal.com/brave-sells-its-search-index-to-ai-and-your-website-is-probably-in-it/595829/",
+      "source": "searchenginejournal.com",
+      "points": 15
     },
     {
-      "title": "Perplexity launches AI agents for work",
-      "url": "https://www.perplexity.ai/en-GB/hub/blog/teammates-are-agents-for-complex-ongoing-work",
-      "source": "perplexity.ai",
-      "points": 61
+      "title": "I don't care if web content is AI-generated",
+      "url": "https://kevinboone.me/ai.html",
+      "source": "kevinboone.me",
+      "points": 14
     }
   ],
-  "aiAnalysis": "今天的榜单透露出一个清晰的方向：Agent 正在从“能对话”走向“能自己干活”。deepseek 的 superagent 原型、agent-autoloop 提出的后台自动接活与人工拍板机制，都在回答同一个问题——如何让智能体在无人盯守时依然可控。这说明行业焦点已从模型能力转向工程化的自治闭环，谁把权限边界和干预时机设计好，谁就更接近落地。另一个值得注意的现象是“理解工具”类项目走红，craft-anything 一天涨近一千五百星，反映出开发者对逆向分析、系统理解的强烈需求，这与 AI 生成代码泛滥后对可读性和可信度的焦虑互为表里。AI 前沿也不全是好消息，高校图书馆被爬虫冲击，提醒我们公共资源正在为无节制的模型训练买单。对开发者而言，一条实用建议是：在构建 Agent 时先把“人在回路”的触发条件写成明确规则和日志，别等失控后再补，可观测性和中止机制比炫技更能决定产品寿命。",
+  "aiAnalysis": "今天榜单最鲜明的信号是“Agent 从演示走向值班”：KKKKhazix 的 agent-autoloop 让命令行 Agent 在后台自主接活、推进到底，只在关键决策点发卡片找人拍板，这比单纯堆模型能力更接近真实工作流——人与 AI 的协作边界被明确成“它干活、你审批”。另一个值得留意的是 mromidev 的 claude-animated-shorts，用 three.js 加 Remotion 把 2D 角色放进 3D 场景自动生成故事短视频，说明 Claude 类工具正从写代码扩展到内容生产流水线。AI 动态方面，Claude Code 的“Don't Ask Again”选项把密码泄露进 1122 个公开 GitHub 文件，是一个典型警示：便利性开关往往就是攻击面。微软 Research AI Frontiers 团队的终结，也提示大厂在收缩前沿探索、转向产品化落地。给开发者的建议：在接入任何 Agent 或自动化工具时，先把“哪些操作必须人工确认、哪些凭据绝不落入配置文件或提交历史”写成硬性规则，再谈效率。",
   "keywords": [
-    "Agent",
-    "DeepSeek",
-    "LLM"
+    "Claude",
+    "Agent"
   ],
   "githubSource": "search",
-  "githubDataDate": "2026-11-07",
-  "addStarsSince": "2026-11-07T00:40:16.578Z",
-  "generatedAt": "2026-11-07T13:21:34.785Z"
+  "githubDataDate": "2026-11-08",
+  "addStarsSince": "2026-11-07T13:21:34.785Z",
+  "generatedAt": "2026-11-08T00:39:38.971Z"
 }
