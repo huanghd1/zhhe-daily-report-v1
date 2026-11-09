@@ -1,7 +1,7 @@
 # zhhe-reonr · 每日前沿科技与 GitHub 趋势简报
 
-[![部署](https://github.com/huanghd1/zhhe-daily-report/actions/workflows/update.yml/badge.svg)](https://github.com/huanghd1/zhhe-daily-report/actions/workflows/update.yml)
-[![测试](https://github.com/huanghd1/zhhe-daily-report/actions/workflows/test.yml/badge.svg)](https://github.com/huanghd1/zhhe-daily-report/actions/workflows/test.yml)
+[![部署](https://github.com/huanghd1/zhhe-daily-report-v1/actions/workflows/update.yml/badge.svg)](https://github.com/huanghd1/zhhe-daily-report-v1/actions/workflows/update.yml)
+[![测试](https://github.com/huanghd1/zhhe-daily-report-v1/actions/workflows/test.yml/badge.svg)](https://github.com/huanghd1/zhhe-daily-report-v1/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
 纯静态站点，部署在 GitHub Pages。GitHub Actions 每天北京时间 08:00 运行 `scripts/update-data.js`：抓取 GitHub 热门项目和 Hacker News 上的 AI 快讯，调用大模型生成中文解读，写入 `public/data.json` 并提交回仓库，然后把 `public/` 发布到 Pages。页面只读取这个 JSON，没有后端和数据库。

@@ -780,6 +780,6 @@ describe('archive and feed', () => {
     expect(feed).toContain('今天的解读');
     const sitemap = readFileSync(join(publicDir, 'sitemap.xml'), 'utf8');
     expect(sitemap).toContain('<lastmod>2026-11-06</lastmod>');
-    expect(sitemap).toContain('<loc>https://huanghd1.github.io/zhhe-daily-report/</loc>');
+    expect(sitemap).toContain('<loc>https://huanghd1.github.io/zhhe-daily-report-v1/</loc>');
   });
 });

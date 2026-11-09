@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://huanghd1.github.io/zhhe-daily-report/sitemap.xml
+Sitemap: https://huanghd1.github.io/zhhe-daily-report-v1/sitemap.xml

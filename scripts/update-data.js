@@ -27,7 +27,7 @@ export const TRENDING_URL = 'https://raw.githubusercontent.com/isboyjc/github-tr
 // 兜底：近 7 天新建、按 star 排序（口径与 Trending 不同，页面会标注）
 const GITHUB_SEARCH_URL = 'https://api.github.com/search/repositories';
 // 归档与 feed 需要站点地址；fork 后改成自己的地址，或用仓库 Variable SITE_URL 覆盖
-export const SITE_URL = (process.env.SITE_URL?.trim() || 'https://huanghd1.github.io/zhhe-daily-report').replace(
+export const SITE_URL = (process.env.SITE_URL?.trim() || 'https://huanghd1.github.io/zhhe-daily-report-v1').replace(
   /\/+$/,
   '',
 );
