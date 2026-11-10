@@ -5,8 +5,16 @@
     <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
     <description>每天北京时间 08:00 更新的技术简报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 09 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://huanghd1.github.io/zhhe-daily-report-v1/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日科技简报 2026-11-10</title>
+      <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
+      <guid isPermaLink="false">https://huanghd1.github.io/zhhe-daily-report-v1/#2026-11-10</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Claude</category><category>Agent</category><category>LLM</category><category>开源</category><category>推理</category>
+      <description>今天最突出的信号是“智能体基础设施正在被平台方亲自补齐”：anthropics/skills 以 190979 stars、单日新增 1038 冲上榜首，配套的 claude-quickstarts 也有 20018 stars、新增 551，说明开发者不再只满足于调用 API，而是开始系统性沉淀可复用的技能与脚手架。meta/astryx 单日暴涨 3278、总数 20060，主打“完全可定制且面向智能体”的设计系统，这条线更值得留意——前端界面正在被重新定义为智能体的输出层，而不只是给人看的页面。另一个有趣对照来自 AI 侧：Claude Fable 5.2 在 Artificial Analysis 拿下 65 分、创下新高（HN 270 分），能力榜单继续刷新；但同一时间那条“100% AI 强制一年后没人看得懂我们代码”（HN 90 分）同样被顶上热榜，能力上限与可维护性下限正被同时讨论。建议开发者从今天起给每个 AI 生成的模块留一份“人类可读的意图说明”，把它当成交付物的一部分，而不是事后补的文档——代码可以外包给模型，理解不能。</description>
+    </item>
     <item>
       <title>每日科技简报 2026-11-09</title>
       <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>

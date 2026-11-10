@@ -1,5 +1,18 @@
 [
   {
+    "date": "2026-11-10",
+    "repos": 5,
+    "news": 5,
+    "keywords": [
+      "Claude",
+      "Agent",
+      "LLM",
+      "开源",
+      "推理"
+    ],
+    "head": "今天最突出的信号是“智能体基础设施正在被平台方亲自补齐”：anthropics/skills 以 190979 stars、单日新增 1038 冲上榜首，配套的 claude-qu"
+  },
+  {
     "date": "2026-11-09",
     "repos": 5,
     "news": 5,

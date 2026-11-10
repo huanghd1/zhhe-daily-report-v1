@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-10",
+  "githubTrending": [
+    {
+      "name": "anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "stars": 190979,
+      "addStars": 1038,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/anthropics/skills",
+      "rankDelta": null
+    },
+    {
+      "name": "meta/astryx",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "stars": 20060,
+      "addStars": 3278,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/meta/astryx",
+      "rankDelta": null
+    },
+    {
+      "name": "sherlock-project/sherlock",
+      "description": "Hunt down social media accounts by username across social networks",
+      "stars": 107036,
+      "addStars": 4267,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/sherlock-project/sherlock",
+      "rankDelta": -2
+    },
+    {
+      "name": "google-deepmind/mujoco",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "stars": 16908,
+      "addStars": 574,
+      "language": "C++",
+      "languageColor": "#f34b7d",
+      "url": "https://github.com/google-deepmind/mujoco",
+      "rankDelta": null
+    },
+    {
+      "name": "anthropics/claude-quickstarts",
+      "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+      "stars": 20018,
+      "addStars": 551,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/anthropics/claude-quickstarts",
+      "rankDelta": -1
+    }
+  ],
+  "aiNews": [
+    {
+      "title": "Claude Fable 5.2 and Mythos 5.2",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "source": "anthropic.com",
+      "points": 900
+    },
+    {
+      "title": "Claude Fable 5.2 Scores 65 on Artificial Analysis, Highest So Far",
+      "url": "https://artificialanalysis.ai/models/claude-fable-5-2",
+      "source": "artificialanalysis.ai",
+      "points": 270
+    },
+    {
+      "title": "Apple capped engineers at a $200 daily AI budget",
+      "url": "https://www.stork.ai/newsletter/2026-11-08-apple-capped-engineers-at-a-200-daily-ai-budget",
+      "source": "stork.ai",
+      "points": 110
+    },
+    {
+      "title": "A year after the 100% AI mandate nobody understands our code",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1xq2n3t/a_year_after_the_100_ai_mandate_nobody/",
+      "source": "reddit.com",
+      "points": 90
+    },
+    {
+      "title": "6 Hours of YouTube and 85 handtyped pages of notes on LLM Inference – Start here",
+      "url": "https://github.com/samir-sarwar/samir-vllm",
+      "source": "github.com",
+      "points": 75
+    }
+  ],
+  "aiAnalysis": "今天最突出的信号是“智能体基础设施正在被平台方亲自补齐”：anthropics/skills 以 190979 stars、单日新增 1038 冲上榜首，配套的 claude-quickstarts 也有 20018 stars、新增 551，说明开发者不再只满足于调用 API，而是开始系统性沉淀可复用的技能与脚手架。meta/astryx 单日暴涨 3278、总数 20060，主打“完全可定制且面向智能体”的设计系统，这条线更值得留意——前端界面正在被重新定义为智能体的输出层，而不只是给人看的页面。另一个有趣对照来自 AI 侧：Claude Fable 5.2 在 Artificial Analysis 拿下 65 分、创下新高（HN 270 分），能力榜单继续刷新；但同一时间那条“100% AI 强制一年后没人看得懂我们代码”（HN 90 分）同样被顶上热榜，能力上限与可维护性下限正被同时讨论。建议开发者从今天起给每个 AI 生成的模块留一份“人类可读的意图说明”，把它当成交付物的一部分，而不是事后补的文档——代码可以外包给模型，理解不能。",
+  "analysisStatus": "ok",
+  "keywords": [
+    "Claude",
+    "Agent",
+    "LLM",
+    "开源",
+    "推理"
+  ],
+  "githubSource": "trending",
+  "githubDataDate": "2026-11-10",
+  "addStarsSince": null,
+  "generatedAt": "2026-11-10T00:54:53.107Z"
+}

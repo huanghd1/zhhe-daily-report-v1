@@ -1,100 +1,100 @@
 {
-  "date": "2026-11-09",
+  "date": "2026-11-10",
   "githubTrending": [
+    {
+      "name": "anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "stars": 190979,
+      "addStars": 1038,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/anthropics/skills",
+      "rankDelta": null
+    },
+    {
+      "name": "meta/astryx",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "stars": 20060,
+      "addStars": 3278,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/meta/astryx",
+      "rankDelta": null
+    },
     {
       "name": "sherlock-project/sherlock",
       "description": "Hunt down social media accounts by username across social networks",
-      "stars": 103750,
-      "addStars": 2373,
+      "stars": 107036,
+      "addStars": 4267,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/sherlock-project/sherlock",
-      "rankDelta": null
+      "rankDelta": -2
     },
     {
-      "name": "dsx-ai-factory/nvke",
-      "description": "NVIDIA Kubernetes Engine (NVKE). A management plane for GPU Kubernetes on bare metal.",
-      "stars": 872,
-      "addStars": 345,
-      "language": "Go",
-      "languageColor": "#00add8",
-      "url": "https://github.com/dsx-ai-factory/nvke",
-      "rankDelta": null
-    },
-    {
-      "name": "milind-soni/OpenMausBot",
-      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
-      "stars": 18342,
-      "addStars": 1439,
-      "language": "TypeScript",
-      "languageColor": "#3178c6",
-      "url": "https://github.com/milind-soni/OpenMausBot",
+      "name": "google-deepmind/mujoco",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "stars": 16908,
+      "addStars": 574,
+      "language": "C++",
+      "languageColor": "#f34b7d",
+      "url": "https://github.com/google-deepmind/mujoco",
       "rankDelta": null
     },
     {
       "name": "anthropics/claude-quickstarts",
       "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
-      "stars": 19459,
-      "addStars": 32,
+      "stars": 20018,
+      "addStars": 551,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/anthropics/claude-quickstarts",
-      "rankDelta": null
-    },
-    {
-      "name": "vercel-labs/agent-browser",
-      "description": "Browser automation CLI for AI agents",
-      "stars": 47663,
-      "addStars": 815,
-      "language": "Rust",
-      "languageColor": "#dea584",
-      "url": "https://github.com/vercel-labs/agent-browser",
-      "rankDelta": null
+      "rankDelta": -1
     }
   ],
   "aiNews": [
     {
-      "title": "Goodbye Claude, hello Pi",
-      "url": "https://caleb.software/posts/claude-to-pi.html",
-      "source": "caleb.software",
-      "points": 702
+      "title": "Claude Fable 5.2 and Mythos 5.2",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+      "source": "anthropic.com",
+      "points": 900
     },
     {
-      "title": "Goldman Sachs is pulling Claude Code from its bankers and traders",
-      "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
-      "source": "thestateofai.com",
-      "points": 604
+      "title": "Claude Fable 5.2 Scores 65 on Artificial Analysis, Highest So Far",
+      "url": "https://artificialanalysis.ai/models/claude-fable-5-2",
+      "source": "artificialanalysis.ai",
+      "points": 270
     },
     {
-      "title": "How I Fight AI Brain Fry",
-      "url": "https://sergeykuhne.com/blog/fighting-ai-brain-fry",
-      "source": "sergeykuhne.com",
-      "points": 154
+      "title": "Apple capped engineers at a $200 daily AI budget",
+      "url": "https://www.stork.ai/newsletter/2026-11-08-apple-capped-engineers-at-a-200-daily-ai-budget",
+      "source": "stork.ai",
+      "points": 110
     },
     {
-      "title": "Why I will not be using LLMs in my coding",
-      "url": "https://www.polso.info/why-i-will-not-be-using-llms-coding",
-      "source": "polso.info",
-      "points": 108
+      "title": "A year after the 100% AI mandate nobody understands our code",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1xq2n3t/a_year_after_the_100_ai_mandate_nobody/",
+      "source": "reddit.com",
+      "points": 90
     },
     {
-      "title": "Silicon Valley Promises AI Will Cure Disease. Drugmaker CEOs Aren't Buying It",
-      "url": "https://www.wsj.com/tech/ai/silicon-valley-promises-ai-will-cure-disease-drugmaker-ceos-arent-buying-it-5218511c",
-      "source": "wsj.com",
-      "points": 89
+      "title": "6 Hours of YouTube and 85 handtyped pages of notes on LLM Inference – Start here",
+      "url": "https://github.com/samir-sarwar/samir-vllm",
+      "source": "github.com",
+      "points": 75
     }
   ],
-  "aiAnalysis": "热度榜今天透露出另一种“两线并行”：一条是抓取与自动化工具依旧吸睛，sherlock 以 103750 stars、今日新增 2373 稳居榜首，说明用户名跨平台追踪这类需求常年存在；另一条是基础设施层在悄悄补课，NVIDIA 的 Kubernetes 管理平面 nvke 仅 872 stars 却单日涨 345，增速比例远高于前者，反映裸金属上调度 GPU 的运维缺口正被认真对待。AI 侧最耐人寻味的不是“告别 Claude”的 702 分，而是高盛把 Claude Code 从银行家和交易员手中撤回的 604 分——同一工具在个人开发者那里被追捧，在受监管机构却因权限与审计被收走，工具的能力边界正让位于组织可控性边界。叠加药企 CEO 对“AI 治愈疾病”的怀疑（89 分），可以看出叙事热度与落地信任之间的落差在扩大。建议开发者在选型时把“退出成本”写进评估清单：能否自托管、数据流向是否可审计、模型替换是否只改一层适配，比追逐今日 star 增量更能决定半年后是否被卡住。",
+  "aiAnalysis": "今天最突出的信号是“智能体基础设施正在被平台方亲自补齐”：anthropics/skills 以 190979 stars、单日新增 1038 冲上榜首，配套的 claude-quickstarts 也有 20018 stars、新增 551，说明开发者不再只满足于调用 API，而是开始系统性沉淀可复用的技能与脚手架。meta/astryx 单日暴涨 3278、总数 20060，主打“完全可定制且面向智能体”的设计系统，这条线更值得留意——前端界面正在被重新定义为智能体的输出层，而不只是给人看的页面。另一个有趣对照来自 AI 侧：Claude Fable 5.2 在 Artificial Analysis 拿下 65 分、创下新高（HN 270 分），能力榜单继续刷新；但同一时间那条“100% AI 强制一年后没人看得懂我们代码”（HN 90 分）同样被顶上热榜，能力上限与可维护性下限正被同时讨论。建议开发者从今天起给每个 AI 生成的模块留一份“人类可读的意图说明”，把它当成交付物的一部分，而不是事后补的文档——代码可以外包给模型，理解不能。",
   "analysisStatus": "ok",
   "keywords": [
     "Claude",
     "Agent",
     "LLM",
     "开源",
-    "GPU"
+    "推理"
   ],
   "githubSource": "trending",
-  "githubDataDate": "2026-11-09",
+  "githubDataDate": "2026-11-10",
   "addStarsSince": null,
-  "generatedAt": "2026-11-09T01:58:46.391Z"
+  "generatedAt": "2026-11-10T00:54:53.107Z"
 }
