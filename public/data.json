@@ -1,100 +1,100 @@
 {
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "githubTrending": [
-    {
-      "name": "anthropics/skills",
-      "description": "Public repository for Agent Skills",
-      "stars": 190979,
-      "addStars": 1038,
-      "language": "Python",
-      "languageColor": "#3572a5",
-      "url": "https://github.com/anthropics/skills",
-      "rankDelta": null
-    },
     {
       "name": "meta/astryx",
       "description": "An open source design system that's fully customizable and agent ready",
-      "stars": 20060,
-      "addStars": 3278,
+      "stars": 22834,
+      "addStars": 3108,
       "language": "TypeScript",
       "languageColor": "#3178c6",
       "url": "https://github.com/meta/astryx",
-      "rankDelta": null
+      "rankDelta": 1
     },
     {
-      "name": "sherlock-project/sherlock",
-      "description": "Hunt down social media accounts by username across social networks",
-      "stars": 107036,
-      "addStars": 4267,
+      "name": "anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "stars": 192332,
+      "addStars": 1679,
       "language": "Python",
       "languageColor": "#3572a5",
-      "url": "https://github.com/sherlock-project/sherlock",
-      "rankDelta": -2
+      "url": "https://github.com/anthropics/skills",
+      "rankDelta": -1
     },
     {
-      "name": "google-deepmind/mujoco",
-      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
-      "stars": 16908,
-      "addStars": 574,
-      "language": "C++",
-      "languageColor": "#f34b7d",
-      "url": "https://github.com/google-deepmind/mujoco",
+      "name": "addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "stars": 115170,
+      "addStars": 465,
+      "language": "JavaScript",
+      "languageColor": "#f1e05a",
+      "url": "https://github.com/addyosmani/agent-skills",
       "rankDelta": null
     },
     {
       "name": "anthropics/claude-quickstarts",
       "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
-      "stars": 20018,
-      "addStars": 551,
+      "stars": 20494,
+      "addStars": 531,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/anthropics/claude-quickstarts",
+      "rankDelta": 1
+    },
+    {
+      "name": "google-deepmind/mujoco",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "stars": 17354,
+      "addStars": 456,
+      "language": "C++",
+      "languageColor": "#f34b7d",
+      "url": "https://github.com/google-deepmind/mujoco",
       "rankDelta": -1
     }
   ],
   "aiNews": [
     {
-      "title": "Claude Fable 5.2 and Mythos 5.2",
-      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
-      "source": "anthropic.com",
-      "points": 900
+      "title": "AI usage generates a fragile codebase",
+      "url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/",
+      "source": "evanxmerz.com",
+      "points": 361
     },
     {
-      "title": "Claude Fable 5.2 Scores 65 on Artificial Analysis, Highest So Far",
-      "url": "https://artificialanalysis.ai/models/claude-fable-5-2",
-      "source": "artificialanalysis.ai",
-      "points": 270
+      "title": "CoreWeave bond yield tops 16% as AI credit stress rises",
+      "url": "https://www.cnbc.com/2026/11/06/coreweave-bond-yield-tops-16percent-as-ai-credit-stress-rises.html",
+      "source": "cnbc.com",
+      "points": 191
     },
     {
-      "title": "Apple capped engineers at a $200 daily AI budget",
-      "url": "https://www.stork.ai/newsletter/2026-11-08-apple-capped-engineers-at-a-200-daily-ai-budget",
-      "source": "stork.ai",
-      "points": 110
+      "title": "Fireworks AI security breach impacts Notion and their customers",
+      "url": "https://www.notion.com/help/security-incident-involving-a-third-party-ai-vendor",
+      "source": "notion.com",
+      "points": 159
     },
     {
-      "title": "A year after the 100% AI mandate nobody understands our code",
-      "url": "https://www.reddit.com/r/ClaudeCode/comments/1xq2n3t/a_year_after_the_100_ai_mandate_nobody/",
-      "source": "reddit.com",
-      "points": 90
+      "title": "Claude Whiteboards, Claude Sheets, and Claude Data",
+      "url": "https://claude.com/resources/articles/sheets-whiteboards-data",
+      "source": "claude.com",
+      "points": 156
     },
     {
-      "title": "6 Hours of YouTube and 85 handtyped pages of notes on LLM Inference – Start here",
-      "url": "https://github.com/samir-sarwar/samir-vllm",
-      "source": "github.com",
-      "points": 75
+      "title": "Apple has new Mac app coming to make running local AI models easy",
+      "url": "https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/",
+      "source": "9to5mac.com",
+      "points": 100
     }
   ],
-  "aiAnalysis": "今天最突出的信号是“智能体基础设施正在被平台方亲自补齐”：anthropics/skills 以 190979 stars、单日新增 1038 冲上榜首，配套的 claude-quickstarts 也有 20018 stars、新增 551，说明开发者不再只满足于调用 API，而是开始系统性沉淀可复用的技能与脚手架。meta/astryx 单日暴涨 3278、总数 20060，主打“完全可定制且面向智能体”的设计系统，这条线更值得留意——前端界面正在被重新定义为智能体的输出层，而不只是给人看的页面。另一个有趣对照来自 AI 侧：Claude Fable 5.2 在 Artificial Analysis 拿下 65 分、创下新高（HN 270 分），能力榜单继续刷新；但同一时间那条“100% AI 强制一年后没人看得懂我们代码”（HN 90 分）同样被顶上热榜，能力上限与可维护性下限正被同时讨论。建议开发者从今天起给每个 AI 生成的模块留一份“人类可读的意图说明”，把它当成交付物的一部分，而不是事后补的文档——代码可以外包给模型，理解不能。",
+  "aiAnalysis": "今天最值得注意的不是某个仓库单独爆红，而是“给智能体写技能”这件事正在被反复造轮子：anthropics/skills 已累积 192332 stars、今日新增 1679，而 addyosmani/agent-skills 以 115170 stars、新增 465 紧随其后，两者定位几乎重叠——一个是官方公共技能库，一个是“生产级工程技能”。同一赛道出现两个十万星级别的仓库，说明开发者对“技能该怎么写、写到什么颗粒度”还没有共识，标准仍在混战期。另一个信号来自 AI 侧那篇《AI usage generates a fragile codebase》（HN 361 分）与 CoreWeave 债券收益率突破 16%（HN 191 分）并置：前者讲的是代码质量在交付速度下的隐性折旧，后者讲的是资本层开始给 AI 基础设施的信用风险重新定价，两件事指向同一个问题——高速产出的东西，谁来兜底维护和偿付。meta/astryx 今日新增 3108、总数 22834，继续把设计系统往“agent ready”方向推，这条线和技能库其实是同一枚硬币：输出层和输入层都在为智能体重构。给开发者一条具体建议：如果你在写 agent skill，别急着堆数量，先把你团队最痛的那三个流程写成可被检查的技能（含失败案例和边界条件），这比再抄一份别人的技能清单更能形成壁垒。",
   "analysisStatus": "ok",
   "keywords": [
-    "Claude",
     "Agent",
-    "LLM",
+    "Claude",
+    "模型",
     "开源",
-    "推理"
+    "安全"
   ],
   "githubSource": "trending",
-  "githubDataDate": "2026-11-10",
+  "githubDataDate": "2026-11-11",
   "addStarsSince": null,
-  "generatedAt": "2026-11-10T00:54:53.107Z"
+  "generatedAt": "2026-11-11T00:55:12.853Z"
 }
