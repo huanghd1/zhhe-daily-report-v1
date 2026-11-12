@@ -5,8 +5,16 @@
     <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
     <description>每天北京时间 08:00 更新的技术简报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 11 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://huanghd1.github.io/zhhe-daily-report-v1/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日科技简报 2026-11-12</title>
+      <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
+      <guid isPermaLink="false">https://huanghd1.github.io/zhhe-daily-report-v1/#2026-11-12</guid>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Agent</category><category>LLM</category><category>模型</category><category>开源</category>
+      <description>今天的信号更偏向“智能体开始接入真实世界接口”：agent-browser 以 49875 stars、单日新增 708 冲榜，用 Rust 做浏览器自动化的 CLI，而 Meta 的 astryx 以 24999 stars、今日 +2776 的姿态登场，主打“agent ready 的可定制设计系统”——一个给智能体装上手，一个给智能体装上界面语言，说明交互层正在被重构。与之呼应的是 HN 上联合航空禁止 AI 代理代订机票（327 分）：当代理真能操作真实交易系统时，第一反应不是开放，而是关门。这两条信息放在一起看，才显出本质——浏览器自动化、设计系统、订票禁令，其实都是同一个问题的三张面孔：智能体从“生成内容”走向“执行动作”，权限边界和可审计性就成了新瓶颈。另一个小角度来自 shadcn/improve（10882 stars，+361）：让最强模型审计代码库、写出计划交给便宜模型执行，这种“分层模型分工”比单纯堆技能库更有工程味——它承认了模型能力有价差，并把成本控制写进流程。给开发者的建议：如果你的项目开始暴露给代理调用，别再只测“它能不能做对”，先补上“它做错时怎么被拦住、被追责、被回滚”这一层，能力上线前先把约束机制跑通。</description>
+    </item>
     <item>
       <title>每日科技简报 2026-11-11</title>
       <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>

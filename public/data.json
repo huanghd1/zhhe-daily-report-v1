@@ -1,100 +1,99 @@
 {
-  "date": "2026-11-11",
+  "date": "2026-11-12",
   "githubTrending": [
     {
       "name": "meta/astryx",
       "description": "An open source design system that's fully customizable and agent ready",
-      "stars": 22834,
-      "addStars": 3108,
+      "stars": 24999,
+      "addStars": 2776,
       "language": "TypeScript",
       "languageColor": "#3178c6",
       "url": "https://github.com/meta/astryx",
-      "rankDelta": 1
+      "rankDelta": 0
     },
     {
-      "name": "anthropics/skills",
-      "description": "Public repository for Agent Skills",
-      "stars": 192332,
-      "addStars": 1679,
+      "name": "ZhuLinsen/daily_stock_analysis",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+      "stars": 70254,
+      "addStars": 278,
       "language": "Python",
       "languageColor": "#3572a5",
-      "url": "https://github.com/anthropics/skills",
-      "rankDelta": -1
+      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "rankDelta": null
+    },
+    {
+      "name": "shadcn/improve",
+      "description": "Use your most capable model to audit your codebase and write plans for cheaper models to execute.",
+      "stars": 10882,
+      "addStars": 361,
+      "language": null,
+      "languageColor": null,
+      "url": "https://github.com/shadcn/improve",
+      "rankDelta": null
     },
     {
       "name": "addyosmani/agent-skills",
       "description": "Production-grade engineering skills for AI coding agents.",
-      "stars": 115170,
-      "addStars": 465,
+      "stars": 115958,
+      "addStars": 787,
       "language": "JavaScript",
       "languageColor": "#f1e05a",
       "url": "https://github.com/addyosmani/agent-skills",
-      "rankDelta": null
-    },
-    {
-      "name": "anthropics/claude-quickstarts",
-      "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
-      "stars": 20494,
-      "addStars": 531,
-      "language": "Python",
-      "languageColor": "#3572a5",
-      "url": "https://github.com/anthropics/claude-quickstarts",
-      "rankDelta": 1
-    },
-    {
-      "name": "google-deepmind/mujoco",
-      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
-      "stars": 17354,
-      "addStars": 456,
-      "language": "C++",
-      "languageColor": "#f34b7d",
-      "url": "https://github.com/google-deepmind/mujoco",
       "rankDelta": -1
+    },
+    {
+      "name": "vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "stars": 49875,
+      "addStars": 708,
+      "language": "Rust",
+      "languageColor": "#dea584",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "rankDelta": null
     }
   ],
   "aiNews": [
     {
-      "title": "AI usage generates a fragile codebase",
-      "url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/",
-      "source": "evanxmerz.com",
-      "points": 361
+      "title": "My AI agents found an unmapped Maya site?",
+      "url": "https://pietromiotti.com/latest/maya-site",
+      "source": "pietromiotti.com",
+      "points": 918
     },
     {
-      "title": "CoreWeave bond yield tops 16% as AI credit stress rises",
-      "url": "https://www.cnbc.com/2026/11/06/coreweave-bond-yield-tops-16percent-as-ai-credit-stress-rises.html",
-      "source": "cnbc.com",
-      "points": 191
+      "title": "United Airlines bans AI agents from booking flights on behalf of travelers",
+      "url": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/",
+      "source": "cbsnews.com",
+      "points": 327
     },
     {
-      "title": "Fireworks AI security breach impacts Notion and their customers",
-      "url": "https://www.notion.com/help/security-incident-involving-a-third-party-ai-vendor",
-      "source": "notion.com",
-      "points": 159
+      "title": "Retirement Savings Are Fueling the AI Bubble",
+      "url": "https://lpeproject.org/blog/your-retirement-savings-are-fueling-the-ai-bubble/",
+      "source": "lpeproject.org",
+      "points": 133
     },
     {
-      "title": "Claude Whiteboards, Claude Sheets, and Claude Data",
-      "url": "https://claude.com/resources/articles/sheets-whiteboards-data",
-      "source": "claude.com",
-      "points": 156
+      "title": "AI, activity, and outcomes in software engineering",
+      "url": "https://cabird.com/talks/shipping-faster/",
+      "source": "cabird.com",
+      "points": 103
     },
     {
-      "title": "Apple has new Mac app coming to make running local AI models easy",
-      "url": "https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/",
-      "source": "9to5mac.com",
-      "points": 100
+      "title": "OSS projects banning AI-generated contributions",
+      "url": "https://osssaysno.com/",
+      "source": "osssaysno.com",
+      "points": 61
     }
   ],
-  "aiAnalysis": "今天最值得注意的不是某个仓库单独爆红，而是“给智能体写技能”这件事正在被反复造轮子：anthropics/skills 已累积 192332 stars、今日新增 1679，而 addyosmani/agent-skills 以 115170 stars、新增 465 紧随其后，两者定位几乎重叠——一个是官方公共技能库，一个是“生产级工程技能”。同一赛道出现两个十万星级别的仓库，说明开发者对“技能该怎么写、写到什么颗粒度”还没有共识，标准仍在混战期。另一个信号来自 AI 侧那篇《AI usage generates a fragile codebase》（HN 361 分）与 CoreWeave 债券收益率突破 16%（HN 191 分）并置：前者讲的是代码质量在交付速度下的隐性折旧，后者讲的是资本层开始给 AI 基础设施的信用风险重新定价，两件事指向同一个问题——高速产出的东西，谁来兜底维护和偿付。meta/astryx 今日新增 3108、总数 22834，继续把设计系统往“agent ready”方向推，这条线和技能库其实是同一枚硬币：输出层和输入层都在为智能体重构。给开发者一条具体建议：如果你在写 agent skill，别急着堆数量，先把你团队最痛的那三个流程写成可被检查的技能（含失败案例和边界条件），这比再抄一份别人的技能清单更能形成壁垒。",
+  "aiAnalysis": "今天的信号更偏向“智能体开始接入真实世界接口”：agent-browser 以 49875 stars、单日新增 708 冲榜，用 Rust 做浏览器自动化的 CLI，而 Meta 的 astryx 以 24999 stars、今日 +2776 的姿态登场，主打“agent ready 的可定制设计系统”——一个给智能体装上手，一个给智能体装上界面语言，说明交互层正在被重构。与之呼应的是 HN 上联合航空禁止 AI 代理代订机票（327 分）：当代理真能操作真实交易系统时，第一反应不是开放，而是关门。这两条信息放在一起看，才显出本质——浏览器自动化、设计系统、订票禁令，其实都是同一个问题的三张面孔：智能体从“生成内容”走向“执行动作”，权限边界和可审计性就成了新瓶颈。另一个小角度来自 shadcn/improve（10882 stars，+361）：让最强模型审计代码库、写出计划交给便宜模型执行，这种“分层模型分工”比单纯堆技能库更有工程味——它承认了模型能力有价差，并把成本控制写进流程。给开发者的建议：如果你的项目开始暴露给代理调用，别再只测“它能不能做对”，先补上“它做错时怎么被拦住、被追责、被回滚”这一层，能力上线前先把约束机制跑通。",
   "analysisStatus": "ok",
   "keywords": [
     "Agent",
-    "Claude",
+    "LLM",
     "模型",
-    "开源",
-    "安全"
+    "开源"
   ],
   "githubSource": "trending",
-  "githubDataDate": "2026-11-11",
+  "githubDataDate": "2026-11-12",
   "addStarsSince": null,
-  "generatedAt": "2026-11-11T00:55:12.853Z"
+  "generatedAt": "2026-11-12T01:02:12.866Z"
 }

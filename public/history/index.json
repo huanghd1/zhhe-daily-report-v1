@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-11-12",
+    "repos": 5,
+    "news": 5,
+    "keywords": [
+      "Agent",
+      "LLM",
+      "模型",
+      "开源"
+    ],
+    "head": "今天的信号更偏向“智能体开始接入真实世界接口”：agent-browser 以 49875 stars、单日新增 708 冲榜，用 Rust 做浏览器自动化的 CLI，而 Meta"
+  },
+  {
     "date": "2026-11-11",
     "repos": 5,
     "news": 5,

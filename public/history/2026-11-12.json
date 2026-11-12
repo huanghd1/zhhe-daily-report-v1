@@ -1,0 +1,99 @@
+{
+  "date": "2026-11-12",
+  "githubTrending": [
+    {
+      "name": "meta/astryx",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "stars": 24999,
+      "addStars": 2776,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/meta/astryx",
+      "rankDelta": 0
+    },
+    {
+      "name": "ZhuLinsen/daily_stock_analysis",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+      "stars": 70254,
+      "addStars": 278,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "rankDelta": null
+    },
+    {
+      "name": "shadcn/improve",
+      "description": "Use your most capable model to audit your codebase and write plans for cheaper models to execute.",
+      "stars": 10882,
+      "addStars": 361,
+      "language": null,
+      "languageColor": null,
+      "url": "https://github.com/shadcn/improve",
+      "rankDelta": null
+    },
+    {
+      "name": "addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "stars": 115958,
+      "addStars": 787,
+      "language": "JavaScript",
+      "languageColor": "#f1e05a",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "rankDelta": -1
+    },
+    {
+      "name": "vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "stars": 49875,
+      "addStars": 708,
+      "language": "Rust",
+      "languageColor": "#dea584",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "rankDelta": null
+    }
+  ],
+  "aiNews": [
+    {
+      "title": "My AI agents found an unmapped Maya site?",
+      "url": "https://pietromiotti.com/latest/maya-site",
+      "source": "pietromiotti.com",
+      "points": 918
+    },
+    {
+      "title": "United Airlines bans AI agents from booking flights on behalf of travelers",
+      "url": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/",
+      "source": "cbsnews.com",
+      "points": 327
+    },
+    {
+      "title": "Retirement Savings Are Fueling the AI Bubble",
+      "url": "https://lpeproject.org/blog/your-retirement-savings-are-fueling-the-ai-bubble/",
+      "source": "lpeproject.org",
+      "points": 133
+    },
+    {
+      "title": "AI, activity, and outcomes in software engineering",
+      "url": "https://cabird.com/talks/shipping-faster/",
+      "source": "cabird.com",
+      "points": 103
+    },
+    {
+      "title": "OSS projects banning AI-generated contributions",
+      "url": "https://osssaysno.com/",
+      "source": "osssaysno.com",
+      "points": 61
+    }
+  ],
+  "aiAnalysis": "今天的信号更偏向“智能体开始接入真实世界接口”：agent-browser 以 49875 stars、单日新增 708 冲榜，用 Rust 做浏览器自动化的 CLI，而 Meta 的 astryx 以 24999 stars、今日 +2776 的姿态登场，主打“agent ready 的可定制设计系统”——一个给智能体装上手，一个给智能体装上界面语言，说明交互层正在被重构。与之呼应的是 HN 上联合航空禁止 AI 代理代订机票（327 分）：当代理真能操作真实交易系统时，第一反应不是开放，而是关门。这两条信息放在一起看，才显出本质——浏览器自动化、设计系统、订票禁令，其实都是同一个问题的三张面孔：智能体从“生成内容”走向“执行动作”，权限边界和可审计性就成了新瓶颈。另一个小角度来自 shadcn/improve（10882 stars，+361）：让最强模型审计代码库、写出计划交给便宜模型执行，这种“分层模型分工”比单纯堆技能库更有工程味——它承认了模型能力有价差，并把成本控制写进流程。给开发者的建议：如果你的项目开始暴露给代理调用，别再只测“它能不能做对”，先补上“它做错时怎么被拦住、被追责、被回滚”这一层，能力上线前先把约束机制跑通。",
+  "analysisStatus": "ok",
+  "keywords": [
+    "Agent",
+    "LLM",
+    "模型",
+    "开源"
+  ],
+  "githubSource": "trending",
+  "githubDataDate": "2026-11-12",
+  "addStarsSince": null,
+  "generatedAt": "2026-11-12T01:02:12.866Z"
+}
