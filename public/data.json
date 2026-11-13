@@ -1,99 +1,101 @@
 {
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "githubTrending": [
     {
-      "name": "meta/astryx",
-      "description": "An open source design system that's fully customizable and agent ready",
-      "stars": 24999,
-      "addStars": 2776,
+      "name": "GoogleChrome/modern-web-guidance-src",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "stars": 2953,
+      "addStars": 739,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "url": "https://github.com/meta/astryx",
-      "rankDelta": 0
-    },
-    {
-      "name": "ZhuLinsen/daily_stock_analysis",
-      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
-      "stars": 70254,
-      "addStars": 278,
-      "language": "Python",
-      "languageColor": "#3572a5",
-      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
       "rankDelta": null
     },
     {
-      "name": "shadcn/improve",
-      "description": "Use your most capable model to audit your codebase and write plans for cheaper models to execute.",
-      "stars": 10882,
-      "addStars": 361,
-      "language": null,
-      "languageColor": null,
-      "url": "https://github.com/shadcn/improve",
+      "name": "openai/codex-security",
+      "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+      "stars": 12427,
+      "addStars": 643,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/openai/codex-security",
       "rankDelta": null
     },
     {
-      "name": "addyosmani/agent-skills",
-      "description": "Production-grade engineering skills for AI coding agents.",
-      "stars": 115958,
-      "addStars": 787,
-      "language": "JavaScript",
-      "languageColor": "#f1e05a",
-      "url": "https://github.com/addyosmani/agent-skills",
-      "rankDelta": -1
+      "name": "nvm-sh/nvm",
+      "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
+      "stars": 96015,
+      "addStars": 63,
+      "language": "Shell",
+      "languageColor": "#89e051",
+      "url": "https://github.com/nvm-sh/nvm",
+      "rankDelta": null
     },
     {
-      "name": "vercel-labs/agent-browser",
-      "description": "Browser automation CLI for AI agents",
-      "stars": 49875,
-      "addStars": 708,
-      "language": "Rust",
-      "languageColor": "#dea584",
-      "url": "https://github.com/vercel-labs/agent-browser",
+      "name": "pookjw/HermesEnabler",
+      "description": "Enable Hermès Watch Faces on any Apple Watch devices",
+      "stars": 1538,
+      "addStars": 218,
+      "language": "Objective-C",
+      "languageColor": "#438eff",
+      "url": "https://github.com/pookjw/HermesEnabler",
+      "rankDelta": null
+    },
+    {
+      "name": "we-promise/sure",
+      "description": "The personal finance app for everyone (by everyone)",
+      "stars": 13920,
+      "addStars": 967,
+      "language": "Ruby",
+      "languageColor": "#701516",
+      "url": "https://github.com/we-promise/sure",
       "rankDelta": null
     }
   ],
   "aiNews": [
     {
-      "title": "My AI agents found an unmapped Maya site?",
-      "url": "https://pietromiotti.com/latest/maya-site",
-      "source": "pietromiotti.com",
-      "points": 918
+      "title": "I'm making LLMs work on small and old devices",
+      "url": "https://github.com/hyperionaidev/smolmaxxing/",
+      "source": "github.com",
+      "points": 275
     },
     {
-      "title": "United Airlines bans AI agents from booking flights on behalf of travelers",
-      "url": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/",
-      "source": "cbsnews.com",
-      "points": 327
+      "title": "Chinese frontier AI models carry the fingerprint of export-controlled GPUs",
+      "url": "https://unemploymentlabs.com/checkpoint-forensics",
+      "source": "unemploymentlabs.com",
+      "points": 137
     },
     {
-      "title": "Retirement Savings Are Fueling the AI Bubble",
-      "url": "https://lpeproject.org/blog/your-retirement-savings-are-fueling-the-ai-bubble/",
-      "source": "lpeproject.org",
-      "points": 133
+      "title": "Why You Should Expect an AI Crash",
+      "url": "https://www.economist.com/leaders/2026/11/12/why-you-should-expect-an-ai-crash",
+      "source": "economist.com",
+      "points": 81
     },
     {
-      "title": "AI, activity, and outcomes in software engineering",
-      "url": "https://cabird.com/talks/shipping-faster/",
-      "source": "cabird.com",
-      "points": 103
+      "title": "AI is turning Apple's app review process into a nightmare for synth developers",
+      "url": "https://synthanatomy.com/2026/11/ai-is-turning-apples-app-review-process-into-a-nightmare-for-developers.html",
+      "source": "synthanatomy.com",
+      "points": 74
     },
     {
-      "title": "OSS projects banning AI-generated contributions",
-      "url": "https://osssaysno.com/",
-      "source": "osssaysno.com",
-      "points": 61
+      "title": "Show HN: AI Red Lines – write down what would make you act on AI",
+      "url": "https://yourairedlines.com/",
+      "source": "yourairedlines.com",
+      "points": 32
     }
   ],
-  "aiAnalysis": "今天的信号更偏向“智能体开始接入真实世界接口”：agent-browser 以 49875 stars、单日新增 708 冲榜，用 Rust 做浏览器自动化的 CLI，而 Meta 的 astryx 以 24999 stars、今日 +2776 的姿态登场，主打“agent ready 的可定制设计系统”——一个给智能体装上手，一个给智能体装上界面语言，说明交互层正在被重构。与之呼应的是 HN 上联合航空禁止 AI 代理代订机票（327 分）：当代理真能操作真实交易系统时，第一反应不是开放，而是关门。这两条信息放在一起看，才显出本质——浏览器自动化、设计系统、订票禁令，其实都是同一个问题的三张面孔：智能体从“生成内容”走向“执行动作”，权限边界和可审计性就成了新瓶颈。另一个小角度来自 shadcn/improve（10882 stars，+361）：让最强模型审计代码库、写出计划交给便宜模型执行，这种“分层模型分工”比单纯堆技能库更有工程味——它承认了模型能力有价差，并把成本控制写进流程。给开发者的建议：如果你的项目开始暴露给代理调用，别再只测“它能不能做对”，先补上“它做错时怎么被拦住、被追责、被回滚”这一层，能力上线前先把约束机制跑通。",
+  "aiAnalysis": "今天最值得关注的变化不在榜单头部，而在“工具链自我修正”这个层面：Google Chrome 的 modern-web-guidance-src 以 2953 stars、单日 +739 冲榜，做的事情是给编码智能体喂最新的 Web 最佳实践——这等于承认模型的知识会过时，需要靠外部规则源持续校准。与此同时，OpenAI 的 codex-security 已有 12427 stars、今日 +643，把“找漏洞、验证漏洞、修漏洞”做成 CLI 和 SDK，安全从人工审计变成流水线上的一环。两条项目放在一起，透露的是同一件事：智能体落地的瓶颈正从“能不能写代码”转向“写得对不对、查得准不准”，规则供给和验证环节成了新的基础设施。另一个有意思的小信号来自 HermesEnabler（1538 stars，今日 +218）：用 Objective-C 硬把 Hermès 表盘解锁到任意 Apple Watch，说明越是被厂商锁死的端侧能力，越容易催生逆向小工具，这和 HN 上“让 LLM 跑在老旧小设备”（275 分）的热度是同一种情绪——算力和权限都在往边缘挤。给开发者一条建议：与其追新框架，不如花半天把项目里的 lint、类型检查和测试接成智能体能调用的明确接口，规则越可执行，模型出错的空间就越小。",
   "analysisStatus": "ok",
   "keywords": [
+    "OpenAI",
     "Agent",
     "LLM",
     "模型",
-    "开源"
+    "GPU",
+    "安全"
   ],
   "githubSource": "trending",
-  "githubDataDate": "2026-11-12",
+  "githubDataDate": "2026-11-13",
   "addStarsSince": null,
-  "generatedAt": "2026-11-12T01:02:12.866Z"
+  "generatedAt": "2026-11-13T00:58:58.066Z"
 }

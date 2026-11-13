@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-11-13",
+    "repos": 5,
+    "news": 5,
+    "keywords": [
+      "OpenAI",
+      "Agent",
+      "LLM",
+      "模型",
+      "GPU",
+      "安全"
+    ],
+    "head": "今天最值得关注的变化不在榜单头部，而在“工具链自我修正”这个层面：Google Chrome 的 modern-web-guidance-src 以 2953 stars、单日 +"
+  },
+  {
     "date": "2026-11-12",
     "repos": 5,
     "news": 5,

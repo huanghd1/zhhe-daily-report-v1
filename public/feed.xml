@@ -5,8 +5,16 @@
     <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
     <description>每天北京时间 08:00 更新的技术简报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 12 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://huanghd1.github.io/zhhe-daily-report-v1/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日科技简报 2026-11-13</title>
+      <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
+      <guid isPermaLink="false">https://huanghd1.github.io/zhhe-daily-report-v1/#2026-11-13</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+      <category>OpenAI</category><category>Agent</category><category>LLM</category><category>模型</category><category>GPU</category><category>安全</category>
+      <description>今天最值得关注的变化不在榜单头部，而在“工具链自我修正”这个层面：Google Chrome 的 modern-web-guidance-src 以 2953 stars、单日 +739 冲榜，做的事情是给编码智能体喂最新的 Web 最佳实践——这等于承认模型的知识会过时，需要靠外部规则源持续校准。与此同时，OpenAI 的 codex-security 已有 12427 stars、今日 +643，把“找漏洞、验证漏洞、修漏洞”做成 CLI 和 SDK，安全从人工审计变成流水线上的一环。两条项目放在一起，透露的是同一件事：智能体落地的瓶颈正从“能不能写代码”转向“写得对不对、查得准不准”，规则供给和验证环节成了新的基础设施。另一个有意思的小信号来自 HermesEnabler（1538 stars，今日 +218）：用 Objective-C 硬把 Hermès 表盘解锁到任意 Apple Watch，说明越是被厂商锁死的端侧能力，越容易催生逆向小工具，这和 HN 上“让 LLM 跑在老旧小设备”（275 分）的热度是同一种情绪——算力和权限都在往边缘挤。给开发者一条建议：与其追新框架，不如花半天把项目里的 lint、类型检查和测试接成智能体能调用的明确接口，规则越可执行，模型出错的空间就越小。</description>
+    </item>
     <item>
       <title>每日科技简报 2026-11-12</title>
       <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
