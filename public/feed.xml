@@ -5,8 +5,16 @@
     <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
     <description>每天北京时间 08:00 更新的技术简报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 13 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://huanghd1.github.io/zhhe-daily-report-v1/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日科技简报 2026-11-14</title>
+      <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
+      <guid isPermaLink="false">https://huanghd1.github.io/zhhe-daily-report-v1/#2026-11-14</guid>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 GMT</pubDate>
+      <category>OpenAI</category><category>Agent</category><category>LLM</category><category>Claude</category><category>Anthropic</category><category>安全</category>
+      <description>今天的信号来自审查与验证环节的“分工细化”。阿里 open-code-review 拿到 50621 stars、今日 +215，走的是混合架构：确定性流水线负责可枚举规则（NPE、线程安全、XSS、SQL 注入），LLM Agent 负责语义判断，输出精确到行的评论。它和昨天冒头的 OpenAI codex-security（今日 +751）不是同一件事——后者是外部安全扫描，前者更像把审查规则嵌进了 PR 流程，一个从外往里查，一个在门口拦。另一个值得看的是 modern-web-guidance-src 单日 +1925、总计 4850 stars，说明“给智能体喂规则”这件事的需求确实在持续释放。AI 侧则出现了明显的降温信号：claude.ai 与 Claude Code 平台报错登上 HN 484 分，Gödel 笔记本被 AI 解锁的新闻有 318 分，而 “No AI Slop” 宣言和“AI 摧毁读写信任”两篇同时进榜，舆论对生成内容的容忍度在收紧。对开发者的建议：如果要把 LLM 接入代码审查，先把规则部分做成可测试的确定性检查，只把模糊判断留给模型，否则误报会很快耗尽团队的信任。</description>
+    </item>
     <item>
       <title>每日科技简报 2026-11-13</title>
       <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>

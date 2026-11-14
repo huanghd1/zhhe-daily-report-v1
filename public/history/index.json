@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-11-14",
+    "repos": 5,
+    "news": 5,
+    "keywords": [
+      "OpenAI",
+      "Agent",
+      "LLM",
+      "Claude",
+      "Anthropic",
+      "安全"
+    ],
+    "head": "今天的信号来自审查与验证环节的“分工细化”。阿里 open-code-review 拿到 50621 stars、今日 +215，走的是混合架构：确定性流水线负责可枚举规则（NPE"
+  },
+  {
     "date": "2026-11-13",
     "repos": 5,
     "news": 5,

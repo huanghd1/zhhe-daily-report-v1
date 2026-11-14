@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-14",
+  "githubTrending": [
+    {
+      "name": "alibaba/open-code-review",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "stars": 50621,
+      "addStars": 215,
+      "language": "Go",
+      "languageColor": "#00add8",
+      "url": "https://github.com/alibaba/open-code-review",
+      "rankDelta": null
+    },
+    {
+      "name": "GoogleChrome/modern-web-guidance-src",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "stars": 4850,
+      "addStars": 1925,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "rankDelta": -1
+    },
+    {
+      "name": "openai/codex-security",
+      "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+      "stars": 13132,
+      "addStars": 751,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/openai/codex-security",
+      "rankDelta": -1
+    },
+    {
+      "name": "ZhuLinsen/daily_stock_analysis",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+      "stars": 71597,
+      "addStars": 256,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "rankDelta": null
+    },
+    {
+      "name": "we-promise/sure",
+      "description": "The personal finance app for everyone (by everyone)",
+      "stars": 14743,
+      "addStars": 925,
+      "language": "Ruby",
+      "languageColor": "#701516",
+      "url": "https://github.com/we-promise/sure",
+      "rankDelta": 0
+    }
+  ],
+  "aiNews": [
+    {
+      "title": "Elevated errors on claude.ai, Claude Code, and platform.claude.com",
+      "url": "https://status.claude.com/incidents/nn11wk485zfn",
+      "source": "status.claude.com",
+      "points": 484
+    },
+    {
+      "title": "AI unlocks Gödel's notebooks, said to contain hundreds of proved theorems",
+      "url": "https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths",
+      "source": "theguardian.com",
+      "points": 318
+    },
+    {
+      "title": "AI is destroying the trust between writers and readers",
+      "url": "https://www.theatlantic.com/books/2026/11/ai-literary-scams-amazon/689391/",
+      "source": "theatlantic.com",
+      "points": 309
+    },
+    {
+      "title": "No AI Slop: A Manifesto",
+      "url": "https://www.slopmanifesto.com/",
+      "source": "slopmanifesto.com",
+      "points": 180
+    },
+    {
+      "title": "Why is Google cutting off Search from AI-free schools? Here are some theories",
+      "url": "https://text.npr.org/nx-s1-6029408",
+      "source": "text.npr.org",
+      "points": 163
+    }
+  ],
+  "aiAnalysis": "今天的信号来自审查与验证环节的“分工细化”。阿里 open-code-review 拿到 50621 stars、今日 +215，走的是混合架构：确定性流水线负责可枚举规则（NPE、线程安全、XSS、SQL 注入），LLM Agent 负责语义判断，输出精确到行的评论。它和昨天冒头的 OpenAI codex-security（今日 +751）不是同一件事——后者是外部安全扫描，前者更像把审查规则嵌进了 PR 流程，一个从外往里查，一个在门口拦。另一个值得看的是 modern-web-guidance-src 单日 +1925、总计 4850 stars，说明“给智能体喂规则”这件事的需求确实在持续释放。AI 侧则出现了明显的降温信号：claude.ai 与 Claude Code 平台报错登上 HN 484 分，Gödel 笔记本被 AI 解锁的新闻有 318 分，而 “No AI Slop” 宣言和“AI 摧毁读写信任”两篇同时进榜，舆论对生成内容的容忍度在收紧。对开发者的建议：如果要把 LLM 接入代码审查，先把规则部分做成可测试的确定性检查，只把模糊判断留给模型，否则误报会很快耗尽团队的信任。",
+  "analysisStatus": "ok",
+  "keywords": [
+    "OpenAI",
+    "Agent",
+    "LLM",
+    "Claude",
+    "Anthropic",
+    "安全"
+  ],
+  "githubSource": "trending",
+  "githubDataDate": "2026-11-14",
+  "addStarsSince": null,
+  "generatedAt": "2026-11-14T00:53:27.416Z"
+}
