@@ -5,8 +5,16 @@
     <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
     <description>每天北京时间 08:00 更新的技术简报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 14 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://huanghd1.github.io/zhhe-daily-report-v1/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日科技简报 2026-11-15</title>
+      <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
+      <guid isPermaLink="false">https://huanghd1.github.io/zhhe-daily-report-v1/#2026-11-15</guid>
+      <pubDate>Sun, 15 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Agent</category><category>Claude</category><category>GPU</category><category>Anthropic</category><category>OpenAI</category><category>LLM</category>
+      <description>今天的信号集中在“把智能体接进工程现场”这一层，而不是再往模型能力上加码。GoogleChrome/modern-web-guidance-src 单日新增 1231 颗星、总数 6060，做的事很朴素：把最新的 Web 最佳实践整理成编码智能体可直接消费的规则源，等于给模型补一份不过期的前端手册。ChromeDevTools/chrome-devtools-mcp 已有 56308 颗星、今日 +664，进一步把浏览器调试能力做成 MCP 接口，智能体可以自己看 DOM、抓网络请求，而不是靠人贴日志。两个项目一前一后，一个管“该怎么做”，一个管“做完怎么验”，正好补上智能体写前端时最缺的闭环。阿里 open-code-review 延续热度，51442 颗星、+893，说明带确定性与 LLM 分工的审查流水线在真实规模下站得住。AI 侧 HN 上 Nvidia 被指资助初创公司回购自家 GPU 的帖子拿到 1030 分，讨论焦点已从模型转向算力供应链的扭曲，这类质疑会持续影响开源模型的训练资源预期。给开发者一句实在话：与其追新模型，不如先把自己项目里的规范、调试入口和审查规则整理成智能体能直接读的结构化文件，这部分投入的回报比换模型更稳。</description>
+    </item>
     <item>
       <title>每日科技简报 2026-11-14</title>
       <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>

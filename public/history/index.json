@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-11-15",
+    "repos": 5,
+    "news": 5,
+    "keywords": [
+      "Agent",
+      "Claude",
+      "GPU",
+      "Anthropic",
+      "OpenAI",
+      "LLM"
+    ],
+    "head": "今天的信号集中在“把智能体接进工程现场”这一层，而不是再往模型能力上加码。GoogleChrome/modern-web-guidance-src 单日新增 1231 颗星、总数 "
+  },
+  {
     "date": "2026-11-14",
     "repos": 5,
     "news": 5,

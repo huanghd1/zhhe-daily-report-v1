@@ -1,101 +1,101 @@
 {
-  "date": "2026-11-14",
+  "date": "2026-11-15",
   "githubTrending": [
     {
-      "name": "alibaba/open-code-review",
-      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
-      "stars": 50621,
-      "addStars": 215,
-      "language": "Go",
-      "languageColor": "#00add8",
-      "url": "https://github.com/alibaba/open-code-review",
+      "name": "backnotprop/plannotator",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+      "stars": 11133,
+      "addStars": 408,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/backnotprop/plannotator",
       "rankDelta": null
     },
     {
       "name": "GoogleChrome/modern-web-guidance-src",
       "description": "Keep your coding agent up to date with the latest web best practices",
-      "stars": 4850,
-      "addStars": 1925,
+      "stars": 6060,
+      "addStars": 1231,
       "language": "TypeScript",
       "languageColor": "#3178c6",
       "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
-      "rankDelta": -1
+      "rankDelta": 0
     },
     {
-      "name": "openai/codex-security",
-      "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
-      "stars": 13132,
-      "addStars": 751,
-      "language": "TypeScript",
-      "languageColor": "#3178c6",
-      "url": "https://github.com/openai/codex-security",
-      "rankDelta": -1
-    },
-    {
-      "name": "ZhuLinsen/daily_stock_analysis",
-      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
-      "stars": 71597,
-      "addStars": 256,
+      "name": "tradermonty/claude-trading-skills",
+      "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+      "stars": 4817,
+      "addStars": 553,
       "language": "Python",
       "languageColor": "#3572a5",
-      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "url": "https://github.com/tradermonty/claude-trading-skills",
       "rankDelta": null
     },
     {
-      "name": "we-promise/sure",
-      "description": "The personal finance app for everyone (by everyone)",
-      "stars": 14743,
-      "addStars": 925,
-      "language": "Ruby",
-      "languageColor": "#701516",
-      "url": "https://github.com/we-promise/sure",
-      "rankDelta": 0
+      "name": "ChromeDevTools/chrome-devtools-mcp",
+      "description": "Chrome DevTools for coding agents",
+      "stars": 56308,
+      "addStars": 664,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "rankDelta": null
+    },
+    {
+      "name": "alibaba/open-code-review",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "stars": 51442,
+      "addStars": 893,
+      "language": "Go",
+      "languageColor": "#00add8",
+      "url": "https://github.com/alibaba/open-code-review",
+      "rankDelta": -4
     }
   ],
   "aiNews": [
     {
-      "title": "Elevated errors on claude.ai, Claude Code, and platform.claude.com",
-      "url": "https://status.claude.com/incidents/nn11wk485zfn",
-      "source": "status.claude.com",
-      "points": 484
+      "title": "Nvidia allegedly engineered scarcity by funding AI startups to buy its GPUs",
+      "url": "https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus",
+      "source": "techpowerup.com",
+      "points": 1030
     },
     {
-      "title": "AI unlocks Gödel's notebooks, said to contain hundreds of proved theorems",
-      "url": "https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths",
-      "source": "theguardian.com",
-      "points": 318
+      "title": "The Claude Delusion",
+      "url": "https://www.netmeister.org/blog/claude-delusion.html",
+      "source": "netmeister.org",
+      "points": 145
     },
     {
-      "title": "AI is destroying the trust between writers and readers",
-      "url": "https://www.theatlantic.com/books/2026/11/ai-literary-scams-amazon/689391/",
-      "source": "theatlantic.com",
-      "points": 309
+      "title": "Ask HN: What are the most useful, concrete AI skills to independently learn?",
+      "url": "https://news.ycombinator.com/item?id=50494696",
+      "source": "news.ycombinator.com",
+      "points": 76
     },
     {
-      "title": "No AI Slop: A Manifesto",
-      "url": "https://www.slopmanifesto.com/",
-      "source": "slopmanifesto.com",
-      "points": 180
+      "title": "Smuggling of 1.5M AI GPUs could be the cause of Huang's departure",
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/mass-smuggling-of-nvidia-ai-gpus-could-be-the-underlying-cause-of-jensen-huangs-departure-analysts-claim-more-than-1-5-gigawatts-of-banned-chips-tracked-to-china-despite-export-controls",
+      "source": "tomshardware.com",
+      "points": 45
     },
     {
-      "title": "Why is Google cutting off Search from AI-free schools? Here are some theories",
-      "url": "https://text.npr.org/nx-s1-6029408",
-      "source": "text.npr.org",
-      "points": 163
+      "title": "Open-source AI without Jensen",
+      "url": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
+      "source": "interconnects.ai",
+      "points": 16
     }
   ],
-  "aiAnalysis": "今天的信号来自审查与验证环节的“分工细化”。阿里 open-code-review 拿到 50621 stars、今日 +215，走的是混合架构：确定性流水线负责可枚举规则（NPE、线程安全、XSS、SQL 注入），LLM Agent 负责语义判断，输出精确到行的评论。它和昨天冒头的 OpenAI codex-security（今日 +751）不是同一件事——后者是外部安全扫描，前者更像把审查规则嵌进了 PR 流程，一个从外往里查，一个在门口拦。另一个值得看的是 modern-web-guidance-src 单日 +1925、总计 4850 stars，说明“给智能体喂规则”这件事的需求确实在持续释放。AI 侧则出现了明显的降温信号：claude.ai 与 Claude Code 平台报错登上 HN 484 分，Gödel 笔记本被 AI 解锁的新闻有 318 分，而 “No AI Slop” 宣言和“AI 摧毁读写信任”两篇同时进榜，舆论对生成内容的容忍度在收紧。对开发者的建议：如果要把 LLM 接入代码审查，先把规则部分做成可测试的确定性检查，只把模糊判断留给模型，否则误报会很快耗尽团队的信任。",
+  "aiAnalysis": "今天的信号集中在“把智能体接进工程现场”这一层，而不是再往模型能力上加码。GoogleChrome/modern-web-guidance-src 单日新增 1231 颗星、总数 6060，做的事很朴素：把最新的 Web 最佳实践整理成编码智能体可直接消费的规则源，等于给模型补一份不过期的前端手册。ChromeDevTools/chrome-devtools-mcp 已有 56308 颗星、今日 +664，进一步把浏览器调试能力做成 MCP 接口，智能体可以自己看 DOM、抓网络请求，而不是靠人贴日志。两个项目一前一后，一个管“该怎么做”，一个管“做完怎么验”，正好补上智能体写前端时最缺的闭环。阿里 open-code-review 延续热度，51442 颗星、+893，说明带确定性与 LLM 分工的审查流水线在真实规模下站得住。AI 侧 HN 上 Nvidia 被指资助初创公司回购自家 GPU 的帖子拿到 1030 分，讨论焦点已从模型转向算力供应链的扭曲，这类质疑会持续影响开源模型的训练资源预期。给开发者一句实在话：与其追新模型，不如先把自己项目里的规范、调试入口和审查规则整理成智能体能直接读的结构化文件，这部分投入的回报比换模型更稳。",
   "analysisStatus": "ok",
   "keywords": [
-    "OpenAI",
     "Agent",
-    "LLM",
     "Claude",
+    "GPU",
     "Anthropic",
-    "安全"
+    "OpenAI",
+    "LLM"
   ],
   "githubSource": "trending",
-  "githubDataDate": "2026-11-14",
+  "githubDataDate": "2026-11-15",
   "addStarsSince": null,
-  "generatedAt": "2026-11-14T00:53:27.416Z"
+  "generatedAt": "2026-11-15T00:56:18.810Z"
 }
