@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-16",
+  "githubTrending": [
+    {
+      "name": "dream-num/univer",
+      "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+      "stars": 25789,
+      "addStars": 988,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/dream-num/univer",
+      "rankDelta": null
+    },
+    {
+      "name": "ag-ui-protocol/ag-ui",
+      "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+      "stars": 17881,
+      "addStars": 355,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/ag-ui-protocol/ag-ui",
+      "rankDelta": null
+    },
+    {
+      "name": "google-labs-code/stitch-skills",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "stars": 9307,
+      "addStars": 247,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "rankDelta": null
+    },
+    {
+      "name": "backnotprop/plannotator",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+      "stars": 11848,
+      "addStars": 866,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/backnotprop/plannotator",
+      "rankDelta": -3
+    },
+    {
+      "name": "ChromeDevTools/chrome-devtools-mcp",
+      "description": "Chrome DevTools for coding agents",
+      "stars": 56946,
+      "addStars": 717,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "rankDelta": -1
+    }
+  ],
+  "aiNews": [
+    {
+      "title": "All AI-generated code should be Open Source",
+      "url": "https://jakub.jankiewicz.org/blog/ai-code-open-source/",
+      "source": "jakub.jankiewicz.org",
+      "points": 1073
+    },
+    {
+      "title": "Understanding Positional Embeddings in Modern LLMs",
+      "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
+      "source": "magazine.sebastianraschka.com",
+      "points": 200
+    },
+    {
+      "title": "Parents pay $75k for Alpha's AI school. Half of its students missed math target",
+      "url": "https://fortune.com/2026/11/14/alpha-school-ai-students-tuition-learning-goals/",
+      "source": "fortune.com",
+      "points": 63
+    },
+    {
+      "title": "Show HN: db-branch – database branches in seconds for AI agents and CI, via ZFS",
+      "url": "https://github.com/db-branch/db-branch",
+      "source": "github.com",
+      "points": 31
+    },
+    {
+      "title": "Reddit's traffic is down 13%, partly thanks to AI Overviews",
+      "url": "https://www.businessinsider.com/reddit-traffic-down-13-percent-similarweb-google-ai-overviews-2026-11",
+      "source": "businessinsider.com",
+      "points": 13
+    }
+  ],
+  "aiAnalysis": "今天的热度明显往“人机协同的中间层”走，而不是继续堆模型能力。plannotator 单日涨 866 星、总数 11848，做的正是让开发者在规划、批注、审代码时把反馈一键回传给智能体；ag-ui 以 17881 星推出 Agent-User 交互协议，把智能体的状态和动作铺到前端界面上。两者一个管“人说清楚”，一个管“界面表达清楚”，指向同一个取舍：智能体越能干，越需要可读、可干预的中间态，而不是黑箱式地交结果。另一个值得留意的是 univer 今日 +988、总数 25789，把编辑、计算、协作和文件处理打包成可嵌入的 Office SDK，并明确面向人和 AI 智能体，说明“文档即接口”正在成为基础设施级需求。HN 上“AI 生成的代码都该开源”拿到 1073 分，则从治理侧呼应了这种透明化诉求。相比之下，Alpha 学校半数学生未达数学目标那条只有 63 分，更像是旧叙事的余波。给开发者一条具体建议：如果正在做智能体产品，优先设计“人可在环内干预”的反馈通道，并把每一步中间产物落成可审查的结构化格式，这比再加一层提示词更能决定落地成败。",
+  "analysisStatus": "ok",
+  "keywords": [
+    "Agent",
+    "MCP",
+    "开源",
+    "Claude",
+    "LLM"
+  ],
+  "githubSource": "trending",
+  "githubDataDate": "2026-11-16",
+  "addStarsSince": null,
+  "generatedAt": "2026-11-16T01:14:52.000Z"
+}
