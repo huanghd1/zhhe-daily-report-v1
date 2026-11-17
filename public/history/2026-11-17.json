@@ -1,0 +1,99 @@
+{
+  "date": "2026-11-17",
+  "githubTrending": [
+    {
+      "name": "ag-ui-protocol/ag-ui",
+      "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+      "stars": 18989,
+      "addStars": 791,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/ag-ui-protocol/ag-ui",
+      "rankDelta": 1
+    },
+    {
+      "name": "backnotprop/plannotator",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+      "stars": 12567,
+      "addStars": 696,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/backnotprop/plannotator",
+      "rankDelta": 2
+    },
+    {
+      "name": "dream-num/univer",
+      "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+      "stars": 27782,
+      "addStars": 1828,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/dream-num/univer",
+      "rankDelta": -2
+    },
+    {
+      "name": "tradermonty/claude-trading-skills",
+      "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+      "stars": 6317,
+      "addStars": 837,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/tradermonty/claude-trading-skills",
+      "rankDelta": null
+    },
+    {
+      "name": "getarcaneapp/arcane",
+      "description": "Modern Docker Management, Designed for Everyone",
+      "stars": 8729,
+      "addStars": 46,
+      "language": "Go",
+      "languageColor": "#00add8",
+      "url": "https://github.com/getarcaneapp/arcane",
+      "rankDelta": null
+    }
+  ],
+  "aiNews": [
+    {
+      "title": "\"Who is Hiring?\" postings stuck near 12-year lows as AI reaches half of all jobs",
+      "url": "https://www.hntrends.com/2026/november.html",
+      "source": "hntrends.com",
+      "points": 94
+    },
+    {
+      "title": "Caltech professor no longer grades homework's because everyone uses AI",
+      "url": "https://www.businessinsider.com/ai-math-class-university-homework-caltech-careers-2026-11",
+      "source": "businessinsider.com",
+      "points": 43
+    },
+    {
+      "title": "Generative AI Usage in the Games Industry",
+      "url": "https://www.gameworkers.co.uk/ai-manifesto/",
+      "source": "gameworkers.co.uk",
+      "points": 42
+    },
+    {
+      "title": "FBI says Artex AI open-source hacking tool used to breach networks",
+      "url": "https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours/",
+      "source": "techcrunch.com",
+      "points": 42
+    },
+    {
+      "title": "Ask HN: If AI tools are so good, why isn't your bug backlog empty?",
+      "url": "https://news.ycombinator.com/item?id=50520076",
+      "source": "news.ycombinator.com",
+      "points": 39
+    }
+  ],
+  "aiAnalysis": "今天的热度更像是在给智能体“配套工具链”，而不再比拼模型本身。univer 单日 +1828、总数 27782，是本日涨幅冠军，它把编辑、计算、协作、文件处理打包成可嵌入 SDK，明确同时服务人和 AI 智能体，“文档即接口”继续被产品化；ag-ui 以 18989 星推出 Agent-User 交互协议，plannotator 12567 星做反馈回传工作区，两者延续了人机中间态的争夺，但落点已从“界面表达”转向“反馈闭环”。更值得盯的是 claude-trading-skills：6317 星、今日 +837，把 Claude Code 的技能机制用于行情分析、技术图表、经济日历和选股，说明垂直场景的“技能包”正成为新的分发形态。HN 上“Who is Hiring”岗位数接近十二年低位（94 分），与 Caltech 教授因全员用 AI 而不再批作业（43 分）、以及那条“AI 工具这么好，为什么 bug 还没清空”（39 分）放在一起，指向同一件事：AI 提高的是产出速度，不是交付确定性，审查与验证反而成了瓶颈。给开发者一句实在话：别急着接新协议，先给自己的技能包和输出补一层可复现的校验用例，否则越快的生成只会把压力堆到下游。",
+  "analysisStatus": "ok",
+  "keywords": [
+    "Agent",
+    "开源",
+    "Claude",
+    "安全"
+  ],
+  "githubSource": "trending",
+  "githubDataDate": "2026-11-17",
+  "addStarsSince": null,
+  "generatedAt": "2026-11-17T00:58:07.011Z"
+}
