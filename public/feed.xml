@@ -5,8 +5,16 @@
     <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
     <description>每天北京时间 08:00 更新的技术简报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 17 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://huanghd1.github.io/zhhe-daily-report-v1/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日科技简报 2026-11-18</title>
+      <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
+      <guid isPermaLink="false">https://huanghd1.github.io/zhhe-daily-report-v1/#2026-11-18</guid>
+      <pubDate>Wed, 18 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Agent</category><category>Claude</category><category>Anthropic</category><category>LLM</category><category>OpenAI</category><category>开源</category>
+      <description>今天的信号集中在“审查”二字上，只是分成了两种截然不同的审查。一种是审代码：阿里开源的 open-code-review 已积累 53730 星、今日再涨 763，走的是确定性流水线加 LLM Agent 的混合架构，内置 NPE、线程安全、XSS、SQL 注入等多语言规则，还能精确到行级评论——这不是让模型“自由发挥”，而是先用规则兜住底线，再用模型补语义。另一种是审 AI 自身：Claude Code 团队谈验证机制的那篇在 HN 拿到 261 分，同期 PostHog 那篇“Not Everything Needs an LLM”也拿到 89 分，两者指向同一件事——当智能体开始写代码、做调研，人类的成本已从“生产”转向“验收”。值得单独一提的是 Claude-BugHunter，9305 星、今日新增 1005，把 82 个技能、681 条已披露报告模式整理成漏洞猎取的技能包，本质上是把安全审查的经验沉淀成可复用的检查清单，而非让模型即兴找洞。趋势上，热门项目正从“让 Agent 能干活”转向“让 Agent 的产出可被信任”，规则、清单、审批门成了新的基础设施。给开发者的建议：接入任何代码审查类 Agent 前，先确认它的确定性规则层是否独立于模型输出，模型可以建议，但拦截必须可复现——否则你只是在用另一个概率系统检验概率系统。</description>
+    </item>
     <item>
       <title>每日科技简报 2026-11-17</title>
       <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>

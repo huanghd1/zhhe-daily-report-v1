@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-11-18",
+    "repos": 5,
+    "news": 5,
+    "keywords": [
+      "Agent",
+      "Claude",
+      "Anthropic",
+      "LLM",
+      "OpenAI",
+      "开源"
+    ],
+    "head": "今天的信号集中在“审查”二字上，只是分成了两种截然不同的审查。一种是审代码：阿里开源的 open-code-review 已积累 53730 星、今日再涨 763，走的是确定性流水"
+  },
+  {
     "date": "2026-11-17",
     "repos": 5,
     "news": 5,
