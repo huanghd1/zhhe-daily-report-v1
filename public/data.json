@@ -1,101 +1,99 @@
 {
-  "date": "2026-11-18",
+  "date": "2026-11-19",
   "githubTrending": [
     {
-      "name": "elementalsouls/Claude-BugHunter",
-      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
-      "stars": 9305,
-      "addStars": 1005,
+      "name": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "stars": 17206,
+      "addStars": 314,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/cursor/plugins",
+      "rankDelta": null
+    },
+    {
+      "name": "HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "stars": 59745,
+      "addStars": 389,
       "language": "Python",
       "languageColor": "#3572a5",
-      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "url": "https://github.com/HKUDS/CLI-Anything",
       "rankDelta": null
     },
     {
       "name": "mvanhorn/last30days-skill",
       "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
-      "stars": 69070,
-      "addStars": 696,
+      "stars": 70013,
+      "addStars": 1059,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/mvanhorn/last30days-skill",
-      "rankDelta": null
+      "rankDelta": -1
     },
     {
-      "name": "alibaba/open-code-review",
-      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
-      "stars": 53730,
-      "addStars": 763,
+      "name": "getarcaneapp/arcane",
+      "description": "Modern Docker Management, Designed for Everyone",
+      "stars": 9808,
+      "addStars": 547,
       "language": "Go",
       "languageColor": "#00add8",
-      "url": "https://github.com/alibaba/open-code-review",
+      "url": "https://github.com/getarcaneapp/arcane",
       "rankDelta": null
     },
     {
-      "name": "Tencent/LoopForge",
-      "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
-      "stars": 3149,
-      "addStars": 591,
-      "language": "Go",
-      "languageColor": "#00add8",
-      "url": "https://github.com/Tencent/LoopForge",
+      "name": "NVIDIA/SkillEvaluator",
+      "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+      "stars": 3723,
+      "addStars": 312,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/NVIDIA/SkillEvaluator",
       "rankDelta": null
-    },
-    {
-      "name": "dream-num/univer",
-      "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
-      "stars": 28903,
-      "addStars": 1774,
-      "language": "TypeScript",
-      "languageColor": "#3178c6",
-      "url": "https://github.com/dream-num/univer",
-      "rankDelta": -2
     }
   ],
   "aiNews": [
     {
-      "title": "How the Claude Code team thinks about verification",
-      "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
-      "source": "claude.dev",
-      "points": 261
+      "title": "AI is killing All About Berlin",
+      "url": "https://nicolasbouliane.com/blog/death-by-ai",
+      "source": "nicolasbouliane.com",
+      "points": 755
     },
     {
-      "title": "Baidu, Xiaomi CEOs warn of growing gap between AI hype and returns",
-      "url": "https://www.scmp.com/tech/big-tech/article/3374774/baidu-xiaomi-ceos-warn-growing-gap-between-ai-hype-and-returns",
-      "source": "scmp.com",
-      "points": 185
+      "title": "AI agents ask better questions than KPMG accountants in audit trial",
+      "url": "https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/",
+      "source": "europeanbusinessmagazine.com",
+      "points": 344
     },
     {
-      "title": "Regulatory Capture by Anthropic Through METR",
-      "url": "https://nitter.cf/kevinnbass/status/2099621874279817638",
-      "source": "nitter.cf",
-      "points": 138
+      "title": "Claude was trained on protein sequences at scale",
+      "url": "http://xinmingtu.cn/blog/2026/claude-opus-5-5-protein-sequences/",
+      "source": "xinmingtu.cn",
+      "points": 164
     },
     {
-      "title": "Not Everything Needs an LLM",
-      "url": "https://newsletter.posthog.com/p/decision-models",
-      "source": "newsletter.posthog.com",
-      "points": 89
+      "title": "\"Anthropic Is Not a Safe AI Company\" – Coalition Challenges Anthropic Safety",
+      "url": "https://www.businesswire.com/news/home/20261118974464/en/Anthropic-is-Not-a-Safe-AI-Company---Broad-Coalition-of-Scientists-Legal-Scholars-and-Tech-Leaders-Challenge-Anthropics-Safety-Branding-Ahead-of-IPO",
+      "source": "businesswire.com",
+      "points": 124
     },
     {
-      "title": "Anthropic Paid Rubio's Ex-Chief of Staff's Firm $740k.it Lobbied His NSC",
-      "url": "https://www.zerohedge.com/political/anthropic-paid-rubios-ex-chief-staffs-firm-740000-after-jensen-memo-it-lobbied-his-nsc",
-      "source": "zerohedge.com",
-      "points": 63
+      "title": "Bank CEOs, NSA Tell Congress That AI-Driven Patches Are Behind Outages",
+      "url": "https://www.washingtonsun.com/technology/bank-ceos-nsa-tell-congress-ai-driven-patches-behind-outages",
+      "source": "washingtonsun.com",
+      "points": 95
     }
   ],
-  "aiAnalysis": "今天的信号集中在“审查”二字上，只是分成了两种截然不同的审查。一种是审代码：阿里开源的 open-code-review 已积累 53730 星、今日再涨 763，走的是确定性流水线加 LLM Agent 的混合架构，内置 NPE、线程安全、XSS、SQL 注入等多语言规则，还能精确到行级评论——这不是让模型“自由发挥”，而是先用规则兜住底线，再用模型补语义。另一种是审 AI 自身：Claude Code 团队谈验证机制的那篇在 HN 拿到 261 分，同期 PostHog 那篇“Not Everything Needs an LLM”也拿到 89 分，两者指向同一件事——当智能体开始写代码、做调研，人类的成本已从“生产”转向“验收”。值得单独一提的是 Claude-BugHunter，9305 星、今日新增 1005，把 82 个技能、681 条已披露报告模式整理成漏洞猎取的技能包，本质上是把安全审查的经验沉淀成可复用的检查清单，而非让模型即兴找洞。趋势上，热门项目正从“让 Agent 能干活”转向“让 Agent 的产出可被信任”，规则、清单、审批门成了新的基础设施。给开发者的建议：接入任何代码审查类 Agent 前，先确认它的确定性规则层是否独立于模型输出，模型可以建议，但拦截必须可复现——否则你只是在用另一个概率系统检验概率系统。",
+  "aiAnalysis": "今天的信号是“技能”正在被工程化。mvanhorn/last30days-skill 一天涨 1059 星冲到 70013 总星，把跨 Reddit、X、YouTube、HN 和 Polymarket 的调研打包成一个 agent skill，本质是把“怎么查、怎么综合”这套隐性经验写成可复用的动作模板——热门的不再是模型本身，而是喂给模型的技能包。NVIDIA/SkillEvaluator 恰好补上另一头：3723 星、今日 312，做质量门禁、语义重叠检测和合成评测集，直指技能多了以后互相打架、无法度量的问题。CLI-Anything 以 59745 星、389 涨幅继续推进“让所有软件都对 agent 原生”，和前者串起来就是一条链：把软件变成能调用的动作，把动作封成技能，再给技能做质检。值得留意的反面是 HN 上“AI is killing All About Berlin”拿到 755 分——一个靠内容活着的独立站点被 AI 摘要挤掉流量，技能化提效的另一面是供给侧被抽干。对开发者的建议很具体：别急着往 agent 里堆 skill，先给每个 skill 定义一条可自动判定的验收标准，否则技能越多，行为越难回归。",
   "analysisStatus": "ok",
   "keywords": [
     "Agent",
     "Claude",
     "Anthropic",
-    "LLM",
-    "OpenAI",
-    "开源"
+    "GPU"
   ],
   "githubSource": "trending",
-  "githubDataDate": "2026-11-18",
+  "githubDataDate": "2026-11-19",
   "addStarsSince": null,
-  "generatedAt": "2026-11-18T01:04:23.104Z"
+  "generatedAt": "2026-11-19T01:03:16.303Z"
 }
