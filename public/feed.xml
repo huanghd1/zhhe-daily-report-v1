@@ -5,8 +5,16 @@
     <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
     <description>每天北京时间 08:00 更新的技术简报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 19 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://huanghd1.github.io/zhhe-daily-report-v1/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日科技简报 2026-11-20</title>
+      <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
+      <guid isPermaLink="false">https://huanghd1.github.io/zhhe-daily-report-v1/#2026-11-20</guid>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Claude</category><category>Agent</category><category>模型</category><category>LLM</category><category>安全</category>
+      <description>今天最值得注意的转向是：热门项目不再谈“智能体有多大本事”，而是谈“它该被约束到什么程度”。Claude-BugHunter 一日新增 1349 星、总量 12530，把 82 个技能、15 个斜杠命令和 681 条已披露报告模式塞进一个 red-team 技能包，颗粒度细到 24 类漏洞。这与昨天单纯“封装技能”不同，重点在于给高危动作配上明确的清单与授权边界，技能包本身成了流程规范。另一端，obra/superpowers 以 322083 总星、今日 2028 的涨幅稳居榜首，定位是“能用的技能框架和开发方法论”，说明社区愿意为之付费的是可复用的工作协议，而非炫技。更耐人寻味的是 HN 上那篇《Fuck Your AI Safeguards》拿到 471 分，它与底特律高中生因 AI 把多力多滋袋子误判成枪而起诉的事件（114 分）形成呼应：一边是开发者嫌防护碍事，一边是防护失效造成真实伤害。同一天 Claude 宣称解决两个黑洞物理开放问题（367 分），能力上限越高，治理落差就越刺眼。给开发者一条实用建议：设计技能包时，先写拒绝条件与人工确认点，再写执行步骤；能留下审计痕迹的技能，才敢放进生产流程。</description>
+    </item>
     <item>
       <title>每日科技简报 2026-11-19</title>
       <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>

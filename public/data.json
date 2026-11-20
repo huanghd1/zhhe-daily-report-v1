@@ -1,99 +1,100 @@
 {
-  "date": "2026-11-19",
+  "date": "2026-11-20",
   "githubTrending": [
     {
-      "name": "cursor/plugins",
-      "description": "Cursor plugin specification and official plugins",
-      "stars": 17206,
-      "addStars": 314,
-      "language": "TypeScript",
-      "languageColor": "#3178c6",
-      "url": "https://github.com/cursor/plugins",
+      "name": "elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "stars": 12530,
+      "addStars": 1349,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "rankDelta": null
+    },
+    {
+      "name": "obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "stars": 322083,
+      "addStars": 2028,
+      "language": "Shell",
+      "languageColor": "#89e051",
+      "url": "https://github.com/obra/superpowers",
       "rankDelta": null
     },
     {
       "name": "HKUDS/CLI-Anything",
       "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
-      "stars": 59745,
-      "addStars": 389,
+      "stars": 60559,
+      "addStars": 898,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/HKUDS/CLI-Anything",
-      "rankDelta": null
-    },
-    {
-      "name": "mvanhorn/last30days-skill",
-      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
-      "stars": 70013,
-      "addStars": 1059,
-      "language": "Python",
-      "languageColor": "#3572a5",
-      "url": "https://github.com/mvanhorn/last30days-skill",
       "rankDelta": -1
     },
     {
-      "name": "getarcaneapp/arcane",
-      "description": "Modern Docker Management, Designed for Everyone",
-      "stars": 9808,
-      "addStars": 547,
-      "language": "Go",
-      "languageColor": "#00add8",
-      "url": "https://github.com/getarcaneapp/arcane",
+      "name": "jingyaogong/minimind",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "stars": 66864,
+      "addStars": 238,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/jingyaogong/minimind",
       "rankDelta": null
     },
     {
-      "name": "NVIDIA/SkillEvaluator",
-      "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
-      "stars": 3723,
-      "addStars": 312,
-      "language": "Python",
-      "languageColor": "#3572a5",
-      "url": "https://github.com/NVIDIA/SkillEvaluator",
-      "rankDelta": null
+      "name": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "stars": 17559,
+      "addStars": 384,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/cursor/plugins",
+      "rankDelta": -4
     }
   ],
   "aiNews": [
     {
-      "title": "AI is killing All About Berlin",
-      "url": "https://nicolasbouliane.com/blog/death-by-ai",
-      "source": "nicolasbouliane.com",
-      "points": 755
+      "title": "Fuck Your AI Safeguards",
+      "url": "https://ounapuu.ee/posts/2026/11/19/unsafeguards/",
+      "source": "ounapuu.ee",
+      "points": 471
     },
     {
-      "title": "AI agents ask better questions than KPMG accountants in audit trial",
-      "url": "https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/",
-      "source": "europeanbusinessmagazine.com",
-      "points": 344
+      "title": "Claude solves two open problems in the physics of black holes",
+      "url": "https://www.anthropic.com/research/claude-black-hole-physics",
+      "source": "anthropic.com",
+      "points": 367
     },
     {
-      "title": "Claude was trained on protein sequences at scale",
-      "url": "http://xinmingtu.cn/blog/2026/claude-opus-5-5-protein-sequences/",
-      "source": "xinmingtu.cn",
-      "points": 164
+      "title": "Pete warden on local AI, open models, voice interfaces, the future of hardware",
+      "url": "https://thedataexchange.media/pete-warden-moonshine/",
+      "source": "thedataexchange.media",
+      "points": 212
     },
     {
-      "title": "\"Anthropic Is Not a Safe AI Company\" – Coalition Challenges Anthropic Safety",
-      "url": "https://www.businesswire.com/news/home/20261118974464/en/Anthropic-is-Not-a-Safe-AI-Company---Broad-Coalition-of-Scientists-Legal-Scholars-and-Tech-Leaders-Challenge-Anthropics-Safety-Branding-Ahead-of-IPO",
-      "source": "businesswire.com",
-      "points": 124
+      "title": "Chrome AI features wasting much bandwidth",
+      "url": "https://perishablepress.com/chrome-ai-wasting-much-bandwidth/",
+      "source": "perishablepress.com",
+      "points": 122
     },
     {
-      "title": "Bank CEOs, NSA Tell Congress That AI-Driven Patches Are Behind Outages",
-      "url": "https://www.washingtonsun.com/technology/bank-ceos-nsa-tell-congress-ai-driven-patches-behind-outages",
-      "source": "washingtonsun.com",
-      "points": 95
+      "title": "Black high school students sue after AI mistakes Doritos bag for gun",
+      "url": "https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm/",
+      "source": "lawyerscommittee.org",
+      "points": 114
     }
   ],
-  "aiAnalysis": "今天的信号是“技能”正在被工程化。mvanhorn/last30days-skill 一天涨 1059 星冲到 70013 总星，把跨 Reddit、X、YouTube、HN 和 Polymarket 的调研打包成一个 agent skill，本质是把“怎么查、怎么综合”这套隐性经验写成可复用的动作模板——热门的不再是模型本身，而是喂给模型的技能包。NVIDIA/SkillEvaluator 恰好补上另一头：3723 星、今日 312，做质量门禁、语义重叠检测和合成评测集，直指技能多了以后互相打架、无法度量的问题。CLI-Anything 以 59745 星、389 涨幅继续推进“让所有软件都对 agent 原生”，和前者串起来就是一条链：把软件变成能调用的动作，把动作封成技能，再给技能做质检。值得留意的反面是 HN 上“AI is killing All About Berlin”拿到 755 分——一个靠内容活着的独立站点被 AI 摘要挤掉流量，技能化提效的另一面是供给侧被抽干。对开发者的建议很具体：别急着往 agent 里堆 skill，先给每个 skill 定义一条可自动判定的验收标准，否则技能越多，行为越难回归。",
+  "aiAnalysis": "今天最值得注意的转向是：热门项目不再谈“智能体有多大本事”，而是谈“它该被约束到什么程度”。Claude-BugHunter 一日新增 1349 星、总量 12530，把 82 个技能、15 个斜杠命令和 681 条已披露报告模式塞进一个 red-team 技能包，颗粒度细到 24 类漏洞。这与昨天单纯“封装技能”不同，重点在于给高危动作配上明确的清单与授权边界，技能包本身成了流程规范。另一端，obra/superpowers 以 322083 总星、今日 2028 的涨幅稳居榜首，定位是“能用的技能框架和开发方法论”，说明社区愿意为之付费的是可复用的工作协议，而非炫技。更耐人寻味的是 HN 上那篇《Fuck Your AI Safeguards》拿到 471 分，它与底特律高中生因 AI 把多力多滋袋子误判成枪而起诉的事件（114 分）形成呼应：一边是开发者嫌防护碍事，一边是防护失效造成真实伤害。同一天 Claude 宣称解决两个黑洞物理开放问题（367 分），能力上限越高，治理落差就越刺眼。给开发者一条实用建议：设计技能包时，先写拒绝条件与人工确认点，再写执行步骤；能留下审计痕迹的技能，才敢放进生产流程。",
   "analysisStatus": "ok",
   "keywords": [
-    "Agent",
     "Claude",
-    "Anthropic",
-    "GPU"
+    "Agent",
+    "模型",
+    "LLM",
+    "安全"
   ],
   "githubSource": "trending",
-  "githubDataDate": "2026-11-19",
+  "githubDataDate": "2026-11-20",
   "addStarsSince": null,
-  "generatedAt": "2026-11-19T01:03:16.303Z"
+  "generatedAt": "2026-11-20T00:57:07.906Z"
 }
