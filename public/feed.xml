@@ -5,8 +5,16 @@
     <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
     <description>每天北京时间 08:00 更新的技术简报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 20 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://huanghd1.github.io/zhhe-daily-report-v1/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日科技简报 2026-11-21</title>
+      <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
+      <guid isPermaLink="false">https://huanghd1.github.io/zhhe-daily-report-v1/#2026-11-21</guid>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Agent</category><category>LLM</category><category>Claude</category><category>模型</category><category>MCP</category><category>安全</category>
+      <description>今天的信号更偏“规模下探”和“工具链被重新定义”。Claude-BugHunter 冲到 14277 星、单日再涨 1622，连续两天高速增长说明安全技能包已从猎奇进入实际采用；但 82 个技能、15 个斜杠命令、681 条已披露报告模式这套结构，本质是把红队经验做成可检索的案例库，价值在覆盖率而非自动化程度。jingyaogong/minimind 值得单独看：67691 星、今日 847，两小时从零训出 64M 小模型，把训练门槛压到消费级硬件，正好对冲大厂模型越做越重的路线。AI 侧最有意思的是 Frostbite——一个由 AI 设计并验证的 CPU 架构拿到 HN 618 分，说明“AI 做硬件设计”开始有可讨论的成品，而不只是论文里的 demo；Epic 让 AI 参与虚幻引擎编码（58 分）则代表商业引擎在工程效率上的务实妥协。开发者可以试一件事：把 minimind 这类小模型训练流程跑一遍，用它校验自己对数据、tokenizer 和评测环节的理解，比读十篇综述更能暴露工程细节上的盲区。</description>
+    </item>
     <item>
       <title>每日科技简报 2026-11-20</title>
       <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>

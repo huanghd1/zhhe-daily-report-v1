@@ -1,100 +1,101 @@
 {
-  "date": "2026-11-20",
+  "date": "2026-11-21",
   "githubTrending": [
     {
       "name": "elementalsouls/Claude-BugHunter",
       "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
-      "stars": 12530,
-      "addStars": 1349,
+      "stars": 14277,
+      "addStars": 1622,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/elementalsouls/Claude-BugHunter",
-      "rankDelta": null
+      "rankDelta": 0
     },
     {
       "name": "obra/superpowers",
       "description": "An agentic skills framework & software development methodology that works.",
-      "stars": 322083,
-      "addStars": 2028,
+      "stars": 322843,
+      "addStars": 890,
       "language": "Shell",
       "languageColor": "#89e051",
       "url": "https://github.com/obra/superpowers",
-      "rankDelta": null
+      "rankDelta": 0
     },
     {
       "name": "HKUDS/CLI-Anything",
       "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
-      "stars": 60559,
-      "addStars": 898,
+      "stars": 61385,
+      "addStars": 773,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/HKUDS/CLI-Anything",
-      "rankDelta": -1
+      "rankDelta": 0
     },
     {
       "name": "jingyaogong/minimind",
       "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
-      "stars": 66864,
-      "addStars": 238,
+      "stars": 67691,
+      "addStars": 847,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/jingyaogong/minimind",
-      "rankDelta": null
+      "rankDelta": 0
     },
     {
       "name": "cursor/plugins",
       "description": "Cursor plugin specification and official plugins",
-      "stars": 17559,
-      "addStars": 384,
+      "stars": 17848,
+      "addStars": 299,
       "language": "TypeScript",
       "languageColor": "#3178c6",
       "url": "https://github.com/cursor/plugins",
-      "rankDelta": -4
+      "rankDelta": 0
     }
   ],
   "aiNews": [
     {
-      "title": "Fuck Your AI Safeguards",
-      "url": "https://ounapuu.ee/posts/2026/11/19/unsafeguards/",
-      "source": "ounapuu.ee",
-      "points": 471
+      "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
+      "url": "https://architectlabs.com/blog/frostbite",
+      "source": "architectlabs.com",
+      "points": 618
     },
     {
-      "title": "Claude solves two open problems in the physics of black holes",
-      "url": "https://www.anthropic.com/research/claude-black-hole-physics",
-      "source": "anthropic.com",
-      "points": 367
+      "title": "Google Workers Tell Their Employer Not to Punish Schools That Don't Want AI",
+      "url": "https://www.motherjones.com/politics/2026/11/google-alphabet-union-school-ai-protest-gemini-workers-petition/",
+      "source": "motherjones.com",
+      "points": 258
     },
     {
-      "title": "Pete warden on local AI, open models, voice interfaces, the future of hardware",
-      "url": "https://thedataexchange.media/pete-warden-moonshine/",
-      "source": "thedataexchange.media",
-      "points": 212
+      "title": "Epic Games Turns to AI Coding for the Unreal Engine",
+      "url": "https://spectrum.ieee.org/epic-games-unreal-engine-ai",
+      "source": "spectrum.ieee.org",
+      "points": 58
     },
     {
-      "title": "Chrome AI features wasting much bandwidth",
-      "url": "https://perishablepress.com/chrome-ai-wasting-much-bandwidth/",
-      "source": "perishablepress.com",
-      "points": 122
+      "title": "AI is giving everyone the same advice",
+      "url": "https://a90.com/experiments/same-advice/",
+      "source": "a90.com",
+      "points": 50
     },
     {
-      "title": "Black high school students sue after AI mistakes Doritos bag for gun",
-      "url": "https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm/",
-      "source": "lawyerscommittee.org",
-      "points": 114
+      "title": "Llms.txt and MCP didn't move the needle",
+      "url": "https://backpackforlaravel.com/articles/opinions/llms-txt-and-mcp-didn-t-move-the-needle-for-us-here-s-what-did",
+      "source": "backpackforlaravel.com",
+      "points": 29
     }
   ],
-  "aiAnalysis": "今天最值得注意的转向是：热门项目不再谈“智能体有多大本事”，而是谈“它该被约束到什么程度”。Claude-BugHunter 一日新增 1349 星、总量 12530，把 82 个技能、15 个斜杠命令和 681 条已披露报告模式塞进一个 red-team 技能包，颗粒度细到 24 类漏洞。这与昨天单纯“封装技能”不同，重点在于给高危动作配上明确的清单与授权边界，技能包本身成了流程规范。另一端，obra/superpowers 以 322083 总星、今日 2028 的涨幅稳居榜首，定位是“能用的技能框架和开发方法论”，说明社区愿意为之付费的是可复用的工作协议，而非炫技。更耐人寻味的是 HN 上那篇《Fuck Your AI Safeguards》拿到 471 分，它与底特律高中生因 AI 把多力多滋袋子误判成枪而起诉的事件（114 分）形成呼应：一边是开发者嫌防护碍事，一边是防护失效造成真实伤害。同一天 Claude 宣称解决两个黑洞物理开放问题（367 分），能力上限越高，治理落差就越刺眼。给开发者一条实用建议：设计技能包时，先写拒绝条件与人工确认点，再写执行步骤；能留下审计痕迹的技能，才敢放进生产流程。",
+  "aiAnalysis": "今天的信号更偏“规模下探”和“工具链被重新定义”。Claude-BugHunter 冲到 14277 星、单日再涨 1622，连续两天高速增长说明安全技能包已从猎奇进入实际采用；但 82 个技能、15 个斜杠命令、681 条已披露报告模式这套结构，本质是把红队经验做成可检索的案例库，价值在覆盖率而非自动化程度。jingyaogong/minimind 值得单独看：67691 星、今日 847，两小时从零训出 64M 小模型，把训练门槛压到消费级硬件，正好对冲大厂模型越做越重的路线。AI 侧最有意思的是 Frostbite——一个由 AI 设计并验证的 CPU 架构拿到 HN 618 分，说明“AI 做硬件设计”开始有可讨论的成品，而不只是论文里的 demo；Epic 让 AI 参与虚幻引擎编码（58 分）则代表商业引擎在工程效率上的务实妥协。开发者可以试一件事：把 minimind 这类小模型训练流程跑一遍，用它校验自己对数据、tokenizer 和评测环节的理解，比读十篇综述更能暴露工程细节上的盲区。",
   "analysisStatus": "ok",
   "keywords": [
-    "Claude",
     "Agent",
-    "模型",
     "LLM",
+    "Claude",
+    "模型",
+    "MCP",
     "安全"
   ],
   "githubSource": "trending",
-  "githubDataDate": "2026-11-20",
+  "githubDataDate": "2026-11-21",
   "addStarsSince": null,
-  "generatedAt": "2026-11-20T00:57:07.906Z"
+  "generatedAt": "2026-11-21T01:00:39.999Z"
 }
