@@ -5,8 +5,16 @@
     <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
     <description>每天北京时间 08:00 更新的技术简报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 21 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://huanghd1.github.io/zhhe-daily-report-v1/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日科技简报 2026-11-22</title>
+      <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
+      <guid isPermaLink="false">https://huanghd1.github.io/zhhe-daily-report-v1/#2026-11-22</guid>
+      <pubDate>Sun, 22 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Agent</category><category>Claude</category><category>LLM</category><category>Anthropic</category><category>模型</category><category>MCP</category>
+      <description>今天的榜单里，最值得琢磨的不是明星项目的绝对值，而是“技能包”这个形态正在被不同领域复制：Claude-BugHunter 以 16072 星、单日新增 1803 继续领跑，把它拆开看其实是一份 681 条已披露报告模式的索引，红队经验的颗粒度被压成了可搜索的模板；obra/superpowers 虽然星数虚高到 32 万量级、今日仅涨 883，却代表另一种路径——把 agent 工作流本身当成方法论来分发，而不是绑定某个模型。两者放在一起，说明市场在同时押注“垂直知识包”和“通用流程框架”，前者卖覆盖面，后者卖可迁移性。AI 侧 Pandex 把欧盟法规通过 MCP 暴露给 agent（HN 24 分），虽然热度不高，但方向明确：合规正在从文档变成 agent 可调用的接口。ClawDOS 让 AI 编码代理跑进 DOS 环境（158 分），则是怀旧外壳下的工程取舍——限制运行环境反而降低了代理越界的风险。给开发者一条具体建议：别急着接第三个技能包，先把自己团队最常复现的那类 bug 写成带触发条件的检索条目，规模不用大，二十条就能验证这套模式是否真的省下你的时间。</description>
+    </item>
     <item>
       <title>每日科技简报 2026-11-21</title>
       <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>

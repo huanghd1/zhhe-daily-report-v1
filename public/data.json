@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-21",
+  "date": "2026-11-22",
   "githubTrending": [
     {
       "name": "elementalsouls/Claude-BugHunter",
       "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
-      "stars": 14277,
-      "addStars": 1622,
+      "stars": 16072,
+      "addStars": 1803,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/elementalsouls/Claude-BugHunter",
@@ -14,8 +14,8 @@
     {
       "name": "obra/superpowers",
       "description": "An agentic skills framework & software development methodology that works.",
-      "stars": 322843,
-      "addStars": 890,
+      "stars": 323731,
+      "addStars": 883,
       "language": "Shell",
       "languageColor": "#89e051",
       "url": "https://github.com/obra/superpowers",
@@ -24,8 +24,8 @@
     {
       "name": "HKUDS/CLI-Anything",
       "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
-      "stars": 61385,
-      "addStars": 773,
+      "stars": 62078,
+      "addStars": 769,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/HKUDS/CLI-Anything",
@@ -34,8 +34,8 @@
     {
       "name": "jingyaogong/minimind",
       "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
-      "stars": 67691,
-      "addStars": 847,
+      "stars": 68151,
+      "addStars": 488,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/jingyaogong/minimind",
@@ -44,8 +44,8 @@
     {
       "name": "cursor/plugins",
       "description": "Cursor plugin specification and official plugins",
-      "stars": 17848,
-      "addStars": 299,
+      "stars": 18110,
+      "addStars": 260,
       "language": "TypeScript",
       "languageColor": "#3178c6",
       "url": "https://github.com/cursor/plugins",
@@ -54,48 +54,48 @@
   ],
   "aiNews": [
     {
-      "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
-      "url": "https://architectlabs.com/blog/frostbite",
-      "source": "architectlabs.com",
-      "points": 618
+      "title": "ClawDOS – An AI coding agent for DOS",
+      "url": "http://ricapar.net/ClawDOS/",
+      "source": "ricapar.net",
+      "points": 158
     },
     {
-      "title": "Google Workers Tell Their Employer Not to Punish Schools That Don't Want AI",
-      "url": "https://www.motherjones.com/politics/2026/11/google-alphabet-union-school-ai-protest-gemini-workers-petition/",
-      "source": "motherjones.com",
-      "points": 258
+      "title": "Pandex – Official European Law for AI Agents, over MCP",
+      "url": "https://www.pandex.io/",
+      "source": "pandex.io",
+      "points": 24
     },
     {
-      "title": "Epic Games Turns to AI Coding for the Unreal Engine",
-      "url": "https://spectrum.ieee.org/epic-games-unreal-engine-ai",
-      "source": "spectrum.ieee.org",
-      "points": 58
+      "title": "Don't Play Anthropic's Game",
+      "url": "https://www.nytimes.com/2026/11/19/opinion/anthropic-ipo-ai-regulation.html",
+      "source": "nytimes.com",
+      "points": 12
     },
     {
-      "title": "AI is giving everyone the same advice",
-      "url": "https://a90.com/experiments/same-advice/",
-      "source": "a90.com",
-      "points": 50
+      "title": "Show HN: agent-mcts – Monte Carlo tree search on top of Claude Code",
+      "url": "https://github.com/natsu0529/agent-mcts",
+      "source": "github.com",
+      "points": 11
     },
     {
-      "title": "Llms.txt and MCP didn't move the needle",
-      "url": "https://backpackforlaravel.com/articles/opinions/llms-txt-and-mcp-didn-t-move-the-needle-for-us-here-s-what-did",
-      "source": "backpackforlaravel.com",
-      "points": 29
+      "title": "I got banned from Lobsters for writing like an LLM",
+      "url": "https://en.andros.dev/blog/94a77341/i-got-banned-from-lobsters-for-writing-like-an-llm/",
+      "source": "en.andros.dev",
+      "points": 9
     }
   ],
-  "aiAnalysis": "今天的信号更偏“规模下探”和“工具链被重新定义”。Claude-BugHunter 冲到 14277 星、单日再涨 1622，连续两天高速增长说明安全技能包已从猎奇进入实际采用；但 82 个技能、15 个斜杠命令、681 条已披露报告模式这套结构，本质是把红队经验做成可检索的案例库，价值在覆盖率而非自动化程度。jingyaogong/minimind 值得单独看：67691 星、今日 847，两小时从零训出 64M 小模型，把训练门槛压到消费级硬件，正好对冲大厂模型越做越重的路线。AI 侧最有意思的是 Frostbite——一个由 AI 设计并验证的 CPU 架构拿到 HN 618 分，说明“AI 做硬件设计”开始有可讨论的成品，而不只是论文里的 demo；Epic 让 AI 参与虚幻引擎编码（58 分）则代表商业引擎在工程效率上的务实妥协。开发者可以试一件事：把 minimind 这类小模型训练流程跑一遍，用它校验自己对数据、tokenizer 和评测环节的理解，比读十篇综述更能暴露工程细节上的盲区。",
+  "aiAnalysis": "今天的榜单里，最值得琢磨的不是明星项目的绝对值，而是“技能包”这个形态正在被不同领域复制：Claude-BugHunter 以 16072 星、单日新增 1803 继续领跑，把它拆开看其实是一份 681 条已披露报告模式的索引，红队经验的颗粒度被压成了可搜索的模板；obra/superpowers 虽然星数虚高到 32 万量级、今日仅涨 883，却代表另一种路径——把 agent 工作流本身当成方法论来分发，而不是绑定某个模型。两者放在一起，说明市场在同时押注“垂直知识包”和“通用流程框架”，前者卖覆盖面，后者卖可迁移性。AI 侧 Pandex 把欧盟法规通过 MCP 暴露给 agent（HN 24 分），虽然热度不高，但方向明确：合规正在从文档变成 agent 可调用的接口。ClawDOS 让 AI 编码代理跑进 DOS 环境（158 分），则是怀旧外壳下的工程取舍——限制运行环境反而降低了代理越界的风险。给开发者一条具体建议：别急着接第三个技能包，先把自己团队最常复现的那类 bug 写成带触发条件的检索条目，规模不用大，二十条就能验证这套模式是否真的省下你的时间。",
   "analysisStatus": "ok",
   "keywords": [
     "Agent",
-    "LLM",
     "Claude",
+    "LLM",
+    "Anthropic",
     "模型",
-    "MCP",
-    "安全"
+    "MCP"
   ],
   "githubSource": "trending",
-  "githubDataDate": "2026-11-21",
+  "githubDataDate": "2026-11-22",
   "addStarsSince": null,
-  "generatedAt": "2026-11-21T01:00:39.999Z"
+  "generatedAt": "2026-11-22T00:58:12.092Z"
 }
