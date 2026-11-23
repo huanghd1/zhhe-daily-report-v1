@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-23",
+  "githubTrending": [
+    {
+      "name": "elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "stars": 17823,
+      "addStars": 1716,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "rankDelta": 0
+    },
+    {
+      "name": "obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "stars": 324167,
+      "addStars": 788,
+      "language": "Shell",
+      "languageColor": "#89e051",
+      "url": "https://github.com/obra/superpowers",
+      "rankDelta": 0
+    },
+    {
+      "name": "HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "stars": 62784,
+      "addStars": 699,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "rankDelta": 0
+    },
+    {
+      "name": "jingyaogong/minimind",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "stars": 68653,
+      "addStars": 473,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/jingyaogong/minimind",
+      "rankDelta": 0
+    },
+    {
+      "name": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "stars": 18452,
+      "addStars": 294,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/cursor/plugins",
+      "rankDelta": 0
+    }
+  ],
+  "aiNews": [
+    {
+      "title": "87% of the Anthropic power will come from gas and 11% from coal in 2028",
+      "url": "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
+      "source": "betterdatacenterproject.com",
+      "points": 874
+    },
+    {
+      "title": "Show HN: I built a game where you are an LLM's subagent",
+      "url": "https://github.com/gulivan/worker755",
+      "source": "github.com",
+      "points": 266
+    },
+    {
+      "title": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth",
+      "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
+      "source": "gpupartner.com",
+      "points": 173
+    },
+    {
+      "title": "The Mythology of Conscious AI",
+      "url": "https://www.noemamag.com/the-mythology-of-conscious-ai/",
+      "source": "noemamag.com",
+      "points": 165
+    },
+    {
+      "title": "AI is becoming a disaster for the climate",
+      "url": "https://www.bloodinthemachine.com/p/ai-is-becoming-a-disaster-for-the",
+      "source": "bloodinthemachine.com",
+      "points": 99
+    }
+  ],
+  "aiAnalysis": "今天最该盯的细节藏在小数字里：obra/superpowers 单日只涨 788，却挂着 32 万级的 star 总量，说明它的热度早已脱离真实使用曲线，进入“符号化收藏”阶段；而 Claude-BugHunter 以 17823 星、今日 +1716 继续加速，涨势甚至比昨天更陡，垂直技能包仍在实打实吸粉。两个信号合起来看，榜单前十里的 star 数正整体失去分辨力，今日增量才是唯一诚实指标。更有意思的是 cursor/plugins 以 18452 星、+294 挤进前五——它不卖能力也不卖方法论，卖的是一份插件规范，这等于把“agent 生态的接口定义权”本身当成项目来发布，谁定标准谁收租。AI 侧的 HN 讨论也透着同样的务实：有人把 LLM 子代理做成游戏（266 分），有人认真写本地 AI 的入门指南（173 分），而拿 99 分的那篇气候批评和 874 分的“2028 年 Anthropic 87% 电力来自天然气”放在一起，其实是同一句话的两面——算力基础设施开始被当作公开审计对象来讨论。给开发者的建议：评估一个新项目时先看今日增量除以总 star 的比例，再决定是否投入，比例长期低于千分之三的，多半是情怀而非工具。",
+  "analysisStatus": "ok",
+  "keywords": [
+    "Agent",
+    "LLM",
+    "Claude",
+    "Anthropic",
+    "模型",
+    "安全"
+  ],
+  "githubSource": "trending",
+  "githubDataDate": "2026-11-23",
+  "addStarsSince": null,
+  "generatedAt": "2026-11-23T01:00:37.349Z"
+}

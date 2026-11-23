@@ -5,8 +5,16 @@
     <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
     <description>每天北京时间 08:00 更新的技术简报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 22 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://huanghd1.github.io/zhhe-daily-report-v1/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日科技简报 2026-11-23</title>
+      <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
+      <guid isPermaLink="false">https://huanghd1.github.io/zhhe-daily-report-v1/#2026-11-23</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Agent</category><category>LLM</category><category>Claude</category><category>Anthropic</category><category>模型</category><category>安全</category>
+      <description>今天最该盯的细节藏在小数字里：obra/superpowers 单日只涨 788，却挂着 32 万级的 star 总量，说明它的热度早已脱离真实使用曲线，进入“符号化收藏”阶段；而 Claude-BugHunter 以 17823 星、今日 +1716 继续加速，涨势甚至比昨天更陡，垂直技能包仍在实打实吸粉。两个信号合起来看，榜单前十里的 star 数正整体失去分辨力，今日增量才是唯一诚实指标。更有意思的是 cursor/plugins 以 18452 星、+294 挤进前五——它不卖能力也不卖方法论，卖的是一份插件规范，这等于把“agent 生态的接口定义权”本身当成项目来发布，谁定标准谁收租。AI 侧的 HN 讨论也透着同样的务实：有人把 LLM 子代理做成游戏（266 分），有人认真写本地 AI 的入门指南（173 分），而拿 99 分的那篇气候批评和 874 分的“2028 年 Anthropic 87% 电力来自天然气”放在一起，其实是同一句话的两面——算力基础设施开始被当作公开审计对象来讨论。给开发者的建议：评估一个新项目时先看今日增量除以总 star 的比例，再决定是否投入，比例长期低于千分之三的，多半是情怀而非工具。</description>
+    </item>
     <item>
       <title>每日科技简报 2026-11-22</title>
       <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
