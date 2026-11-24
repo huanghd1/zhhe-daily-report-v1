@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-24",
+  "githubTrending": [
+    {
+      "name": "elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "stars": 19784,
+      "addStars": 2029,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "rankDelta": 0
+    },
+    {
+      "name": "obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "stars": 325075,
+      "addStars": 840,
+      "language": "Shell",
+      "languageColor": "#89e051",
+      "url": "https://github.com/obra/superpowers",
+      "rankDelta": 0
+    },
+    {
+      "name": "HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "stars": 63649,
+      "addStars": 790,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "rankDelta": 0
+    },
+    {
+      "name": "jingyaogong/minimind",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "stars": 69463,
+      "addStars": 828,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/jingyaogong/minimind",
+      "rankDelta": 0
+    },
+    {
+      "name": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "stars": 18808,
+      "addStars": 397,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/cursor/plugins",
+      "rankDelta": 0
+    }
+  ],
+  "aiNews": [
+    {
+      "title": "Amodei reportedly suggested games could pacify masses after AI took their jobs (2015)",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1039745/dario-amodei-video-games-ai-joblessness",
+      "source": "theverge.com",
+      "points": 74
+    },
+    {
+      "title": "How should an LLM see a computer?",
+      "url": "https://www.greptile.com/blog/trex-computer-use",
+      "source": "greptile.com",
+      "points": 43
+    },
+    {
+      "title": "Buckle Up the AI Bubble Is Popping",
+      "url": "https://mathbabe.org/2026/11/23/buckle-up-the-ai-bubble-is-popping/",
+      "source": "mathbabe.org",
+      "points": 30
+    },
+    {
+      "title": "Jensen Huang's Apology May Be the Only Correct Use of AI",
+      "url": "https://www.theatlantic.com/newsletters/2026/11/jensen-huang-ai-apology-nvidia/689366/",
+      "source": "theatlantic.com",
+      "points": 23
+    },
+    {
+      "title": "Claude Ship",
+      "url": "https://claude.com/resources/articles/introducing-claude-ship",
+      "source": "claude.com",
+      "points": 22
+    }
+  ],
+  "aiAnalysis": "今天最值得玩味的是 Claude-BugHunter 的增速不降反升：19784 星、单日 +2029，比昨天的 +1716 又高一截，在榜单整体热度趋于平稳的情况下逆向加速，说明红队与漏洞挖掘这类“以攻代防”的垂直技能包正在被真实采购，而非收藏。与之对照，CLI-Anything 以 63649 星、+790 把“让所有软件成为 agent 原生”写进名字，本质上是在抢 agent 调用工具的那层适配标准——和 cursor/plugins 抢接口定义权是同一盘棋，只是切入点在命令行。AI 侧信号则偏冷：HN 上“AI 泡沫正在破裂”（30 分）和 2015 年 Amodei 关于“用游戏安抚失业大众”的旧话被翻出（74 分），讨论重心正从能力惊叹转向社会成本清算；而“LLM 该如何看见一台计算机”（43 分）这种底层接口问题能上榜，恰与 CLI-Anything 的路线互相印证。给开发者的建议：如果你在做 agent 工具链，别再堆 skill 数量，去做一层别人不得不兼容的调用约定——标准比功能更值钱，也更能扛住泡沫退潮。",
+  "analysisStatus": "ok",
+  "keywords": [
+    "Claude",
+    "Agent",
+    "LLM",
+    "模型",
+    "安全"
+  ],
+  "githubSource": "trending",
+  "githubDataDate": "2026-11-24",
+  "addStarsSince": null,
+  "generatedAt": "2026-11-24T01:00:26.541Z"
+}

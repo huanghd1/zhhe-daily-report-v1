@@ -5,8 +5,16 @@
     <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
     <description>每天北京时间 08:00 更新的技术简报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 23 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://huanghd1.github.io/zhhe-daily-report-v1/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日科技简报 2026-11-24</title>
+      <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
+      <guid isPermaLink="false">https://huanghd1.github.io/zhhe-daily-report-v1/#2026-11-24</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Claude</category><category>Agent</category><category>LLM</category><category>模型</category><category>安全</category>
+      <description>今天最值得玩味的是 Claude-BugHunter 的增速不降反升：19784 星、单日 +2029，比昨天的 +1716 又高一截，在榜单整体热度趋于平稳的情况下逆向加速，说明红队与漏洞挖掘这类“以攻代防”的垂直技能包正在被真实采购，而非收藏。与之对照，CLI-Anything 以 63649 星、+790 把“让所有软件成为 agent 原生”写进名字，本质上是在抢 agent 调用工具的那层适配标准——和 cursor/plugins 抢接口定义权是同一盘棋，只是切入点在命令行。AI 侧信号则偏冷：HN 上“AI 泡沫正在破裂”（30 分）和 2015 年 Amodei 关于“用游戏安抚失业大众”的旧话被翻出（74 分），讨论重心正从能力惊叹转向社会成本清算；而“LLM 该如何看见一台计算机”（43 分）这种底层接口问题能上榜，恰与 CLI-Anything 的路线互相印证。给开发者的建议：如果你在做 agent 工具链，别再堆 skill 数量，去做一层别人不得不兼容的调用约定——标准比功能更值钱，也更能扛住泡沫退潮。</description>
+    </item>
     <item>
       <title>每日科技简报 2026-11-23</title>
       <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
