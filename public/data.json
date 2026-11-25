@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "githubTrending": [
     {
       "name": "elementalsouls/Claude-BugHunter",
-      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
-      "stars": 19784,
-      "addStars": 2029,
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 84 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "stars": 21484,
+      "addStars": 1826,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/elementalsouls/Claude-BugHunter",
@@ -14,8 +14,8 @@
     {
       "name": "obra/superpowers",
       "description": "An agentic skills framework & software development methodology that works.",
-      "stars": 325075,
-      "addStars": 840,
+      "stars": 325817,
+      "addStars": 1003,
       "language": "Shell",
       "languageColor": "#89e051",
       "url": "https://github.com/obra/superpowers",
@@ -24,8 +24,8 @@
     {
       "name": "HKUDS/CLI-Anything",
       "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
-      "stars": 63649,
-      "addStars": 790,
+      "stars": 64792,
+      "addStars": 1074,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/HKUDS/CLI-Anything",
@@ -34,8 +34,8 @@
     {
       "name": "jingyaogong/minimind",
       "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
-      "stars": 69463,
-      "addStars": 828,
+      "stars": 70202,
+      "addStars": 727,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/jingyaogong/minimind",
@@ -44,8 +44,8 @@
     {
       "name": "cursor/plugins",
       "description": "Cursor plugin specification and official plugins",
-      "stars": 18808,
-      "addStars": 397,
+      "stars": 19225,
+      "addStars": 360,
       "language": "TypeScript",
       "languageColor": "#3178c6",
       "url": "https://github.com/cursor/plugins",
@@ -54,47 +54,48 @@
   ],
   "aiNews": [
     {
-      "title": "Amodei reportedly suggested games could pacify masses after AI took their jobs (2015)",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1039745/dario-amodei-video-games-ai-joblessness",
-      "source": "theverge.com",
-      "points": 74
+      "title": "LLM agents work for their parent companies, not for you",
+      "url": "https://michaelharley.net/posts/2026/11/01/llm-agents-work-for-their-parent-companies-not-for-you/",
+      "source": "michaelharley.net",
+      "points": 895
     },
     {
-      "title": "How should an LLM see a computer?",
-      "url": "https://www.greptile.com/blog/trex-computer-use",
-      "source": "greptile.com",
-      "points": 43
+      "title": "Tidal bans AI-generated music",
+      "url": "https://variety.com/2026/music/news/tidal-bans-ai-generated-music-1236956924/",
+      "source": "variety.com",
+      "points": 316
     },
     {
-      "title": "Buckle Up the AI Bubble Is Popping",
-      "url": "https://mathbabe.org/2026/11/23/buckle-up-the-ai-bubble-is-popping/",
-      "source": "mathbabe.org",
-      "points": 30
+      "title": "Ask HN: Anthropic is accusing my company of distilling. How can I prove I'm not?",
+      "url": "https://news.ycombinator.com/item?id=50630809",
+      "source": "news.ycombinator.com",
+      "points": 221
     },
     {
-      "title": "Jensen Huang's Apology May Be the Only Correct Use of AI",
-      "url": "https://www.theatlantic.com/newsletters/2026/11/jensen-huang-ai-apology-nvidia/689366/",
-      "source": "theatlantic.com",
-      "points": 23
+      "title": "Anthropic Staff Openly Talk About ‘Taking Over the World’, Claims Max Tegmark",
+      "url": "https://novaramedia.com/2026/11/24/anthropic-staff-openly-talk-about-taking-over-the-world-claims-top-mit-physicist/",
+      "source": "novaramedia.com",
+      "points": 199
     },
     {
-      "title": "Claude Ship",
-      "url": "https://claude.com/resources/articles/introducing-claude-ship",
-      "source": "claude.com",
-      "points": 22
+      "title": "Declare is a UI language for you and your AI",
+      "url": "https://davidtemkin.github.io/declarelang/",
+      "source": "davidtemkin.github.io",
+      "points": 105
     }
   ],
-  "aiAnalysis": "今天最值得玩味的是 Claude-BugHunter 的增速不降反升：19784 星、单日 +2029，比昨天的 +1716 又高一截，在榜单整体热度趋于平稳的情况下逆向加速，说明红队与漏洞挖掘这类“以攻代防”的垂直技能包正在被真实采购，而非收藏。与之对照，CLI-Anything 以 63649 星、+790 把“让所有软件成为 agent 原生”写进名字，本质上是在抢 agent 调用工具的那层适配标准——和 cursor/plugins 抢接口定义权是同一盘棋，只是切入点在命令行。AI 侧信号则偏冷：HN 上“AI 泡沫正在破裂”（30 分）和 2015 年 Amodei 关于“用游戏安抚失业大众”的旧话被翻出（74 分），讨论重心正从能力惊叹转向社会成本清算；而“LLM 该如何看见一台计算机”（43 分）这种底层接口问题能上榜，恰与 CLI-Anything 的路线互相印证。给开发者的建议：如果你在做 agent 工具链，别再堆 skill 数量，去做一层别人不得不兼容的调用约定——标准比功能更值钱，也更能扛住泡沫退潮。",
+  "aiAnalysis": "今天榜单呈现出一个明显的结构变化：头部项目集体从“框架”退向“技能包”和“规格”。superpowers 以 325817 星位居榜首、单日再增 1003，而 Claude-BugHunter 今日 +1826 已超过昨天 +2029 的节奏，说明开发者对“可直接注入 agent 的实战知识库”胃口远大于再学一套方法论；cursor/plugins 以 19225 星、+360 守住插件规范的位置，CLI-Anything 则用 64792 星、+1074 继续把命令行当作 agent 接入层。三者表面无关，实则都在争夺同一个东西：agent 究竟按谁定义的接口调用工具。相比之下，minimind 用 70202 星、+727 提醒我们工程效率的诱惑仍在——两小时训出 64M 模型的价值在于可控与可复现，而非参数规模。\n\nAI 侧更值得盯的是 HN 上那篇 895 分的“LLM agent 为母公司而非你工作”，以及 221 分的“如何自证没有蒸馏”。前者把 agent 的忠诚度问题摆上台面，后者说明模型能力的来源审计正变成合规战场，两者合起来指向一个冷峻事实：agent 的可靠性不只取决于能力，还取决于它的利益与你的利益是否一致。\n\n给开发者一条建议：在接入任何技能包或插件时，先问清它的默认行为把数据和控制权交给了谁，接口标准之争的胜负，最终落在信任链上。",
   "analysisStatus": "ok",
   "keywords": [
-    "Claude",
     "Agent",
+    "Anthropic",
     "LLM",
+    "Claude",
     "模型",
     "安全"
   ],
   "githubSource": "trending",
-  "githubDataDate": "2026-11-24",
+  "githubDataDate": "2026-11-25",
   "addStarsSince": null,
-  "generatedAt": "2026-11-24T01:00:26.541Z"
+  "generatedAt": "2026-11-25T01:06:12.657Z"
 }

@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-11-25",
+    "repos": 5,
+    "news": 5,
+    "keywords": [
+      "Agent",
+      "Anthropic",
+      "LLM",
+      "Claude",
+      "模型",
+      "安全"
+    ],
+    "head": "今天榜单呈现出一个明显的结构变化：头部项目集体从“框架”退向“技能包”和“规格”。superpowers 以 325817 星位居榜首、单日再增 1003，而 Claude-Bug"
+  },
+  {
     "date": "2026-11-24",
     "repos": 5,
     "news": 5,

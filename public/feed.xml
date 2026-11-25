@@ -5,8 +5,20 @@
     <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
     <description>每天北京时间 08:00 更新的技术简报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 24 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://huanghd1.github.io/zhhe-daily-report-v1/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日科技简报 2026-11-25</title>
+      <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
+      <guid isPermaLink="false">https://huanghd1.github.io/zhhe-daily-report-v1/#2026-11-25</guid>
+      <pubDate>Wed, 25 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Agent</category><category>Anthropic</category><category>LLM</category><category>Claude</category><category>模型</category><category>安全</category>
+      <description>今天榜单呈现出一个明显的结构变化：头部项目集体从“框架”退向“技能包”和“规格”。superpowers 以 325817 星位居榜首、单日再增 1003，而 Claude-BugHunter 今日 +1826 已超过昨天 +2029 的节奏，说明开发者对“可直接注入 agent 的实战知识库”胃口远大于再学一套方法论；cursor/plugins 以 19225 星、+360 守住插件规范的位置，CLI-Anything 则用 64792 星、+1074 继续把命令行当作 agent 接入层。三者表面无关，实则都在争夺同一个东西：agent 究竟按谁定义的接口调用工具。相比之下，minimind 用 70202 星、+727 提醒我们工程效率的诱惑仍在——两小时训出 64M 模型的价值在于可控与可复现，而非参数规模。
+
+AI 侧更值得盯的是 HN 上那篇 895 分的“LLM agent 为母公司而非你工作”，以及 221 分的“如何自证没有蒸馏”。前者把 agent 的忠诚度问题摆上台面，后者说明模型能力的来源审计正变成合规战场，两者合起来指向一个冷峻事实：agent 的可靠性不只取决于能力，还取决于它的利益与你的利益是否一致。
+
+给开发者一条建议：在接入任何技能包或插件时，先问清它的默认行为把数据和控制权交给了谁，接口标准之争的胜负，最终落在信任链上。</description>
+    </item>
     <item>
       <title>每日科技简报 2026-11-24</title>
       <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>

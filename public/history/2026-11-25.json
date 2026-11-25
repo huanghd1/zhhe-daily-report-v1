@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-25",
+  "githubTrending": [
+    {
+      "name": "elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 84 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "stars": 21484,
+      "addStars": 1826,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "rankDelta": 0
+    },
+    {
+      "name": "obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "stars": 325817,
+      "addStars": 1003,
+      "language": "Shell",
+      "languageColor": "#89e051",
+      "url": "https://github.com/obra/superpowers",
+      "rankDelta": 0
+    },
+    {
+      "name": "HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "stars": 64792,
+      "addStars": 1074,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "rankDelta": 0
+    },
+    {
+      "name": "jingyaogong/minimind",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "stars": 70202,
+      "addStars": 727,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/jingyaogong/minimind",
+      "rankDelta": 0
+    },
+    {
+      "name": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "stars": 19225,
+      "addStars": 360,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/cursor/plugins",
+      "rankDelta": 0
+    }
+  ],
+  "aiNews": [
+    {
+      "title": "LLM agents work for their parent companies, not for you",
+      "url": "https://michaelharley.net/posts/2026/11/01/llm-agents-work-for-their-parent-companies-not-for-you/",
+      "source": "michaelharley.net",
+      "points": 895
+    },
+    {
+      "title": "Tidal bans AI-generated music",
+      "url": "https://variety.com/2026/music/news/tidal-bans-ai-generated-music-1236956924/",
+      "source": "variety.com",
+      "points": 316
+    },
+    {
+      "title": "Ask HN: Anthropic is accusing my company of distilling. How can I prove I'm not?",
+      "url": "https://news.ycombinator.com/item?id=50630809",
+      "source": "news.ycombinator.com",
+      "points": 221
+    },
+    {
+      "title": "Anthropic Staff Openly Talk About ‘Taking Over the World’, Claims Max Tegmark",
+      "url": "https://novaramedia.com/2026/11/24/anthropic-staff-openly-talk-about-taking-over-the-world-claims-top-mit-physicist/",
+      "source": "novaramedia.com",
+      "points": 199
+    },
+    {
+      "title": "Declare is a UI language for you and your AI",
+      "url": "https://davidtemkin.github.io/declarelang/",
+      "source": "davidtemkin.github.io",
+      "points": 105
+    }
+  ],
+  "aiAnalysis": "今天榜单呈现出一个明显的结构变化：头部项目集体从“框架”退向“技能包”和“规格”。superpowers 以 325817 星位居榜首、单日再增 1003，而 Claude-BugHunter 今日 +1826 已超过昨天 +2029 的节奏，说明开发者对“可直接注入 agent 的实战知识库”胃口远大于再学一套方法论；cursor/plugins 以 19225 星、+360 守住插件规范的位置，CLI-Anything 则用 64792 星、+1074 继续把命令行当作 agent 接入层。三者表面无关，实则都在争夺同一个东西：agent 究竟按谁定义的接口调用工具。相比之下，minimind 用 70202 星、+727 提醒我们工程效率的诱惑仍在——两小时训出 64M 模型的价值在于可控与可复现，而非参数规模。\n\nAI 侧更值得盯的是 HN 上那篇 895 分的“LLM agent 为母公司而非你工作”，以及 221 分的“如何自证没有蒸馏”。前者把 agent 的忠诚度问题摆上台面，后者说明模型能力的来源审计正变成合规战场，两者合起来指向一个冷峻事实：agent 的可靠性不只取决于能力，还取决于它的利益与你的利益是否一致。\n\n给开发者一条建议：在接入任何技能包或插件时，先问清它的默认行为把数据和控制权交给了谁，接口标准之争的胜负，最终落在信任链上。",
+  "analysisStatus": "ok",
+  "keywords": [
+    "Agent",
+    "Anthropic",
+    "LLM",
+    "Claude",
+    "模型",
+    "安全"
+  ],
+  "githubSource": "trending",
+  "githubDataDate": "2026-11-25",
+  "addStarsSince": null,
+  "generatedAt": "2026-11-25T01:06:12.657Z"
+}
