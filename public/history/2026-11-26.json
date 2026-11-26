@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-26",
+  "githubTrending": [
+    {
+      "name": "elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 85 skills, 16 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "stars": 23024,
+      "addStars": 1652,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "rankDelta": 0
+    },
+    {
+      "name": "obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "stars": 326621,
+      "addStars": 903,
+      "language": "Shell",
+      "languageColor": "#89e051",
+      "url": "https://github.com/obra/superpowers",
+      "rankDelta": 0
+    },
+    {
+      "name": "HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "stars": 65680,
+      "addStars": 1106,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "rankDelta": 0
+    },
+    {
+      "name": "jingyaogong/minimind",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "stars": 70947,
+      "addStars": 826,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/jingyaogong/minimind",
+      "rankDelta": 0
+    },
+    {
+      "name": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "stars": 19533,
+      "addStars": 416,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/cursor/plugins",
+      "rankDelta": 0
+    }
+  ],
+  "aiNews": [
+    {
+      "title": "Much shorter version of GRH Lean verification from Anthropic",
+      "url": "https://github.com/lsernau/grh-lean",
+      "source": "github.com",
+      "points": 240
+    },
+    {
+      "title": "Marginalia Search, Money, C++, Rust, AI, Stuff",
+      "url": "https://www.marginalia.nu/log/a_141_marginalia_update/",
+      "source": "marginalia.nu",
+      "points": 218
+    },
+    {
+      "title": "The New York Times warns photographers not to update Photoshop over AI features",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
+      "source": "theverge.com",
+      "points": 180
+    },
+    {
+      "title": "Top open problems in mathematics ranked by LLM-assessed importance",
+      "url": "https://www.proofatlas.ai/open-problems/",
+      "source": "proofatlas.ai",
+      "points": 101
+    },
+    {
+      "title": "New York bans AI toys, including those using internet to talk to children",
+      "url": "https://www.theguardian.com/us-news/2026/nov/25/new-york-bans-ai-toys",
+      "source": "theguardian.com",
+      "points": 42
+    }
+  ],
+  "aiAnalysis": "今天榜单最值得玩味的，是“能力封装”与“能力创造”同时升温。Claude-BugHunter 以 23024 星、单日 +1652 继续高速膨胀，85 个技能、681 条公开报告模式被压缩成一包可直接加载的实战知识，说明红队与漏洞挖掘这类高门槛工作正在被拆成 agent 可消费的零件；superpowers 一天再涨 903，CLI-Anything 也进账 1106，三者共同指向一个工程取舍：与其训练更大的模型，不如把领域经验固化成接口。另一头，minimind 用 70947 星、今日 +826 提醒我们反向路径依然有市场——两小时训出 64M 模型，卖点是全程可控、可复现、可在本地跑完，而不是追参数。AI 侧的信号偏监管与基础验证：纽约州禁止能联网与儿童对话的 AI 玩具（HN 42 分），Anthropic 放出更短的 GRH Lean 验证版本（HN 240 分），一边是边界收紧，一边是形式化验证下沉。给开发者一句实在话：如果你手上有反复手动执行的领域流程，先别急着上大模型，把它写成一份带示例和失败模式的技能说明，收益往往比换模型更快兑现。",
+  "analysisStatus": "ok",
+  "keywords": [
+    "Agent",
+    "LLM",
+    "Claude",
+    "Anthropic",
+    "模型",
+    "安全"
+  ],
+  "githubSource": "trending",
+  "githubDataDate": "2026-11-26",
+  "addStarsSince": null,
+  "generatedAt": "2026-11-26T01:05:59.318Z"
+}

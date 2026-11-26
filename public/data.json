@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "githubTrending": [
     {
       "name": "elementalsouls/Claude-BugHunter",
-      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 84 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
-      "stars": 21484,
-      "addStars": 1826,
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 85 skills, 16 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "stars": 23024,
+      "addStars": 1652,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/elementalsouls/Claude-BugHunter",
@@ -14,8 +14,8 @@
     {
       "name": "obra/superpowers",
       "description": "An agentic skills framework & software development methodology that works.",
-      "stars": 325817,
-      "addStars": 1003,
+      "stars": 326621,
+      "addStars": 903,
       "language": "Shell",
       "languageColor": "#89e051",
       "url": "https://github.com/obra/superpowers",
@@ -24,8 +24,8 @@
     {
       "name": "HKUDS/CLI-Anything",
       "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
-      "stars": 64792,
-      "addStars": 1074,
+      "stars": 65680,
+      "addStars": 1106,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/HKUDS/CLI-Anything",
@@ -34,8 +34,8 @@
     {
       "name": "jingyaogong/minimind",
       "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
-      "stars": 70202,
-      "addStars": 727,
+      "stars": 70947,
+      "addStars": 826,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/jingyaogong/minimind",
@@ -44,8 +44,8 @@
     {
       "name": "cursor/plugins",
       "description": "Cursor plugin specification and official plugins",
-      "stars": 19225,
-      "addStars": 360,
+      "stars": 19533,
+      "addStars": 416,
       "language": "TypeScript",
       "languageColor": "#3178c6",
       "url": "https://github.com/cursor/plugins",
@@ -54,48 +54,48 @@
   ],
   "aiNews": [
     {
-      "title": "LLM agents work for their parent companies, not for you",
-      "url": "https://michaelharley.net/posts/2026/11/01/llm-agents-work-for-their-parent-companies-not-for-you/",
-      "source": "michaelharley.net",
-      "points": 895
+      "title": "Much shorter version of GRH Lean verification from Anthropic",
+      "url": "https://github.com/lsernau/grh-lean",
+      "source": "github.com",
+      "points": 240
     },
     {
-      "title": "Tidal bans AI-generated music",
-      "url": "https://variety.com/2026/music/news/tidal-bans-ai-generated-music-1236956924/",
-      "source": "variety.com",
-      "points": 316
+      "title": "Marginalia Search, Money, C++, Rust, AI, Stuff",
+      "url": "https://www.marginalia.nu/log/a_141_marginalia_update/",
+      "source": "marginalia.nu",
+      "points": 218
     },
     {
-      "title": "Ask HN: Anthropic is accusing my company of distilling. How can I prove I'm not?",
-      "url": "https://news.ycombinator.com/item?id=50630809",
-      "source": "news.ycombinator.com",
-      "points": 221
+      "title": "The New York Times warns photographers not to update Photoshop over AI features",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
+      "source": "theverge.com",
+      "points": 180
     },
     {
-      "title": "Anthropic Staff Openly Talk About ‘Taking Over the World’, Claims Max Tegmark",
-      "url": "https://novaramedia.com/2026/11/24/anthropic-staff-openly-talk-about-taking-over-the-world-claims-top-mit-physicist/",
-      "source": "novaramedia.com",
-      "points": 199
+      "title": "Top open problems in mathematics ranked by LLM-assessed importance",
+      "url": "https://www.proofatlas.ai/open-problems/",
+      "source": "proofatlas.ai",
+      "points": 101
     },
     {
-      "title": "Declare is a UI language for you and your AI",
-      "url": "https://davidtemkin.github.io/declarelang/",
-      "source": "davidtemkin.github.io",
-      "points": 105
+      "title": "New York bans AI toys, including those using internet to talk to children",
+      "url": "https://www.theguardian.com/us-news/2026/nov/25/new-york-bans-ai-toys",
+      "source": "theguardian.com",
+      "points": 42
     }
   ],
-  "aiAnalysis": "今天榜单呈现出一个明显的结构变化：头部项目集体从“框架”退向“技能包”和“规格”。superpowers 以 325817 星位居榜首、单日再增 1003，而 Claude-BugHunter 今日 +1826 已超过昨天 +2029 的节奏，说明开发者对“可直接注入 agent 的实战知识库”胃口远大于再学一套方法论；cursor/plugins 以 19225 星、+360 守住插件规范的位置，CLI-Anything 则用 64792 星、+1074 继续把命令行当作 agent 接入层。三者表面无关，实则都在争夺同一个东西：agent 究竟按谁定义的接口调用工具。相比之下，minimind 用 70202 星、+727 提醒我们工程效率的诱惑仍在——两小时训出 64M 模型的价值在于可控与可复现，而非参数规模。\n\nAI 侧更值得盯的是 HN 上那篇 895 分的“LLM agent 为母公司而非你工作”，以及 221 分的“如何自证没有蒸馏”。前者把 agent 的忠诚度问题摆上台面，后者说明模型能力的来源审计正变成合规战场，两者合起来指向一个冷峻事实：agent 的可靠性不只取决于能力，还取决于它的利益与你的利益是否一致。\n\n给开发者一条建议：在接入任何技能包或插件时，先问清它的默认行为把数据和控制权交给了谁，接口标准之争的胜负，最终落在信任链上。",
+  "aiAnalysis": "今天榜单最值得玩味的，是“能力封装”与“能力创造”同时升温。Claude-BugHunter 以 23024 星、单日 +1652 继续高速膨胀，85 个技能、681 条公开报告模式被压缩成一包可直接加载的实战知识，说明红队与漏洞挖掘这类高门槛工作正在被拆成 agent 可消费的零件；superpowers 一天再涨 903，CLI-Anything 也进账 1106，三者共同指向一个工程取舍：与其训练更大的模型，不如把领域经验固化成接口。另一头，minimind 用 70947 星、今日 +826 提醒我们反向路径依然有市场——两小时训出 64M 模型，卖点是全程可控、可复现、可在本地跑完，而不是追参数。AI 侧的信号偏监管与基础验证：纽约州禁止能联网与儿童对话的 AI 玩具（HN 42 分），Anthropic 放出更短的 GRH Lean 验证版本（HN 240 分），一边是边界收紧，一边是形式化验证下沉。给开发者一句实在话：如果你手上有反复手动执行的领域流程，先别急着上大模型，把它写成一份带示例和失败模式的技能说明，收益往往比换模型更快兑现。",
   "analysisStatus": "ok",
   "keywords": [
     "Agent",
-    "Anthropic",
     "LLM",
     "Claude",
+    "Anthropic",
     "模型",
     "安全"
   ],
   "githubSource": "trending",
-  "githubDataDate": "2026-11-25",
+  "githubDataDate": "2026-11-26",
   "addStarsSince": null,
-  "generatedAt": "2026-11-25T01:06:12.657Z"
+  "generatedAt": "2026-11-26T01:05:59.318Z"
 }

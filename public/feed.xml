@@ -5,8 +5,16 @@
     <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
     <description>每天北京时间 08:00 更新的技术简报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 25 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://huanghd1.github.io/zhhe-daily-report-v1/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日科技简报 2026-11-26</title>
+      <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
+      <guid isPermaLink="false">https://huanghd1.github.io/zhhe-daily-report-v1/#2026-11-26</guid>
+      <pubDate>Thu, 26 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Agent</category><category>LLM</category><category>Claude</category><category>Anthropic</category><category>模型</category><category>安全</category>
+      <description>今天榜单最值得玩味的，是“能力封装”与“能力创造”同时升温。Claude-BugHunter 以 23024 星、单日 +1652 继续高速膨胀，85 个技能、681 条公开报告模式被压缩成一包可直接加载的实战知识，说明红队与漏洞挖掘这类高门槛工作正在被拆成 agent 可消费的零件；superpowers 一天再涨 903，CLI-Anything 也进账 1106，三者共同指向一个工程取舍：与其训练更大的模型，不如把领域经验固化成接口。另一头，minimind 用 70947 星、今日 +826 提醒我们反向路径依然有市场——两小时训出 64M 模型，卖点是全程可控、可复现、可在本地跑完，而不是追参数。AI 侧的信号偏监管与基础验证：纽约州禁止能联网与儿童对话的 AI 玩具（HN 42 分），Anthropic 放出更短的 GRH Lean 验证版本（HN 240 分），一边是边界收紧，一边是形式化验证下沉。给开发者一句实在话：如果你手上有反复手动执行的领域流程，先别急着上大模型，把它写成一份带示例和失败模式的技能说明，收益往往比换模型更快兑现。</description>
+    </item>
     <item>
       <title>每日科技简报 2026-11-25</title>
       <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
