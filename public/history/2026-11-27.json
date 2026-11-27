@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-27",
+  "githubTrending": [
+    {
+      "name": "elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 85 skills, 16 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "stars": 24614,
+      "addStars": 1597,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "rankDelta": 0
+    },
+    {
+      "name": "obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "stars": 327496,
+      "addStars": 854,
+      "language": "Shell",
+      "languageColor": "#89e051",
+      "url": "https://github.com/obra/superpowers",
+      "rankDelta": 0
+    },
+    {
+      "name": "HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "stars": 66374,
+      "addStars": 746,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "rankDelta": 0
+    },
+    {
+      "name": "jingyaogong/minimind",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "stars": 71651,
+      "addStars": 702,
+      "language": "Python",
+      "languageColor": "#3572a5",
+      "url": "https://github.com/jingyaogong/minimind",
+      "rankDelta": 0
+    },
+    {
+      "name": "cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "stars": 19792,
+      "addStars": 270,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "url": "https://github.com/cursor/plugins",
+      "rankDelta": 0
+    }
+  ],
+  "aiNews": [
+    {
+      "title": "Tracking Diseases Cured by AI",
+      "url": "https://diseasescuredbyai.com/",
+      "source": "diseasescuredbyai.com",
+      "points": 299
+    },
+    {
+      "title": "AI made self-hosting fun again",
+      "url": "https://janlukas.blog/posts/ai-self-hosting",
+      "source": "janlukas.blog",
+      "points": 267
+    },
+    {
+      "title": "Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email",
+      "url": "https://techstackups.com/articles/google-workspace-ai-agents-mcp/",
+      "source": "techstackups.com",
+      "points": 228
+    },
+    {
+      "title": "One guy is doing a hunger strike outside Anthropic, currently in his 3rd day",
+      "url": "https://twitter.com/ElliotC1/status/2125689373337489419",
+      "source": "twitter.com",
+      "points": 55
+    },
+    {
+      "title": "Top-cited AI scientists at four US companies compared",
+      "url": "https://topcitedscientists.com/figures/ai-at-four-us-companies/",
+      "source": "topcitedscientists.com",
+      "points": 32
+    }
+  ],
+  "aiAnalysis": "今天榜单的看点不在“又多了几个技能包”，而在 agent 基础设施正被拆成两层：一层是给 agent 用的“说明书”，一层是让 agent 直接调用的“入口”。Claude-BugHunter 冲到 24614 星、单日 +1597，把 85 个技能、681 条公开报告模式压进一包，是典型的说明书层打法；HKUDS/CLI-Anything 66374 星、今日 +746，主张“把一切软件变成 agent 原生”，走的是入口层——与其让 agent 学界面，不如给它一条命令行。两者一上一下，恰好在回答同一个问题：agent 到底该被喂知识，还是该被给接口。更值得玩味的是 Google 要让 AI agent 使用自家 MCP 服务，但 Gmail 那个连发邮件都做不到（HN 228 分）——接口开放了，权限没开放，这正是入口层最现实的坑。相对地，jingyaogong/minimind 71651 星、今日 +702，用两小时训出 64M 模型继续吸粉，说明“可跑通、可复现”仍是开发者最朴素的信任来源。给开发者一条建议：别急着囤技能包，先给自己的工具写一条稳定、幂等、有清晰错误码的 CLI，这才是 agent 真正吃得下的接口。",
+  "analysisStatus": "ok",
+  "keywords": [
+    "Agent",
+    "Claude",
+    "Anthropic",
+    "LLM",
+    "模型",
+    "MCP"
+  ],
+  "githubSource": "trending",
+  "githubDataDate": "2026-11-27",
+  "addStarsSince": null,
+  "generatedAt": "2026-11-27T01:11:51.878Z"
+}
