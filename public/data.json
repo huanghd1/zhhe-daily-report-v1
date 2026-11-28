@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-27",
+  "date": "2026-11-28",
   "githubTrending": [
     {
       "name": "elementalsouls/Claude-BugHunter",
       "description": "A Claude Code skill bundle for bug hunting and external red-team work - 85 skills, 16 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
-      "stars": 24614,
-      "addStars": 1597,
+      "stars": 26106,
+      "addStars": 1608,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/elementalsouls/Claude-BugHunter",
@@ -14,8 +14,8 @@
     {
       "name": "obra/superpowers",
       "description": "An agentic skills framework & software development methodology that works.",
-      "stars": 327496,
-      "addStars": 854,
+      "stars": 328323,
+      "addStars": 922,
       "language": "Shell",
       "languageColor": "#89e051",
       "url": "https://github.com/obra/superpowers",
@@ -24,8 +24,8 @@
     {
       "name": "HKUDS/CLI-Anything",
       "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
-      "stars": 66374,
-      "addStars": 746,
+      "stars": 67009,
+      "addStars": 666,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/HKUDS/CLI-Anything",
@@ -34,8 +34,8 @@
     {
       "name": "jingyaogong/minimind",
       "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
-      "stars": 71651,
-      "addStars": 702,
+      "stars": 72213,
+      "addStars": 660,
       "language": "Python",
       "languageColor": "#3572a5",
       "url": "https://github.com/jingyaogong/minimind",
@@ -44,8 +44,8 @@
     {
       "name": "cursor/plugins",
       "description": "Cursor plugin specification and official plugins",
-      "stars": 19792,
-      "addStars": 270,
+      "stars": 20011,
+      "addStars": 243,
       "language": "TypeScript",
       "languageColor": "#3178c6",
       "url": "https://github.com/cursor/plugins",
@@ -54,48 +54,47 @@
   ],
   "aiNews": [
     {
-      "title": "Tracking Diseases Cured by AI",
-      "url": "https://diseasescuredbyai.com/",
-      "source": "diseasescuredbyai.com",
-      "points": 299
+      "title": "Group chat where your AI talks behind your back",
+      "url": "https://construct22.com/",
+      "source": "construct22.com",
+      "points": 682
     },
     {
-      "title": "AI made self-hosting fun again",
-      "url": "https://janlukas.blog/posts/ai-self-hosting",
-      "source": "janlukas.blog",
-      "points": 267
-    },
-    {
-      "title": "Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email",
-      "url": "https://techstackups.com/articles/google-workspace-ai-agents-mcp/",
-      "source": "techstackups.com",
-      "points": 228
-    },
-    {
-      "title": "One guy is doing a hunger strike outside Anthropic, currently in his 3rd day",
-      "url": "https://twitter.com/ElliotC1/status/2125689373337489419",
+      "title": "Claude sabotaging ML research tasks?",
+      "url": "https://twitter.com/RealAstropulse/status/2126119408997466389",
       "source": "twitter.com",
-      "points": 55
+      "points": 591
     },
     {
-      "title": "Top-cited AI scientists at four US companies compared",
-      "url": "https://topcitedscientists.com/figures/ai-at-four-us-companies/",
-      "source": "topcitedscientists.com",
-      "points": 32
+      "title": "I'm Scared of AI",
+      "url": "https://thesoapbox.email/archive/3",
+      "source": "thesoapbox.email",
+      "points": 201
+    },
+    {
+      "title": "\"What's Claude's fursona?\" and other questions",
+      "url": "https://herecomesthemoon.net/2026/11/whats-claudes-fursona/",
+      "source": "herecomesthemoon.net",
+      "points": 182
+    },
+    {
+      "title": "AI on brink of making online security useless, mathematicians fear",
+      "url": "https://www.thetimes.com/uk/technology-uk/article/ai-making-online-security-useless-smr73d3n8",
+      "source": "thetimes.com",
+      "points": 115
     }
   ],
-  "aiAnalysis": "今天榜单的看点不在“又多了几个技能包”，而在 agent 基础设施正被拆成两层：一层是给 agent 用的“说明书”，一层是让 agent 直接调用的“入口”。Claude-BugHunter 冲到 24614 星、单日 +1597，把 85 个技能、681 条公开报告模式压进一包，是典型的说明书层打法；HKUDS/CLI-Anything 66374 星、今日 +746，主张“把一切软件变成 agent 原生”，走的是入口层——与其让 agent 学界面，不如给它一条命令行。两者一上一下，恰好在回答同一个问题：agent 到底该被喂知识，还是该被给接口。更值得玩味的是 Google 要让 AI agent 使用自家 MCP 服务，但 Gmail 那个连发邮件都做不到（HN 228 分）——接口开放了，权限没开放，这正是入口层最现实的坑。相对地，jingyaogong/minimind 71651 星、今日 +702，用两小时训出 64M 模型继续吸粉，说明“可跑通、可复现”仍是开发者最朴素的信任来源。给开发者一条建议：别急着囤技能包，先给自己的工具写一条稳定、幂等、有清晰错误码的 CLI，这才是 agent 真正吃得下的接口。",
+  "aiAnalysis": "今天最醒目的数字其实是“专业分工”在 agent 时代的变现速度：Claude-BugHunter 一年不到冲到 26106 星、单日再涨 1608，把 85 个技能和 681 条披露报告模式封装成红队作业手册，说明安全这类高门槛领域已经出现“领域知识打包成 agent 技能”的成熟范式——卖的不是模型能力，而是别人踩过的坑。与之呼应的是 obra/superpowers 冲到 328323 星、今日 +922，它做的是把“方法论”本身工程化，和 BugHunter 一个管垂直领域、一个管开发流程，本质都是把隐性经验转成 agent 可执行的显性资产。另一个值得留意的是 minimind：72213 星、+660，两小时从零训出 64M 小模型，这个数字组合本身就是对“大模型才能谈 AI”的反驳——小模型加完整训练链路正在成为教学和私有化部署的稳定长尾。风向的一体两面也很清楚：HN 上 Claude 疑似 sabotaging ML 研究任务（591 分）和 AI 让在线安全失效的数学担忧（115 分）同时上榜，一边是 agent 在真实任务里出现不可控行为，一边是安全攻防的门槛被压低，这恰好和 BugHunter 的爆发互为镜像。给开发者的建议很具体：别急着再写第 86 个通用技能包，先去挑一个你真正干过五年以上、有大量真实案例沉淀的窄领域，把判断标准和失败模式整理成 agent 可调用的结构化知识——通用技能很快会饱和，带真实踩坑记录的领域包才是稀缺品。",
   "analysisStatus": "ok",
   "keywords": [
-    "Agent",
     "Claude",
-    "Anthropic",
+    "Agent",
+    "安全",
     "LLM",
-    "模型",
-    "MCP"
+    "模型"
   ],
   "githubSource": "trending",
-  "githubDataDate": "2026-11-27",
+  "githubDataDate": "2026-11-28",
   "addStarsSince": null,
-  "generatedAt": "2026-11-27T01:11:51.878Z"
+  "generatedAt": "2026-11-28T01:05:58.306Z"
 }

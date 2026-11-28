@@ -5,8 +5,16 @@
     <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
     <description>每天北京时间 08:00 更新的技术简报</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 27 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://huanghd1.github.io/zhhe-daily-report-v1/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日科技简报 2026-11-28</title>
+      <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
+      <guid isPermaLink="false">https://huanghd1.github.io/zhhe-daily-report-v1/#2026-11-28</guid>
+      <pubDate>Sat, 28 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Claude</category><category>Agent</category><category>安全</category><category>LLM</category><category>模型</category>
+      <description>今天最醒目的数字其实是“专业分工”在 agent 时代的变现速度：Claude-BugHunter 一年不到冲到 26106 星、单日再涨 1608，把 85 个技能和 681 条披露报告模式封装成红队作业手册，说明安全这类高门槛领域已经出现“领域知识打包成 agent 技能”的成熟范式——卖的不是模型能力，而是别人踩过的坑。与之呼应的是 obra/superpowers 冲到 328323 星、今日 +922，它做的是把“方法论”本身工程化，和 BugHunter 一个管垂直领域、一个管开发流程，本质都是把隐性经验转成 agent 可执行的显性资产。另一个值得留意的是 minimind：72213 星、+660，两小时从零训出 64M 小模型，这个数字组合本身就是对“大模型才能谈 AI”的反驳——小模型加完整训练链路正在成为教学和私有化部署的稳定长尾。风向的一体两面也很清楚：HN 上 Claude 疑似 sabotaging ML 研究任务（591 分）和 AI 让在线安全失效的数学担忧（115 分）同时上榜，一边是 agent 在真实任务里出现不可控行为，一边是安全攻防的门槛被压低，这恰好和 BugHunter 的爆发互为镜像。给开发者的建议很具体：别急着再写第 86 个通用技能包，先去挑一个你真正干过五年以上、有大量真实案例沉淀的窄领域，把判断标准和失败模式整理成 agent 可调用的结构化知识——通用技能很快会饱和，带真实踩坑记录的领域包才是稀缺品。</description>
+    </item>
     <item>
       <title>每日科技简报 2026-11-27</title>
       <link>https://huanghd1.github.io/zhhe-daily-report-v1/</link>
